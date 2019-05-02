@@ -1,0 +1,110 @@
+body {
+    font-family: sans-serif;
+}
+
+.hide {
+    display: none;
+}
+
+.navbar {
+    position: fixed;
+    bottom: 0;
+    height: 60px;
+    background-color: lightgrey;
+    text-align: center;
+
+    .icon_line {
+        height: 100%;
+        width: 100%;
+        margin: auto;
+    }
+}
+
+#L2S2 {
+    .pad {
+        padding: 25% 15%;
+
+        .txt_box {
+            background: #666666;
+            margin-bottom: 10vh;
+            color: #fff;
+        }
+
+        .logo_big {
+            margin: auto;
+            width: 80%;
+            height: 180px;
+            border: 1px solid #000;
+        }
+
+        .logos_small_box {
+            padding: 5% 10%;
+
+            .col-4 {
+                .slogo {
+                    border: 1px solid #000;
+                    height: 50px;
+                }
+            }
+        }
+    }
+}
+
+#L3S3 {
+    .logo {
+        width: 30%;
+        height: 100px;
+        border: 1px solid #000;
+        margin: 25px 0 0 25px;
+    }
+
+    .txt_box {
+        text-align: center;
+        margin: 10vh 0;
+    }
+
+    .centered_div {
+        margin: auto; // rechnet den margin aus muss aber die width definieren
+        width: 40%;
+    }
+
+    .auswahl_button {
+        display: table;
+        height: 65px;
+        border: 1px solid #000;
+        margin-bottom: 5vh;
+        text-align: center;
+
+        p {
+            display: table-cell;
+            vertical-align: middle;
+        }
+    }
+}
+
+#L4 {
+    .pad {
+    }
+    .row {
+        .col-6 pt-3{
+            .but {
+                padding: 2vh;
+                width: 10vh !important;
+            }
+        }
+    }
+}
+
+#L5_1 {
+    #usercount {
+    margin-bottom: 40px;
+    margin-top:10px;
+    width: 100px;
+    text-align: left;
+    float: right;
+    color:white;
+    padding: 10px;
+    background-size: 100% 100%;
+    background-image: url(bilder/hintergrund3.png); 
+    }
+}

@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-grid.css" />
+    <link rel="stylesheet" href="js/bootstrap.bundle.js" />
+    
+    <!-- Bootstrap ICONS (fontawesome)-->
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    
+   <!-- Lehrer CSS (hoang) -->
+    <link rel="stylesheet" href="style.css" type="text/css" media="screen"/>
+    
+    <!-- eigene CSS Schueler (daria) -->
+    <link rel="stylesheet" href="schueler.css" type="text/css" media="screen" />
+    
+    <!-- jQuery -->
+     <script src="js/jquery.js"></script>
+    
+    <!-- Bootstrap JS -->
+    <script src="js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <title>PHONE SCREEN BT</title>
+</head>
+
+<body>
+   <!--Zustand L2/S2 "Willkommen" (Bei Lehrer und Schüler gleich)-->
+   <!--lehrer/schueler gleich-->
+    
+    <div id="L2S2" onload="setTimeout(function(){ hideelem('L3S3','L2S2') },3000);">  
+    <div class="container-fluid pt-5 pb-5 mb-3 hintergrbild"> 
+        <h1 class="text-center" id="willk">Willkommen!</h1>
+    </div>
+        
+    <div class="container mt-5 mb-3">
+        <img src="bilder/LogoSpiel.png" class="img-fluid mx-auto d-block" id="logogross">
+    </div>  
+    <div class="row mr-5 ml-5">
+    <div class="container mt-5 pr-0 pl-0 col col4">
+        <img src="bilder/logoERASMUS2.png" class="img-fluid mx-auto d-block logosklein">
+    </div>
+    <div class="container mt-5 pr-0 pl-0 col col4">
+        <img src="bilder/logoGSG.jpg" class="img-fluid mx-auto d-block logosklein">
+    </div>
+       <div class="container mt-5 pr-0 pl-0 col col4">
+        <img src="bilder/logoHFU2.png" class="img-fluid mx-auto d-block logosklein">
+    </div>
+    </div>
+    </div>
+
+<!--Zustand L3/S3 "Admin/Spieler wählen" (Bei Lehrer und Schüler gleich)-->
+<!--lehrer/schueler gleich-->
+
+<div id="L3S3" class="hide" >
+    
+    <div class="container-fluid pt-5 pb-5 mb-5 hintergrbild"> <!--@hoang diese div kannst du immer als überschrift kopieren für alle screens -->
+        <h2 class="text-center">Bitte auswählen.</h2>
+    </div>
+    
+    <div class="container pt-2"></div>      <!--abstand-->
+    <div class="container">
+    <div class="container mt-5">
+        <button type="button" class="btn btn-secondary btn-lg btn-block buttoncss pt-5 pb-5" onclick="hideelem('L4','L3S3')">Admin</button>
+    </div>
+    <div class="container mt-3">
+        <button type="button" class="btn btn-secondary btn-lg btn-block buttoncss pt-5 pb-5" onclick="hideelem('S4','L3S3'); replacenav();">Spieler</button>
+    </div>
+    </div>
+    </div>
+       
+<!-- Zustand L4 "Spieleauswahl Lehrer" (Wenn klick auf Admin) -->
+    <div id="L4" class="hide">
+        <div class="container-fluid pt-5 pb-4 hintergrbild">
+            <h2 class="text-center">Home</h2>
+            <h5 class="text-center">Bitte Spiel auswählen.</h5>
+        </div>
+        <div class="container pad pt-3">
+
+            <div class="row text-center">
+                <div class="col-6 pt-3 pr-2">
+                    <div class="but">
+                        <button type="button" class="btn btn-secondary btn-xs btn-block buttoncss pt-5 pb-5" onclick="hideelem('L5_1','L4')">Buzzerspiel</button>
+                    </div>
+                </div>
+                <div class="col-6 pt-3 pl-2">
+                    <div class="but">
+                        <button type="button" class="btn btn-secondary btn-xs btn-block buttoncss pt-5 pb-5">Pantomime</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 pt-3 pr-2">
+                    <div class="but">
+                        <button type="button" class="btn btn-secondary btn-xs btn-block buttoncss pt-5 pb-5" onclick="hideelem('L5.2','L4')">Highscore</button>
+                    </div>
+                </div>
+                <div class="col-6 pt-3 pl-2">
+                    <div class="but">
+                        <button type="button" class="btn btn-secondary btn-xs btn-block buttoncss pt-5 pb-5" onclick="hideelem('L5.3','L4')">Einstellungen</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    <!--    lehrer navbar   -->
+    <nav class="navbar navbar-expand-lg fixed-bottom navfarbe">
+        <div class="row icon_line pt-2">
+            <div class="col-4">
+                <a href="#">
+                    <i class="fa fa-chevron-left fa-2x" onclick="backbutt()" aria-hidden="true"></i></a>
+            </div>
+            <div class="col-4">
+                <a href="#">
+                    <i class="fa fa-home fa-2x" aria-hidden="true"></i></a>
+            </div>
+            <div class="col-4">
+                <a href="#">
+                    <i class="fa fa-cog fa-2x" onclick="hideelem('L5.3','L4')" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </nav>
+        
+    </div>
+
+    <!--    Zustand L5.1 "warten auf einloggen der Schüler" (Wenn klick auf Buzzerspiel)    -->
+    <div id="L5_1" class="hide">
+
+        <div class="container-fluid-xs pt-5 pb-5 hintergrbild">
+            <h2 class="text-center">Warten auf Spieler...</h2>
+        </div>
+    <div class="container row mt-3 pr-0">
+     <div class="col col-8 mt-2">
+     <button type="button" onclick="hideelem('L6','L5_1');counter7();setTimeout(function(){ hideelem('L7','L6') },6000);" class="btn btn-secondary btn-block buttoncss2">Spiel starten</button>
+     </div>
+     <div class="col col-4 pr-0">
+     <p id="usercount">Spieler: 10</p>
+     </div>
+    </div>
+  
+
+        <div class="container mt-4 table-responsive">
+         <table class="table text-center">
+            <tbody>
+              <tr>
+                <td class="platz">1</td>
+                <td>Doe</td>
+              </tr>
+              <tr>
+                <td class="platz">2</td>
+                <td>Moe</td>
+              </tr>
+              <tr>
+                <td class="platz">3</td>
+                <td>Dooley</td>
+              </tr>
+              <tr>
+                <td class="platz">4</td>
+                <td>nickname x</td>
+              </tr>
+              <tr>
+                <td class="platz">5</td>
+                <td>nickname x</td>
+              </tr>
+              <tr>
+                <td class="platz">6</td>
+                <td>nickname x</td>
+              </tr>
+              <tr>
+                <td class="platz">7</td>
+                <td>nickname x</td>
+              </tr>
+              <tr>
+                <td class="platz">8</td>
+                <td>nickname x</td>
+              </tr>
+              <tr>
+                <td class="platz">9</td>
+                <td>nickname x</td>
+              </tr>
+              <tr>
+                <td class="platz">10</td>
+                <td>nickname x</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <!--    lehrer navbar   -->
+    <nav class="navbar navbar-expand-lg fixed-bottom navfarbe">
+        <div class="row icon_line pt-2">
+            <div class="col-4">
+                <a href="#">
+                    <i class="fa fa-chevron-left fa-2x" onclick="backbutt()"  aria-hidden="true"></i></a>
+            </div>
+            <div class="col-4">
+                <a href="#">
+                    <i class="fa fa-home fa-2x" onclick="hideelem('L4','L5_1')" aria-hidden="true"></i></a>
+            </div>
+            <div class="col-4">
+                <a href="#">
+                    <i class="fa fa-cog fa-2x" onclick="hideelem('L5.3','L5_1')" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </nav>
+        
+</div>
+
+
+	
+ <!-- Zustand L5.2/S4.1 "Highscore anzeigen" (Wenn klick auf Highscore anzeigen)-->
+ <div id="L5.2" class="hide">
+    <div class="container-fluid pt-5 pb-5 hintergrbild">
+        <h2 class="text-center">Highscore</h2>
+    </div>
+        
+ <div class="container mt-4">     
+ <ul class="nav nav-tabs" role="tablist">
+   <li class="nav-item active">
+      <a class="nav-link textd" data-toggle="tab"
+         href="#buzzL"
+         role="tab">
+      Buzzerspiel
+      </a>
+   </li>
+   <li class="nav-item">
+      <a class="nav-link textd" id="tab-css" data-toggle="tab"
+         href="#pantoL"
+         role="tab">
+      Pantomimenspiel
+      </a>
+   </li>
+</ul>
+<div class="tab-content mt-2 mg-r3 mgl-3" id="myTabContentL">
+   <div class="tab-pane active" id="buzzL"
+      role="tabpanel" aria-labelledby="tab-javascript">
+     <h4 class="text-center mt-5">Top 10 - Buzzerspiel</h4>
+     <div class="container mt-4 table-responsive">
+         <table class="table text-center">
+            <tbody>
+              <tr>
+                <td class="platz">1</td>
+                <td>Doe</td>
+                <td>192803</td>
+              </tr>
+              <tr>
+                <td class="platz">2</td>
+                <td>Moe</td>
+                <td>108922</td>
+              </tr>
+              <tr>
+                <td class="platz">3</td>
+                <td>Dooley</td>
+                <td>390039</td>
+              </tr>
+              <tr>
+                <td class="platz">4</td>
+                <td>nickname x</td>
+                <td>390039</td>
+              </tr>
+              <tr>
+                <td class="platz">5</td>
+                <td>nickname x</td>
+                <td>390039</td>
+              </tr>
+              <tr>
+                <td class="platz">6</td>
+                <td>nickname x</td>
+                <td>390039</td>
+              </tr>
+              <tr>
+                <td class="platz">7</td>
+                <td>nickname x</td>
+                <td>390039</td>
+              </tr>
+              <tr>
+                <td class="platz">8</td>
+                <td>nickname x</td>
+                <td>390039</td>
+              </tr>
+              <tr>
+                <td class="platz">9</td>
+                <td>nickname x</td>
+                <td>390039</td>
+              </tr>
+              <tr>
+                <td class="platz">10</td>
+                <td>nickname x</td>
+                <td>390039</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+   </div>
+   <div class="tab-pane" id="pantoL"
+      role="tabpanel" aria-labelledby="tab-css">
+      <h4 class="text-center mt-5">Top 10 - Pantomimenspiel</h4>
+      <div class="container mt-4 table-responsive">
+         <table class="table text-center">
+            <tbody>
+              <tr>
+                <td class="platz">1</td>
+                <td>nickname x</td>
+                <td>192803</td>
+              </tr>
+              <tr>
+                <td class="platz">2</td>
+                <td>nickname x</td>
+                <td>108922</td>
+              </tr>
+              <tr>
+                <td class="platz">3</td>
+                <td>nickname x</td>
+                <td>390039</td>
+              </tr>
+              <tr>
+                <td class="platz">4</td>
+                <td>nickname x</td>
+                <td>390039</td>
+              </tr>
+              <tr>
+                <td class="platz">5</td>
+                <td>nickname x</td>
+                <td>390039</td>
+              </tr>
+              <tr>
+                <td class="platz">6</td>
+                <td>nickname x</td>
+                <td>390039</td>
+              </tr>
+              <tr>
+                <td class="platz">7</td>
+                <td>nickname x</td>
+                <td>390039</td>
+              </tr>
+              <tr>
+                <td class="platz">8</td>
+                <td>nickname x</td>
+                <td>390039</td>
+              </tr>
+              <tr>
+                <td class="platz">9</td>
+                <td>nickname x</td>
+                <td>390039</td>
+              </tr>
+              <tr>
+                <td class="platz">10</td>
+                <td>nickname x</td>
+                <td>390039</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+   </div>
+</div>
+</div>
+
+    <div class="container pt-5"></div>  
+    
+    <div id="navL5.2">     
+    <!--    lehrer navbar   -->
+    <nav class="navbar navbar-expand-lg fixed-bottom navfarbe">
+        <div class="row icon_line pt-2">
+            <div class="col-4">
+                <a href="#">
+                    <i class="fa fa-chevron-left fa-2x"  onclick="hideelem('L4','L5.2')" onclick="backbutt()" aria-hidden="true"></i></a>
+            </div>
+            <div class="col-4">
+                <a href="#">
+                    <i class="fa fa-home fa-2x" onclick="hideelem('L4','L5.2')" aria-hidden="true"></i></a>
+            </div>
+            <div class="col-4">
+                <a href="#">
+                    <i class="fa fa-cog fa-2x" onclick="hideelem('L5.3','L5.2')" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </nav>
+    </div>   
+</div>
+    
+
+
+
+ <!-- Zustand L5.3 "Einstellungen" (Wenn klick auf Einstellungen)-->
+    <div id="L5.3" class="hide">
+         <div class="container-fluid pt-5 pb-5 hintergrbild">
+            <h2 class="text-center">Einstellungen</h2>
+        </div>
+       
+<div class="container mt-4">     
+ <ul class="nav nav-tabs" role="tablist">
+   <li class="nav-item active">
+      <a class="nav-link textd" data-toggle="tab" href="#buzz1" role="tab">
+      Buzzerspiel
+      </a>
+   </li>
+   <li class="nav-item">
+      <a class="nav-link textd" data-toggle="tab" href="#panto1" role="tab">
+      Pantomimenspiel
+      </a>
+   </li>
+</ul>
+
+<div class="tab-content mt-2 mg-r3 mgl-3">
+   <div class="tab-pane active" id="buzz1" role="tabpanel" aria-labelledby="tab-javascript">
+       
+<!-- @Hoang hier kommt Tabinhalt von Buzzerspiel rein-->
+     <h4 class="text-center mt-5 mb-4">Buzzerspiel</h4>
+       
+    <!-- akkordeon-->
+    <div id="accordion">
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <h5 class="mb-0">
+        <button class="btn btn-link linkfarbe" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Level 1
+        </button>
+      </h5>
+    </div>
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+      <div class="card-body">
+          
+      <!-- inhalt toggle 1-->
+       <div class="container">
+        <div class="col-md-offset-5 col-md-5 check-row">
+        <form role="form">
+          <div class="form-group">
+
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" class="check" id="checkAll"> Alle
+            </label>
+          </div>
+
+            <div class="checkbox">
+            <label>
+              <input type="checkbox" class="check"> Kategorie 1
+            </label>
+          </div>
+              
+            <div class="checkbox">
+            <label>
+              <input type="checkbox" class="check"> Kategorie 2
+            </label>
+          </div>
+
+            <div class="checkbox">
+            <label>
+              <input type="checkbox" class="check"> Kategorie 3
+            </label>
+          </div>
+            </div>
+        </form>
+          </div>
+         </div>
+          
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingTwo">
+      <h5 class="mb-0">
+        <button class="btn btn-link  linkfarbe collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+         Level 2 
+        </button>
+      </h5>
+    </div>
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+      <div class="card-body">
+          
+        <!-- inhalt toggle 2-->
+       <div class="container">
+        <div class="col-md-offset-5 col-md-5 check-row">
+        <form role="form">
+          <div class="form-group">
+
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" class="check2" id="checkAll2"> Alle
+            </label>
+          </div>
+
+            <div class="checkbox">
+            <label>
+              <input type="checkbox" class="check2"> Kategorie 1
+            </label>
+          </div>
+              
+            <div class="checkbox">
+            <label>
+              <input type="checkbox" class="check2"> Kategorie 2
+            </label>
+          </div>
+
+            <div class="checkbox">
+            <label>
+              <input type="checkbox" class="check2"> Kategorie 3
+            </label>
+          </div>
+            </div>
+        </form>
+          </div>
+         </div>
+          
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingThree">
+      <h5 class="mb-0">
+        <button class="btn btn-link linkfarbe collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+         Level 3
+        </button>
+      </h5>
+    </div>
+    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+      <div class="card-body">
+       
+      <!-- inhalt toggle 3-->
+       <div class="container">
+        <div class="col-md-offset-5 col-md-5 check-row">
+        <form role="form">
+          <div class="form-group">
+
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" class="check3" id="checkAll3"> Alle
+            </label>
+          </div>
+
+            <div class="checkbox">
+            <label>
+              <input type="checkbox" class="check3"> Kategorie 1
+            </label>
+          </div>
+              
+            <div class="checkbox">
+            <label>
+              <input type="checkbox" class="check3"> Kategorie 2
+            </label>
+          </div>
+
+            <div class="checkbox">
+            <label>
+              <input type="checkbox" class="check3"> Kategorie 3
+            </label>
+          </div>
+            </div>
+        </form>
+          </div>
+         </div>
+          
+      </div>
+    </div>
+  </div>
+ <div class="card">
+    <div class="card-header" id="headingfour">
+      <h5 class="mb-0">
+        <button class="btn btn-link  linkfarbe collapsed" data-toggle="collapse" data-target="#collapsefour" aria-expanded="false" aria-controls="collapsefour">
+         Level 4
+        </button>
+      </h5>
+    </div>
+    <div id="collapsefour" class="collapse" aria-labelledby="headingfour" data-parent="#accordion">
+      <div class="card-body">
+      
+        <!-- inhalt toggle 4-->
+       <div class="container">
+        <div class="col-md-offset-5 col-md-5 check-row">
+        <form role="form">
+          <div class="form-group">
+
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" class="check4" id="checkAll4"> Alle
+            </label>
+          </div>
+
+            <div class="checkbox">
+            <label>
+              <input type="checkbox" class="check4"> Kategorie 1
+            </label>
+          </div>
+              
+            <div class="checkbox">
+            <label>
+              <input type="checkbox" class="check4"> Kategorie 2
+            </label>
+          </div>
+
+            <div class="checkbox">
+            <label>
+              <input type="checkbox" class="check4"> Kategorie 3
+            </label>
+          </div>
+            </div>
+        </form>
+          </div>
+         </div>
+          
+      </div>
+    </div>
+  </div>
+</div>
+       
+<!-- range-slider bereich-->
+ <div class="row mt-5 ml-2">
+     <input type="text" id="antwortzeitwert" value="" class="pl-2">
+     <h6 class=" mt-2 ml-3 mr-3">Sekunden Antwortzeit</h6>
+ </div>
+ <input type="range" class="custom-range" min="3" max="40" id="sliderantwortzeit" onchange="updateTextInput(this.value);"> 
+       
+ <div class="row mt-5 ml-2">
+     <input type="text" id="rundenwert" value="" class="pl-2">
+     <h6 class=" mt-2 ml-3 mr-3">Runden pro Spiel</h6>
+ </div>
+ <input type="range" class="custom-range" min="1" max="50" id="sliderrunden" onchange="updateRundenwert(this.value);"> 
+       
+</div> <!-- Ende inhalt tab1-->
+
+    
+<!-- js check all und range-slider-->
+     <script type="text/javascript">
+         $("#checkAll").click(function () {
+         $(".check").prop('checked', $(this).prop('checked'));
+         });
+         
+         $("#checkAll2").click(function () {
+         $(".check2").prop('checked', $(this).prop('checked'));
+         });
+         
+         $("#checkAll3").click(function () {
+         $(".check3").prop('checked', $(this).prop('checked'));
+         });
+         
+         $("#checkAll4").click(function () {
+         $(".check4").prop('checked', $(this).prop('checked'));
+         });
+         
+         function updateTextInput(val) {
+          document.getElementById('antwortzeitwert').value=val; 
+        }
+        function updateRundenwert(val) {
+          document.getElementById('rundenwert').value=val; 
+        }
+    </script>
+    
+    
+   <div class="tab-pane" id="panto1" role="tabpanel" aria-labelledby="tab-css">
+<!-- hier kommt Tabinhalt von Pantomimenspiel rein-->
+      <h4 class="text-center mt-5">Pantomimenspiel</h4>
+    </div>
+    </div>
+</div>
+     <div class="container pt-5 mt-5 mb-5"></div>      <!--abstand-->
+        
+        
+<!--    lehrer navbar   -->
+    <nav class="navbar navbar-expand-lg fixed-bottom navfarbe">
+        <div class="row icon_line pt-2">
+            <div class="col-4">
+                <a href="#">
+                    <i class="fa fa-chevron-left fa-2x" onclick="backbutt()" aria-hidden="true"></i></a>
+            </div>
+            <div class="col-4">
+                <a href="#">
+                    <i class="fa fa-home fa-2x" onclick="hideelem('L4','L5.3')" aria-hidden="true"></i></a>
+            </div>
+            <div class="col-4">
+                <a href="#">
+                    <i class="fa fa-cog fa-2x"  aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </nav>
+        
+</div>
+
+    
+
+<!-- Zustand L6/S6 "Countdown" (Das Spiel beginnt, wenn bei L5.1 klick auf Startbutton)-->
+<!-- @hoang schon gemacht, weil bei lehrer und schueler gleich-->
+    
+<div id="L6" class="hide">
+    <div class="container mt-5 mb-5 pl-5 pr-5 pt-5">
+    <img src="bilder/spielbeginnt.png" class="img-fluid mx-auto d-block">
+    </div>
+    <div class="container p-5 CountDownTrigger" id="counterx7">5</div>
+</div>
+
+<!-- Zustand L7 "Steurung" (Bildschirm Lehrer während des Spiels)-->
+    <div id="L7" class="hide">
+        <div class="container-fluid pt-5 pb-4 hintergrbild">
+            <h2 class="text-center">Steuerung</h2>
+            <p  class="text-center">Das Spiel läuft...</p>
+        </div>
+    <div class="container row ml-0 mt-4">
+    <div class="container col col-6">
+        <button type="button" class="btn btn-secondary btn-block buttoncss btnsteuerung">Spiel abbrechen</button>
+    </div>
+    <div class="container col col-6">
+        <button type="button" class="btn btn-secondary btn-block buttoncss btnsteuerung">Reset</button>
+    </div>
+    </div>
+    <div class="container row ml-0 mt-4">
+    <div class="container col col-6">
+        <button type="button" class="btn btn-secondary btn-block buttoncss btnsteuerung">Spiel anhalten</button>
+    </div>
+    <div class="container col col-6">
+        <button type="button" class="btn btn-secondary btn-block buttoncss btnsteuerung">letzte Runde</button>
+    </div>
+    </div>
+      <div class="container row ml-0 mt-4">
+    <div class="container col col-6">
+        <button type="button" class="btn btn-secondary btn-block buttoncss btnsteuerung">Ton aus</button>
+    </div>
+    <div class="container col col-6">
+        <button type="button" class="btn btn-secondary btn-block buttoncss btnsteuerung"  onclick="hideelem('L8','L7')">Spiel zu Ende</button>
+    </div>
+    </div>
+</div>
+
+      <!-- Zustand L8 "Zurück zur Spieleauswahl" (Bildschirm Lehrer, wenn Spiel zu Ende)-->
+        <div id="L8" class="hide">
+            <div class="container-fluid pt-5 pb-5 hintergrbild">
+                 <h2 class="text-center">Das Spiel ist zu Ende.</h2>
+             </div>
+            
+       <div class="container mt-5">
+            <button type="button" class="btn btn-secondary btn-lg btn-block buttoncss pt-5 pb-5 mb-3"  onclick="hideelem('L4','L8')">Zurück zur Spieleauswahl</button>
+        </div>
+        <div class="container mt-1 mb-5">
+            <button type="button" class="btn btn-secondary btn-lg btn-block buttoncss pt-5 pb-5 mb-5"  onclick="hideelem('L9','L8')" >Scores des letzten Spieles <br>anzeigen</button>
+        </div>
+        <div class="container pt-5"></div>      <!--abstand-->
+            
+     <!--    lehrer navbar   -->
+    <nav class="navbar navbar-expand-lg fixed-bottom navfarbe">
+        <div class="row icon_line pt-2">
+            <div class="col-4">
+                <a href="#">
+                    <i class="fa fa-chevron-left fa-2x"  onclick="hideelem('L4','L8')" aria-hidden="true"></i></a>
+            </div>
+            <div class="col-4">
+                <a href="#">
+                    <i class="fa fa-home fa-2x"  onclick="hideelem('L4','L8')" aria-hidden="true"></i></a>
+            </div>
+            <div class="col-4">
+                <a href="#">
+                    <i class="fa fa-cog fa-2x"  onclick="hideelem('L5.3','L8')" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </nav>
+        </div>
+
+        <!-- Zustand L9 "Scores des letzten Spiels" (Wenn Lehrer auf "Highscore klickt")-->
+        <!-- @Hoang schon gemacht-->
+        <div id="L9" class="hide">
+            <div class="container-fluid pt-5 pb-5 hintergrbild">
+                 <h2 class="text-center">Scores<br>des letzten Spieles</h2>
+             </div>
+             <h4 class="text-center mt-5">Top 10</h4>
+             <div class="container mt-4 mb-5 table-responsive">
+             <table class="table text-center">
+                <tbody>
+                  <tr>
+                    <td class="platz">1</td>
+                    <td>Doe</td>
+                    <td>192803</td>
+                  </tr>
+                  <tr>
+                    <td class="platz">2</td>
+                    <td>Moe</td>
+                    <td>108922</td>
+                  </tr>
+                  <tr>
+                    <td class="platz">3</td>
+                    <td>Dooley</td>
+                    <td>390039</td>
+                  </tr>
+                  <tr>
+                    <td class="platz">4</td>
+                    <td>nickname x</td>
+                    <td>390039</td>
+                  </tr>
+                  <tr>
+                    <td class="platz">5</td>
+                    <td>nickname x</td>
+                    <td>390039</td>
+                  </tr>
+                  <tr>
+                    <td class="platz">6</td>
+                    <td>nickname x</td>
+                    <td>390039</td>
+                  </tr>
+                  <tr>
+                    <td class="platz">7</td>
+                    <td>nickname x</td>
+                    <td>390039</td>
+                  </tr>
+                  <tr>
+                    <td class="platz">8</td>
+                    <td>nickname x</td>
+                    <td>390039</td>
+                  </tr>
+                  <tr>
+                    <td class="platz">9</td>
+                    <td>nickname x</td>
+                    <td>390039</td>
+                  </tr>
+                  <tr>
+                    <td class="platz">10</td>
+                    <td>nickname x</td>
+                    <td>390039</td>
+                  </tr>
+                </tbody>
+              </table>
+          </div>
+                 
+    <!--    lehrer navbar   -->
+    <nav class="navbar navbar-expand-lg fixed-bottom navfarbe">
+        <div class="row icon_line pt-2">
+            <div class="col-4">
+                <a href="#">
+                    <i class="fa fa-chevron-left fa-2x"  onclick="backbutt()" aria-hidden="true"></i></a>
+            </div>
+            <div class="col-4">
+                <a href="#">
+                    <i class="fa fa-home fa-2x"  onclick="hideelem('L4','L9')" aria-hidden="true"></i></a>
+            </div>
+            <div class="col-4">
+                <a href="#">
+                    <i class="fa fa-cog fa-2x"  onclick="hideelem('L5.3','L9')" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </nav>
+            
+    </div>
+    
+ 
+    
+    <!-- Zustand S4 "Lobby-warten auf Admin, teilnehmen nicht klickbar siehe S5" (Wenn bei S3/L3 klick auf Spieler)-->
+        
+      <div id="S4" class="hide">
+    <div class="container-fluid pt-5 pb-1 hintergrbild">
+        <h2 class="text-center">Lobby</h2>
+        <p class="text-center mt-3">Sobald der Admin ein Spiel gewählt hat, kannst du teilnehmen. Wähle solange deinen Nickname.</p>
+    </div>
+    <div class="container pt-2"></div>
+    <div class="container">
+        <div class="form-group container mt-5">
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="nickname">
+        </div>
+    <div class="container mt-5">
+        <button type="button" class="btn btn-secondary btn-lg btn-block pt-5 pb-5 disabled" >Teilnehmen</button>
+    </div>
+    <div class="container mt-3 mb-5">
+        <button type="button" class="btn btn-secondary btn-lg btn-block buttoncss pt-5 pb-5" onclick="hideelem('L5.2','S4')">Highscore anzeigen</button> 
+    </div>
+    </div>
+    <a class="ml-5" onclick="hideelem('S5','S4')">Erstmal überspringen</a>
+    <div class="container pb-5 pt-5"></div>
+    <div id="navSchueler">
+    <nav class="navbar navbar-expand-lg fixed-bottom navfarbe">
+        <button type="button" class="btn btn-secondary btn-sm ml-auto" onclick="backbutt()">Zurück</button>
+    </nav>
+    </div>
+    </div>
+
+
+ <!--Zustand S4.1/L5.2  "Highscore anzeigen" siehe L5.2-->
+      
+   
+    
+ <!--Zustand S5 "Lobby Teilnehmen klickbar"-->
+      
+    <div id="S5" class="hide">
+    <div class="container-fluid pt-5 pb-1 hintergrbild">
+        <h2 class="text-center">Lobby</h2>
+        <p class="text-center mt-3">Klicke auf "Teilnehmen", wenn du bereit bist.</p>
+    </div>
+    <div class="container pt-2"></div>
+    <div class="container">
+        <div class="form-group container mt-5">
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="nickname">
+        </div>
+    <div class="container mt-5" id="btnTeilnehmen">
+        <button type="button" class="btn btn-secondary btn-lg btn-block buttoncss pt-5 pb-5" onclick="buttclicked()">Teilnehmen</button>
+    </div>
+    <div class="container mt-3 mb-5">
+        <button type="button" class="btn btn-secondary btn-lg btn-block buttoncss pt-5 pb-5" onclick="hideelem('L5.2','S5')">Highscore anzeigen</button>
+    </div>
+    </div>
+    <div class="container pt-5"></div>  
+    <nav class="navbar navbar-expand-lg fixed-bottom navfarbe">
+        <button type="button" class="btn btn-secondary btn-sm ml-auto" onclick="backbutt()">Zurück</button>
+    </nav>
+        
+     <div class="container mt-5 hide" id="btnaktiv">
+        <button type="button" class="btn btn-secondary btn-lg btn-block buttoncssJS pt-5 pb-5" >Teilgenommen</button>
+    </div>
+    
+     <a class="ml-5" onclick="hideelem('L6','S5');counter7();setTimeout(function(){ hideelem('S7','L6') },6000);">Wenn Lehrer Spiel startet</a>
+    <div class="mt-5 pt-5"></div>
+        
+    </div>
+    
+ <!--Zustand S6 siehe L6 "spiel beginnt countdown"-->
+      
+      
+<!-- Zustand S7 "Antwortbuttons"-->
+    
+<div id="S7" class="hide">
+    <div class="container-fluid pt-4 pb-4 mb-2 hintergrbild">
+        <h2 class="text-center mb-2">Wie lautet die richtige Antwort?</h2>
+    </div>
+
+<div class="container row ml-0 mt-2">
+    <div class="container">
+    <p id="RundenCounter">Runde: 5</p>
+    </div>
+    <div class="container col col-6">
+        <button type="button" class="btn btn-secondary btn-block buttoncss btnantworten" onclick="hideelem('S8','S7')">tea</button>
+    </div>
+    <div class="container col col-6">
+        <button type="button" class="btn btn-secondary btn-block buttoncss btnantworten" onclick="hideelem('S8','S7')">tree</button>
+    </div>
+</div>
+    
+<div class="container row ml-0 mt-4">
+    <div class="container col col-6">
+        <button type="button" class="btn btn-secondary btn-block buttoncss btnantworten" onclick="hideelem('S8','S7')">three</button>
+    </div>
+    <div class="container col col-6">
+        <button type="button" class="btn btn-secondary btn-block buttoncss btnantworten" onclick="hideelem('S8','S7')">trees</button>
+    </div>
+</div>
+</div>
+
+<!-- Zustand S8 "Antwort wurde abgegeben" (Wenn bei S7 auf eine Antwort gekklickt wurde)-->
+
+<div id="S8" class="hide">
+    <div class="container-fluid pt-4 pb-4 mb-2 hintergrbild">
+        <h2 class="text-center mb-2">Deine Antwort wurde abgegeben!</h2>
+    </div>
+
+<div class="container row ml-0 mt-2">
+    <div class="container">
+    <p id="RundenCounter">Runde: 5</p>
+    </div>
+    <div class="container col col-6">
+        <button type="button" class=" disabled btn btn-secondary btn-block btnantworten">tea</button>
+    </div>
+    <div class="container col col-6">
+        <button type="button" class=" disabled btn btn-secondary btn-block btnantworten">tree</button>
+    </div>
+</div>
+    
+<div class="container row ml-0 mt-4">
+    <div class="container col col-6">
+        <button type="button" class=" disabled btn btn-secondary btn-block btnantworten">three</button>
+    </div>
+    <div class="container col col-6">
+        <button type="button" class="disabled btn btn-secondary btn-block btnantworten">trees</button>
+    </div>
+</div>
+    
+    <div class="mt-5"></div>
+    <a class="ml-5" onclick="nacheinander()">Wenn Timer abgelaufen ist</a>
+
+</div>
+
+<!-- Zustand S9 "Richtig" (Wenn Countdown abgelaufen)-->
+    
+<div id="S9" class="hide">
+    <div class="container-fluid pt-5 pb-5 mb-2 hintergrbild">
+        <h2 class="text-center mb-2">Deine Antwort ist richtig!</h2>
+    </div>
+    <div class="container">
+        <img src="bilder/richtig.png" class="img-fluid mx-auto d-block">
+    </div>
+    
+    <a class="ml-5" onclick="hideelem('S11','S9'); pause('S12', 'S11', '4000'); stopNacheinander();">Nach der 15. Runde</a>
+
+</div> 
+    
+<!--Zustand S9 "Antwort falsch"-->
+      
+<div id="S9.1" class="hide">
+    <div class="container-fluid pt-5 pb-5 mb-2 hintergrbild">
+        <h2 class="text-center mb-2">Deine Antwort ist falsch!</h2>
+    </div>
+    <div class="container">
+        <img src="bilder/falsch.png" class="img-fluid mx-auto d-block">
+    </div>
+</div>
+  
+<!--Zustand S10 "nächste Frage countdown"-->
+      
+<div id="S10" class="hide">
+    <div class="container mt-5 mb-5 pl-5 pr-5 pt-5">
+    <img src="bilder/nextfrage.png" class="img-fluid mx-auto d-block">
+    </div>
+    <div class="container p-5 CountDownTrigger" id="counterx6">5</div>
+</div>
+
+<!--Zustand S11 "Spiel zu Ende"-->
+<div id="S11" class="hide">
+<div class="container-fluid pt-5 pb-5 mb-2 hintergrbild">
+        <h2 class="text-center mb-2">Das Spiel ist zu Ende.</h2>
+    </div>
+    <div class="container pt-5"></div>      <!--abstand-->
+    <div class="container pt-5 mt-5">
+    <img id="gameover" src="bilder/gameover.png" class="img-fluid mx-auto d-block pl-4 pr-4">
+    </div>
+</div>
+
+<!--Zustand S12 "persönlicher Score"-->
+      
+<div id="S12" class="hide">
+    <div class="container-fluid pt-5 pb-5 mb-5 hintergrbildgelb">
+        <h2 class="text-center">Dein persönlicher Score</h2>
+    </div>
+    <div class="container text-center">
+        <div class="container mt-5 pt-2 pb-2 border border-warning text-secondary" >
+        <h2>Letztes Spiel</h2>
+        <h3> 125</h3>
+        </div>
+        <div class="container mt-5 mb-5 pb-2 pt-2 border border-warning text-secondary">
+        <h2>Gesamt Score</h2>
+        <h3> 80305</h3> 
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-lg fixed-bottom navfarbe">
+        <button type="button" class="btn btn-secondary btn-sm ml-auto" onclick="hideelem('S4','S12')">Zurück zur Lobby</button>
+    </nav>
+</div>   
+    
+</body>
+
+</html>

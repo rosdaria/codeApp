@@ -1,0 +1,496 @@
+html, body {
+  height:100%;
+}
+
+.hide{
+	display:none;
+}
+.Titel1w{                   /*Schriften in weiß*/    
+    color:white;
+    text-align: center;
+    font-size: 3rem;
+    font-family: 'Roboto', sans-serif;
+    margin: 2%;
+}
+.Titel2w{
+    color:white;
+    font-size: 30px;
+    margin-bottom: 2em; 
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+.Titel3w{                   
+    font-size: 20px;
+    margin-bottom: 2em; 
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    color:white;
+}
+
+.Titel1{                    /*Schriften in schwarz*/                     
+    text-align: center;
+    font-size: 3rem;
+    font-family: 'Roboto', sans-serif;
+    margin: 2%;
+    color: #333332;
+}
+.Titel2{
+    font-size: 30px;
+    margin-bottom: 2em; 
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    color: #333332;
+}
+.Titel3{
+    font-size: 20px;
+    margin-bottom: 2em; 
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    color: #333332;
+}
+
+#willk{                        /*Animation Willkommen*/ 
+    animation: willkommen 5s 1;
+}
+@keyframes willkommen{
+    0%{
+    }
+    25%{
+        letter-spacing: 30px;
+    }
+    70%{
+        letter-spacing: 4px;
+    }
+}
+#nachrichtAdmin{                        /*Animation @Admin*/ 
+    animation: admin 5s 1;
+}
+@keyframes admin{
+    0%{
+        font-size: 0px;
+    }   
+    40%{
+        font-size: 30px;
+    }   
+}
+#nachrichtSpieler{                        /*Animation @Spieler*/ 
+    animation: spieler 5s 1;
+}
+@keyframes spieler{
+    0%{
+        font-size: 0px;
+    }
+    15%{
+        font-size: 0px;
+    }  
+    60%{
+        font-size: 30px;
+    }  
+}
+                                                        /*Zustand SC1*/
+
+#SC1{
+    height:100%;
+    text-align:center;
+  }
+
+.Logo1_gross{                   /*Logo Spiel in gross*/    
+    text-align: left;
+    display: inline-block;
+    height: 35%;
+    width: auto;
+    margin: 3%;
+   
+ }
+
+#logogr1{
+ height:100%; 
+}
+
+br.clear {                      /*nächste Zeile*/      
+	clear: both;
+	line-height: 0em;
+	height: 0px;
+}
+
+.Logo2_klein{                   /*Logo Erasmus+ in klein*/  
+    display: inline-block;
+    height: 10%;
+    width: auto;
+    margin:1%;
+}
+
+#logoklerasmus1{
+    height: 100%;
+}
+
+.Logo3_klein{                   /*Logo GSG in klein*/  
+    display: inline-block;
+    height: 10%;
+    width: auto;
+    margin:1%;
+}
+
+#logoklgsg1{
+    height: 100%;
+}
+
+.Logo4_klein{                 /*Logo HFU in klein*/  
+    /*Logo HFU in klein*/  
+    display: inline-block;
+    height: 10%;
+    width: auto;
+    margin:1%;
+}
+
+#logoklhfu1{
+    height: 100%;
+}
+
+div.anfangstext{
+    background-image: url(bilder/hintergrund1.png);
+    background-size: 100% 100% ;
+    padding: 2px;
+    padding-bottom: 100px;
+    margin-top: 1%;
+}
+
+                                                        /*Zustand SC2*/
+
+#SC2{
+    height:100%;
+    text-align:center;
+}
+#logogr2{
+ height:100%; 
+}
+#logoklerasmus2{
+    height: 100%;
+}
+#logoklgsg2{
+    height: 100%;
+}
+#logoklhfu2{
+    height: 100%;
+}
+
+                                                        /*Zustand SC3*/
+
+#SC3{
+    height:100%;
+    text-align:center;
+}
+#logogr3{
+ height:100%; 
+}
+#logoklerasmus3{
+    height: 100%;
+}
+#logoklgsg3{
+    height: 100%;
+}
+#logoklhfu3{
+    height: 100%;
+}
+                                                        /*Zustand SC4*/
+
+#SC4{
+    height:100%;
+    text-align:center;
+}
+
+#logogr4{
+ height:100%; 
+}
+#logoklerasmus4{
+    height: 100%;
+}
+#logoklgsg4{
+    height: 100%;
+}
+#logoklhfu4{
+    height: 100%;
+}
+
+.Logo1_links{                   /*Logo links oben*/    
+    float: left;
+    display: inline-block;
+    height: 20%;
+    width: auto;
+    margin: 1%;
+}
+
+.Logo_rechts{                   /*3 Logos rechts*/    
+    float: right;
+    display: inline-block;
+    height: 7%;
+    width: auto;
+    margin: 1%;
+}
+
+#titelspieler{
+    display: inline;
+}
+
+#Teilnehmercount{               /*3 Teilnehmercounter*/
+    display: inline;
+    float:right;
+    margin: 1%;
+    background-image:url(bilder/hintergrund2.png);
+    background-size: 100% 100% ;
+    height:40px;
+    width:40px;
+}
+
+#SpielerTeilnahme{              /*Nickname tabelle*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:#575da1  ;
+    padding-bottom: 60%;
+    padding-top:3%
+}
+
+#tabelleNick{                   
+    text-align: left;
+}
+
+td{
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left:30px;
+    padding-right:30px;
+    border: 5em;
+}
+
+#loadinggif{
+    height: 70px;
+    display: inline-block;
+}
+
+                                                    /*Zustand SC5*/
+#SC5{
+    height:100%;
+    text-align:center;
+}
+#logogr5{
+    height:100%; 
+}
+
+img#countdown{
+    height:300px;
+    width:300px;
+   }
+img#spielbeginnt{
+    height:120px;
+}
+.CountDownTrigger{
+    background-image: url(bilder/hintergrund2.png);
+    background-size: 100% 100% ;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 150px;
+    width: 220px;
+    display: inline-block;
+}
+                                                    /*Zustand SC6*/
+#SC6{
+    height:100%;
+    text-align:center;
+}
+#logokl2{
+    height:100%; 
+}
+img#countdown15{
+    height:90px;
+    width:90px;
+}
+.countrechts{
+   float: right;
+}
+#RundenCounter{
+    margin:10px;
+    text-align: left;
+    padding: 10px;
+    background-size: 100% 100%;
+    background-image: url(bilder/hintergrund3.png); 
+}
+#AntwortenCounter{
+    margin:10px; 
+    text-align: left;
+    padding: 10px;
+    background-size: 100% 100%;
+    background-image: url(bilder/hintergrund3.png);
+}
+.CountDownTrigger3{
+    background-image: url(bilder/hintergrund2.png);
+    background-size: 100% 100% ;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 70px;
+    width: 110px;
+    display: inline-block;
+}
+#Frage{
+    background-color:#e5e8e9;
+    height: 100%; 
+    margin-top: 1%;
+}
+#fragetitel{
+    padding-top: 1%;
+    padding-bottom:0%;
+}
+#fragewort{
+    margin: 5%;
+}
+#fragebild{
+    margin:0%;
+    padding: 0%;
+    height:300px;
+}
+
+                                                        /*Zustand SC7*/
+#SC7{
+    height:100%;
+    text-align:center;
+}
+#logokl3{
+    height:100%; 
+}
+#RundenCounter2{
+    margin:10px;
+    text-align: left;
+    padding: 10px;
+    background-size: 100% 100%;
+    background-image: url(bilder/hintergrund3.png); 
+}
+#counterx3{
+    margin:10px;  
+    text-align: left;
+}
+#countdown20{
+    height: 100px;
+}
+#loesung{
+    margin-bottom: 10px;
+}
+.CountDownTrigger2{
+    background-image: url(bilder/hintergrund2.png);
+    background-size: 100% 100% ;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 50px;
+    width: 100px;
+    text-align: center !important;
+}
+
+#RichtigeNickListe{              /*Tabelle Spieler, die richtig lagen*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:#575da1  ;
+    padding-bottom: 60%;
+    padding-top:3%;
+}
+#tabellerichtige{                   
+    text-align: left;
+}
+
+                                                            /*Zustand SC8*/
+#SC8{
+    height:100%;
+    text-align:center;
+}
+#logokl4{
+    height:100%; 
+}
+#RundenCounter3{
+    margin:10px;
+    text-align: left;
+    padding: 10px;
+    background-size: 100% 100%;
+    background-image: url(bilder/hintergrund3.png); 
+}
+img#countdown2{
+    height:300px;
+    width:300px;
+   }
+img#nextfrage{
+    height:120px;
+}
+    
+                                                                /*Zustand SC9*/
+#SC9{
+    height:100%;
+    text-align:center;
+}
+#logokl4{
+    height:100%; 
+}
+img#gameover{
+    height:180px;
+    margin-top:50px;
+    animation: gameover 6s 1;                  /*Animation Game Over*/      
+}
+@keyframes gameover{
+    0%{
+        height: 50px;
+    }   
+    100%{
+        height: 180px;
+    } 
+}
+                                                                       /*Zustand SC10*/
+#SC10{
+    height:100%;
+    text-align:center;
+}
+#logokl5{
+    height:100%; 
+}
+img#highscoretitel{
+    height:180px;
+}
+#Score9{                     /*Tabelle Spieler score*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#tabellescore td{
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+td.platz{
+    background-image: url(bilder/hintergrund3.png);
+    background-size: 100% 100%;
+    color:white;
+    border: 10px solid #ffffff;
+    width: 50px;
+    height: 20px;
+}
+#tabellescore{                   
+    text-align: left;
+}
+#Score1{                    /*Tabelle gewinner score*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 1%;
+    padding-top:1%;
+    background-color: #f4b767;
+    margin-bottom: 2%;
+}
+#gewinner{
+    margin-bottom: 0em !important;
+    text-align: left;
+}
+#platz{
+    background-color: #eda139 ;
+    background-size: 100% 100%;
+    color:white;
+    width: 50px;
+    height: 20px;
+}
+

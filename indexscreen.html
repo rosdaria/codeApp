@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+
+<html lang="de">
+
+<head>
+<title>BEAMER Screen</title>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+<link rel="stylesheet" href="stylescreen.css" type="text/css" media="screen" />
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script type="text/javascript" src="main.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script  src="jQuery.js"></script>
+</head>
+
+<body>
+<!--Zustand SC1 "Willkommen, bitte im Wlan einloggen"-->
+<div id="SC1"  class="hide">
+	<div class="Logo1_gross"><img id="logogr1" src="bilder/LogoSpiel.png"></div><br class="clear" />
+	<div class="Logo2_klein"><img id="logoklerasmus1" src="bilder/logoERASMUS.jpg"></div>
+	<div class="Logo3_klein"><img id="logoklgsg1"  src="bilder/logoGSG.jpg"></div>
+	<div class="Logo4_klein"><img id="logoklhfu1"  src="bilder/logoHFU.png"></div>
+    <div class="anfangstext">
+	<div class="Titel1w" id="willk">Willkommen</div>
+	<div class="Titel2w"id="willk2">Bitte im Wlan einloggen.</div>
+    </div>
+</div>
+
+<!--Zustand SC2 "Willkommen"-->
+<div id="SC2"  class="hide">
+    <div class="Logo1_gross"><img id="logogr2" src="bilder/LogoSpiel.png"></div><br class="clear" />
+	<div class="Logo2_klein"><img id="logoklerasmus2" src="bilder/logoERASMUS.jpg"></div>
+	<div class="Logo3_klein"><img id="logoklgsg2" src="bilder/logoGSG.jpg"></div>
+	<div class="Logo4_klein"><img id="logoklhfu2" src="bilder/logoHFU.png"></div>
+    <div class="anfangstext">
+	<div class="Titel1w">Willkommen</div>
+    <div class="Titel2w">Die Vokabelspiele-App ohne Ermüdungsgefahr!</div>
+    </div>
+</div>
+
+<!--Zustand SC3 "Willkommen @Admin Spiel wählen..." (Sobald ein Nutzer bei S3/L3 auf Admin geklickt hat) -->
+<div id="SC3"  class="hide">
+	<div class="Logo1_gross"><img id="logogr3" src="bilder/LogoSpiel.png"></div><br class="clear" />
+	<div class="Logo2_klein"><img id="logoklerasmus3" src="bilder/logoERASMUS.jpg"></div>
+	<div class="Logo3_klein"><img id="logoklgsg3" src="bilder/logoGSG.jpg"></div>
+	<div class="Logo4_klein"><img id="logoklhfu3" src="bilder/logoHFU.png"></div>
+     <div class="anfangstext">
+	   <div class="Titel1w">Willkommen</div>
+       <div class="Titel2w"><p id="nachrichtAdmin">@Admin: Wähle ein Spiel aus.</p><p id="nachrichtSpieler"> @Spieler: Lege deinen nickname fest.</p></div>
+     </div>
+</div>
+
+<!--Zustand SC4 "Liste Teilnehmer" (Sobald Admin bei L4 auf Buzzerspiel klickt) -->
+
+<div id="SC4" class="hide">
+    <div class="Logo1_links"><img id="logogr4" src="bilder/LogoSpiel.png"></div>
+	<div class="Logo_rechts"><img id="logoklerasmus4" src="bilder/logoERASMUS.jpg"></div>
+	<div class="Logo_rechts"><img id="logoklgsg4" src="bilder/logoGSG.jpg"></div>
+	<div class="Logo_rechts"><img id="logoklhfu4" src="bilder/logoHFU.png"></div><br class="clear" />
+	<div class="Titel2"id="titelspieler">Spieler</div>
+	<div id="Teilnehmercount" class="Titel2w">30</div><br>
+    <img id="loadinggif" src="bilder/loading.gif">
+	<div id="SpielerTeilnahme" class="Titel3w">
+        <table id= "tabelleNick">
+            <tr>
+                <td>nickname1</td><td>nickname2</td><td>nickname3</td><td>nickname4</td><td>nickname5</td>
+            </tr>
+            <tr>
+                <td>nickname6</td><td>nickname7</td><td>nickname8</td><td>nickname9</td><td>nickname10</td>
+            </tr>
+            <tr>
+                <td>nickname11</td><td>nickname12</td><td>nickname13</td><td>nickname14</td><td>nickname15</td>
+            </tr>
+             <tr>
+                <td>nickname16</td><td>nickname17</td><td>nickname18</td><td>nickname16</td><td>nickname4</td>
+            </tr>
+             <tr>
+                <td>nickname19</td><td>nickname20</td><td>nickname21</td><td>nickname20</td><td>nickname4</td>
+            </tr>
+            <tr>
+                <td>nickname22</td><td>nickname23</td><td>nickname24</td><td>nickname25</td><td>nickname26</td>
+            </tr>
+        </table>
+     </div>
+</div>
+    
+<!-- Zustand SC5 "Countdown" (Das Spiel beginnt, wenn bei L5.1 klick auf Startbutton)-->
+<div id="SC5" class="hide">
+    <div class="Logo1_links"><img id="logogr5" src="bilder/LogoSpiel.png"></div><br class="clear"/>
+    <div><img id="spielbeginnt" src="bilder/spielbeginnt.png"></div>
+    <div class="CountDownTrigger" id="counterx1">5</div>
+    
+   <script type="text/javascript">
+      var seconds1 = document.getElementById("counterx1").textContent;
+      var countdown1 = setInterval(function() {
+           seconds1--;
+        document.getElementById("counterx1").textContent = seconds1;
+        if (seconds1 <= 0) clearInterval(countdown1);
+       }, 1000)
+   </script>
+</div>
+ 
+<!-- Zustand SC6 "Frage"-->
+<div id="SC6" class="hide">
+    <div class="Logo1_links"><img id="logokl2" src="bilder/LogoSpiel.png"></div>
+    <div class="countrechts">
+    <p class="Titel3w" id="RundenCounter">Runde: 5</p>
+    <p class="Titel3w" id="AntwortenCounter">Antworten: 2</p>
+    </div><br class="clear"/>
+    <div class="CountDownTrigger3" id="counterx4">15</div>
+        <script type="text/javascript">
+              var seconds4 = document.getElementById("counterx4").textContent;
+              var countdown4 = setInterval(function() {
+                seconds4--;
+                document.getElementById("counterx4").textContent = seconds4;
+                if (seconds4 <= 0) clearInterval(countdown4);
+                }, 1000)
+        </script>
+    <div id="Frage"><p id="fragetitel" class="Titel3">Wie lautet die richtige Antwort?</p>
+    <div id="frageteil"><p id="fragewort" class="Titel1">Hier erscheint die Frage/ das Wort/ Bild</p><img id="fragebild" src=""></div>
+    </div>
+</div>
+  
+<!-- Zustand SC7 "Lösung" (Spieler, die richtig lagen, geordnet nach Schnelligkeit-->
+<div id="SC7" class="hide">
+    <div class="Logo1_links"><img id="logokl3" src="bilder/LogoSpiel.png"></div>
+    <div class="countrechts">
+    <div class="Titel3w" id="RundenCounter2">Runde: 5</div>
+    <div id="counterx3" class="CountDownTrigger2">15</div>
+          <script type="text/javascript">
+              var seconds3 = document.getElementById("counterx3").textContent;
+              var countdown3 = setInterval(function() {
+                seconds3--;
+                document.getElementById("counterx3").textContent = seconds3;
+                if (seconds3 <= 0) clearInterval(countdown3);
+                }, 1000)
+        </script>
+    </div><br class="clear"/>
+    <div id="loesung" class="Titel2"> Die korrekte Antwort ist: "Lösungswort"</div>
+    <div id="titelXrichtige" class="Titel3"><span id="richtigeantworten">12 </span>Spieler wussten die korrekte Antwort.</div>
+   <div class="Titel3w" id="RichtigeNickListe">
+     <table id="tabellerichtige">
+            <tr>
+                <td>1. nickname1</td><td>2. nickname2</td><td>3. nickname3</td><td>4. ickname4</td>
+            </tr>
+            <tr>
+                <td>5. nickname6</td><td>6. nickname7</td><td>7. nickname8</td><td>8. nickname9</td>
+            </tr>
+            <tr>
+                <td>9. nickname11</td><td>10. nickname12</td><td>11. nickname13</td><td>12. nickname14</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Zustand SC8 "Countdown nächste Frage" (14mal)-->
+<div id="SC8" class="hide">
+    <div class="Logo1_links"><img id="logokl4" src="bilder/LogoSpiel.png"></div>
+    <div class="countrechts">
+    <div class="Titel3w" id="RundenCounter3">Runde: 6</div>
+    </div><br class="clear"/>
+    <div><img id="nextfrage" src="bilder/nextfrage.png"></div>
+    <div class="CountDownTrigger" id="counterx2">15</div>
+    
+    <script type="text/javascript">
+      var seconds2 = document.getElementById("counterx2").textContent;
+      var countdown2 = setInterval(function() {
+           seconds2--;
+        document.getElementById("counterx2").textContent = seconds2;
+        if (seconds2 <= 0) clearInterval(countdown2);
+       }, 1000)
+   </script>
+    
+</div>
+
+<!-- Zustand SC9 "Spiel zu Ende" (nach der 15. Runde)-->
+<div id="SC9" class="hide">
+    <div class="Logo1_links"><img id="logokl4" src="bilder/LogoSpiel.png"></div><br class="clear"/>
+    <div><img id="gameover" src="bilder/gameover.png"></div>
+</div>
+
+<!-- Zustand SC10 "Score" (Wird angezeigt, bis Admin auf "Zurück zur Spieleauswahl" klickt )-->
+<div id="SC10">
+    <div class="Logo1_links"><img id="logokl5" src="bilder/LogoSpiel.png"></div><br class="clear"/>
+    <div><img id="highscoretitel" src="bilder/highscore.png"></div>
+    <div id="Score1">
+        <table id="gewinner" class="Titel2w" >
+            <tr>
+                <td id="platz">1</td><td>nickname</td><td>score<td>
+            </tr>
+            </table>
+    </div>
+    <div id="Score9">
+        <table id="tabellescore">
+            <tr class="marginweg2">
+                <td class="platz">2</td><td>nickname</td><td>19283</td><td></td><td class="platz">5</td><td>nickname</td><td>2380</td><td></td><td class="platz">8</td><td>nickname</td><td>2380</td>
+            </tr>
+            <tr>
+                <td class="platz">3</td><td>nickname</td><td>2390</td><td></td><td class="platz">6</td><td>nickname</td><td>2370</td><td></td><td class="platz">9</td><td>nickname</td><td>2380</td>
+            </tr>
+            <tr>
+                <td class="platz">4</td><td>nickname</td><td>34067</td><td></td><td class="platz">7</td><td>nickname</td><td>2350</td><td></td><td class="platz">10</td><td>nickname</td><td>2380</td>
+            </tr>
+        </table>
+    </div>
+</div>
+    
+
+<!-- meine JavaScript -->
+</body>
+
+</html>
