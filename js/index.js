@@ -40,14 +40,13 @@ function replacenav() {
     document.getElementById('navL5.2').innerHTML = document.getElementById('navSchueler').innerHTML;
   }
 
-    //CSS wenn button aktiv ist (S5)
+//CSS wenn button aktiv ist (S5)
 function buttclicked() {
     var x= document.getElementById('Inputnick');
     if(x.value.length==0){
         alert("Gib bitte deinen Nickname ein, danach kannst du Teilnehmen.");
        }else{
-     document.getElementById('btnTeilnehmen').innerHTML = document.getElementById('btnaktiv').innerHTML; x.setAttribute('disabled','disabled');
-           
+     document.getElementById('btnTeilnehmen').innerHTML = document.getElementById('btnaktiv').innerHTML; x.setAttribute('disabled','disabled'); 
        }
 }
 //codes für countdown
