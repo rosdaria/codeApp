@@ -698,30 +698,37 @@
             <h2 class="text-center">Steuerung</h2>
             <p  class="text-center">Das Spiel läuft...</p>
         </div>
-    <div class="container row ml-0 mt-4">
+    <div class="container nachhinten row ml-0 mt-4">
     <div class="container col col-6">
-        <button type="button" class="btn btn-secondary btn-block buttoncss btnsteuerung">Spiel abbrechen</button>
-    </div>
-    <div class="container col col-6">
-        <button type="button" class="btn btn-secondary btn-block buttoncss btnsteuerung">Reset</button>
-    </div>
-    </div>
-    <div class="container row ml-0 mt-4">
-    <div class="container col col-6">
-        <button type="button" class="btn btn-secondary btn-block buttoncss btnsteuerung">Spiel anhalten</button>
+        <button type="button" onclick="meldung('#stop','stop')" class="btn btn-secondary btn-block buttoncss btnsteuerung">Spiel abbrechen</button>
     </div>
     <div class="container col col-6">
-        <button type="button" class="btn btn-secondary btn-block buttoncss btnsteuerung">letzte Runde</button>
+        <button type="button" onclick="meldung('#reset','reset')" class="btn btn-secondary btn-block buttoncss btnsteuerung">Reset</button>
     </div>
     </div>
-      <div class="container row ml-0 mt-4">
+    <div class="container nachhinten row ml-0 mt-4">
     <div class="container col col-6">
-        <button type="button" class="btn btn-secondary btn-block buttoncss btnsteuerung">Frage skippen</button>
+        <button type="button" onclick="meldungpause('#pause')" class="btn btn-secondary btn-block buttoncss btnsteuerung">Spiel anhalten</button>
+    </div>
+    <div class="container col col-6">
+        <button type="button" onclick="meldung('#lastrunde','lastrunde')" class="btn btn-secondary btn-block buttoncss btnsteuerung">letzte Runde</button>
+    </div>
+    </div>
+      <div class="container nachhinten row ml-0 mt-4">
+    <div class="container col col-6">
+        <button type="button" class="btn btn-secondary btn-block buttoncss btnsteuerung" onclick="meldung('#frageskip','frageskip')">Frage skippen</button>
     </div>
     <div class="container col col-6">
         <button type="button" class="btn btn-secondary btn-block buttoncss btnsteuerung"  onclick="hideelem('L8','L7')">Spiel zu Ende</button>
     </div>
     </div>
+     
+    <div id="frageskip" class="hide nachvorne"><img src="bilder/frageskip.png" class=" img-fluid mx-auto d-block nachvorneimg"></div> 
+    <div id="lastrunde" class="hide nachvorne"><img src="bilder/letzterunde.png" class=" img-fluid mx-auto d-block nachvorneimg"></div> 
+    <div id="pause" class="hide nachvorne"><img src="bilder/pauseL.png" onclick="meldungpauseweg('#pause','pause')" class=" img-fluid mx-auto d-block nachvorneimg"></div> 
+    <div id="reset" class="hide nachvorne"><img src="bilder/reset.png" class=" img-fluid mx-auto d-block nachvorneimg"></div> 
+    <div id="stop" class="hide nachvorne"><img src="bilder/stop.png" class=" img-fluid mx-auto d-block nachvorneimg"></div> 
+        
 </div>
 
       <!-- Zustand L8 "Zurück zur Spieleauswahl" (Bildschirm Lehrer, wenn Spiel zu Ende)-->
@@ -853,7 +860,7 @@
     <div class="container pt-2"></div>
     <div class="container">
         <div class="form-group container mt-5">
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="nickname">
+        <input type="email" class="form-control" id="Inputnickprev" aria-describedby="emailHelp" placeholder="nickname">
         </div>
     <div class="container mt-5">
         <button type="button" class="btn btn-secondary btn-lg btn-block pt-5 pb-5 disabled" >Teilnehmen</button>
@@ -862,7 +869,7 @@
         <button type="button" class="btn btn-secondary btn-lg btn-block buttoncss pt-5 pb-5" onclick="hideelem('L5.2','S4')">Highscore anzeigen</button> 
     </div>
     </div>
-    <a class="ml-5" onclick="hideelem('S5','S4')">Erstmal überspringen</a>
+    <a class="ml-5" onclick="hideelem('S5','S4');inputwert();">Wenn admin Spiel gewählt hat</a>
     <div class="container pb-5 pt-5"></div>
     <div id="navSchueler">
     <nav class="navbar navbar-expand-lg fixed-bottom navfarbe">

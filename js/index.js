@@ -49,6 +49,12 @@ function buttclicked() {
      document.getElementById('btnTeilnehmen').innerHTML = document.getElementById('btnaktiv').innerHTML; x.setAttribute('disabled','disabled'); 
        }
 }
+
+//Inputvalue übernehmen von S4 zu S5
+function inputwert(){
+  document.getElementById('Inputnick').value = document.getElementById('Inputnickprev').value; 
+    }
+
 //codes für countdown
 function counter7(){
        var seconds7 = document.getElementById("counterx7").textContent;
@@ -74,7 +80,6 @@ function counter6(){
          seconds6=5;}
 }
 
-
 //Screens S8,S9 S10 , wieder S7 werden nacheinander gezeigt
 var showS10;
 var counterTimeout;
@@ -95,6 +100,23 @@ function stopNacheinander(){
     nurhide(S7);
 }
 
+// L7 Meldungen bei Steuerung
+function meldung(x,y){
+    $(x).fadeIn('slow');
+	setTimeout(function(){ $(x).fadeOut('slow');}, 2000);
+    setTimeout(function(){ $(x).removeAttr("style");}, 2500);
+    setTimeout(function(){ document.getElementById(y).classList.add("hide");}, 2500);
+}
+function meldungpause(x){
+    $(x).fadeIn('slow');
+}
+
+function meldungpauseweg(x,y){
+    $(x).fadeOut('slow');
+    setTimeout(function(){ $(x).removeAttr("style");},500);
+    setTimeout(function(){ document.getElementById(y).classList.add("hide");},500);
+}
+// Ende L7 Meldungen bei Steuerung
 
 
 

@@ -136,3 +136,17 @@
      height:100px;
      word-wrap: break-word;
 }
+.nachhinten{
+    z-index: 20;
+    position: relative;
+}
+.nachvorne{
+    z-index:30;  
+    position: relative;
+}
+.nachvorneimg{  
+    width: 100%;
+    height: auto;
+    margin-top: -400px;
+    position: relative;
+    }
