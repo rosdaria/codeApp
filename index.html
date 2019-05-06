@@ -32,12 +32,17 @@
 <body>
    <!--Zustand L2/S2 "Willkommen" (Bei Lehrer und Schüler gleich)-->
    <!--lehrer/schueler gleich-->
-    
-    <div id="L2S2" onload="setTimeout(function(){ hideelem('L3S3','L2S2') },3000);">  
+
+    <div id="L2S2" onload="setTimeout(function(){ hideelem('L3S3','L2S2') },3000);" class="hid">  
     <div class="container-fluid pt-5 pb-5 mb-3 hintergrbild"> 
         <h1 class="text-center" id="willk">Willkommen!</h1>
     </div>
-        
+    
+<iframe src="sound_files/funk_beamerscreen.mp3" allow="autoplay" id="audio" style="display:none"></iframe>
+<audio id="player" autoplay loop>
+    <source src="audio/source.mp3" type="audio/mp3">
+</audio>
+   
     <div class="container mt-5 mb-3">
         <img src="bilder/LogoSpiel.png" class="img-fluid mx-auto d-block" id="logogross">
     </div>  
@@ -50,6 +55,7 @@
     </div>
        <div class="container mt-5 pr-0 pl-0 col col4">
         <img src="bilder/logoHFU2.png" class="img-fluid mx-auto d-block logosklein">
+
     </div>
     </div>
     </div>
@@ -108,24 +114,26 @@
             </div>
         </div>
         
-    <!--    lehrer navbar   -->
-    <nav class="navbar navbar-expand-lg fixed-bottom navfarbe">
-        <div class="row icon_line pt-2">
-            <div class="col-4">
-                <a href="#">
-                    <i class="fa fa-chevron-left fa-2x" onclick="backbutt()" aria-hidden="true"></i></a>
+        <!--    lehrer navbar   -->
+        <nav class="navbar navbar-expand-lg fixed-bottom navfarbe">
+            <div class="row icon_line pt-2">
+                <div class="col-4">
+                    <a href="#">
+                        <audio id="sbutback" src="sound_files/button_back.mp3" preload="auto"></audio>
+                        <i class="fa fa-chevron-left fa-2x" onclick="document.getElementById('sbutback').play(); backbutt()"; aria-hidden="true"></i></a>
+                </div>
+                <div class="col-4">
+                    <a href="#">
+                        <audio id="sbuthome" src="sound_files/button_home.mp3" preload="auto"></audio>
+                        <i class="fa fa-home fa-2x" onclick="document.getElementById('sbuthome').play();" aria-hidden="true"></i></a>
+                </div>
+                <div class="col-4">
+                    <a href="#">
+                        <audio id="sbutset" src="sound_files/button_setting.mp3" preload="auto"></audio>
+                        <i class="fa fa-cog fa-2x" onclick="document.getElementById('sbutset').play(); hideelem('L5.3','L4')" aria-hidden="true"></i></a>
+                </div>
             </div>
-            <div class="col-4">
-                <a href="#">
-                    <i class="fa fa-home fa-2x" aria-hidden="true"></i></a>
-            </div>
-            <div class="col-4">
-                <a href="#">
-                    <i class="fa fa-cog fa-2x" onclick="hideelem('L5.3','L4')" aria-hidden="true"></i></a>
-            </div>
-        </div>
-    </nav>
-        
+        </nav>
     </div>
 
     <!--    Zustand L5.1 "warten auf einloggen der Schüler" (Wenn klick auf Buzzerspiel)    -->
@@ -191,25 +199,27 @@
           </table>
         </div>
         
-        <!--    lehrer navbar   -->
-    <nav class="navbar navbar-expand-lg fixed-bottom navfarbe">
-        <div class="row icon_line pt-2">
-            <div class="col-4">
-                <a href="#">
-                    <i class="fa fa-chevron-left fa-2x" onclick="backbutt()"  aria-hidden="true"></i></a>
+        <!--    lehrer navbar 5_1  -->
+        <nav class="navbar navbar-expand-lg fixed-bottom navfarbe">
+            <div class="row icon_line pt-2">
+                <div class="col-4">
+                    <a href="#">
+                        <audio id="sbutback" src="sound_files/button_back.mp3" preload="auto"></audio>
+                        <i class="fa fa-chevron-left fa-2x" onclick="document.getElementById('sbutback').play(); backbutt()" aria-hidden="true"></i></a>
+                </div>
+                <div class="col-4">
+                    <a href="#">
+                        <audio id="sbuthome" src="sound_files/button_home.mp3" preload="auto"></audio>
+                        <i class="fa fa-home fa-2x" onclick="document.getElementById('sbuthome').play(); hideelem('L4','L5_1')" aria-hidden="true"></i></a>
+                </div>
+                <div class="col-4">
+                    <a href="#">
+                        <audio id="sbutset" src="sound_files/button_setting.mp3" preload="auto"></audio>
+                        <i class="fa fa-cog fa-2x" onclick="document.getElementById('sbutset').play(); hideelem('L5.3','L5_1')" aria-hidden="true"></i></a>
+                </div>
             </div>
-            <div class="col-4">
-                <a href="#">
-                    <i class="fa fa-home fa-2x" onclick="hideelem('L4','L5_1')" aria-hidden="true"></i></a>
-            </div>
-            <div class="col-4">
-                <a href="#">
-                    <i class="fa fa-cog fa-2x" onclick="hideelem('L5.3','L5_1')" aria-hidden="true"></i></a>
-            </div>
-        </div>
-    </nav>
-        
-</div>
+        </nav>
+    </div>
 
 
 	
@@ -362,29 +372,31 @@
 
     <div class="container pt-5"></div>  
     
-    <div id="navL5.2">     
     <!--    lehrer navbar   -->
-    <nav class="navbar navbar-expand-lg fixed-bottom navfarbe">
-        <div class="row icon_line pt-2">
-            <div class="col-4">
-                <a href="#">
-                    <i class="fa fa-chevron-left fa-2x"  onclick="hideelem('L4','L5.2')" onclick="backbutt()" aria-hidden="true"></i></a>
-            </div>
-            <div class="col-4">
-                <a href="#">
-                    <i class="fa fa-home fa-2x" onclick="hideelem('L4','L5.2')" aria-hidden="true"></i></a>
-            </div>
-            <div class="col-4">
-                <a href="#">
-                    <i class="fa fa-cog fa-2x" onclick="hideelem('L5.3','L5.2')" aria-hidden="true"></i></a>
-            </div>
+       
+        <div id="navL5.2">
+            <nav class="navbar navbar-expand-lg fixed-bottom navfarbe">
+                <div class="row icon_line pt-2">
+                    <div class="col-4">
+                        <a href="#">
+                            <audio id="sbutback" src="sound_files/button_back.mp3" preload="auto"></audio>
+                            <i class="fa fa-chevron-left fa-2x" onclick="document.getElementById('sbutback').play(); hideelem('L4','L5.2'); backbutt()" ; aria-hidden="true"></i></a>
+                    </div>
+                    <div class="col-4">
+                        <a href="#">
+                            <audio id="sbuthome" src="sound_files/button_home.mp3" preload="auto"></audio>
+                            <i class="fa fa-home fa-2x" onclick="document.getElementById('sbuthome').play(); hideelem('L4','L5.2')" aria-hidden="true"></i></a>
+                    </div>
+                    <div class="col-4">
+                        <a href="#">
+                            <audio id="sbutset" src="sound_files/button_setting.mp3" preload="auto"></audio>
+                            <i class="fa fa-cog fa-2x" onclick="document.getElementById('sbutset').play(); hideelem('L5.3','L5.2')" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </nav>
         </div>
-    </nav>
-    </div>   
-</div>
+    </div>
     
-
-
 
  <!-- Zustand L5.3 "Einstellungen" (Wenn klick auf Einstellungen)-->
     <div id="L5.3" class="hide">
@@ -660,25 +672,27 @@
      <div class="container pt-5 mt-5 mb-5"></div>      <!--abstand-->
         
         
-<!--    lehrer navbar   -->
-    <nav class="navbar navbar-expand-lg fixed-bottom navfarbe">
-        <div class="row icon_line pt-2">
-            <div class="col-4">
-                <a href="#">
-                    <i class="fa fa-chevron-left fa-2x" onclick="backbutt()" aria-hidden="true"></i></a>
+        <!--    lehrer navbar 5.3  -->
+        <nav class="navbar navbar-expand-lg fixed-bottom navfarbe">
+            <div class="row icon_line pt-2">
+                <div class="col-4">
+                    <a href="#">
+                        <audio id="sbutback" src="sound_files/button_back.mp3" preload="auto"></audio>
+                        <i class="fa fa-chevron-left fa-2x" onclick="document.getElementById('sbutback').play(); backbutt()" ; aria-hidden="true"></i></a>
+                </div>
+                <div class="col-4">
+                    <a href="#">
+                        <audio id="sbuthome" src="sound_files/button_home.mp3" preload="auto"></audio>
+                        <i class="fa fa-home fa-2x" onclick="document.getElementById('sbuthome').play(); hideelem('L4','L5.3')" aria-hidden="true"></i></a>
+                </div>
+                <div class="col-4">
+                    <a href="#">
+                        <audio id="sbutset" src="sound_files/button_setting.mp3" preload="auto"></audio>
+                        <i class="fa fa-cog fa-2x" onclick="document.getElementById('sbutset').play();" aria-hidden="true"></i></a>
+                </div>
             </div>
-            <div class="col-4">
-                <a href="#">
-                    <i class="fa fa-home fa-2x" onclick="hideelem('L4','L5.3')" aria-hidden="true"></i></a>
-            </div>
-            <div class="col-4">
-                <a href="#">
-                    <i class="fa fa-cog fa-2x"  aria-hidden="true"></i></a>
-            </div>
+        </nav>
         </div>
-    </nav>
-        
-</div>
 
     
 
@@ -745,24 +759,27 @@
         </div>
         <div class="container pt-5"></div>      <!--abstand-->
             
-     <!--    lehrer navbar   -->
-    <nav class="navbar navbar-expand-lg fixed-bottom navfarbe">
-        <div class="row icon_line pt-2">
-            <div class="col-4">
-                <a href="#">
-                    <i class="fa fa-chevron-left fa-2x"  onclick="hideelem('L4','L8')" aria-hidden="true"></i></a>
+        <!--    lehrer navbar L8   -->
+        <nav class="navbar navbar-expand-lg fixed-bottom navfarbe">
+            <div class="row icon_line pt-2">
+                <div class="col-4">
+                    <a href="#">
+                        <audio id="sbutback" src="sound_files/button_back.mp3" preload="auto"></audio>
+                        <i class="fa fa-chevron-left fa-2x" onclick="document.getElementById('sbutback').play(); hideelem('L4','L8')" aria-hidden="true"></i></a>
+                </div>
+                <div class="col-4">
+                    <a href="#">
+                        <audio id="sbuthome" src="sound_files/button_home.mp3" preload="auto"></audio>
+                        <i class="fa fa-home fa-2x" onclick="document.getElementById('sbuthome').play(); hideelem('L4','L8')" aria-hidden="true"></i></a>
+                </div>
+                <div class="col-4">
+                    <a href="#">
+                        <audio id="sbutset" src="sound_files/button_setting.mp3" preload="auto"></audio>
+                        <i class="fa fa-cog fa-2x" onclick="document.getElementById('sbutset').play(); hideelem('L5.3','L8')" aria-hidden="true"></i></a>
+                </div>
             </div>
-            <div class="col-4">
-                <a href="#">
-                    <i class="fa fa-home fa-2x"  onclick="hideelem('L4','L8')" aria-hidden="true"></i></a>
-            </div>
-            <div class="col-4">
-                <a href="#">
-                    <i class="fa fa-cog fa-2x"  onclick="hideelem('L5.3','L8')" aria-hidden="true"></i></a>
-            </div>
-        </div>
-    </nav>
-        </div>
+        </nav>
+    </div>
 
         <!-- Zustand L9 "Scores des letzten Spiels" (Wenn Lehrer auf "Highscore klickt")-->
         <!-- @Hoang schon gemacht-->
@@ -828,27 +845,28 @@
               </table>
           </div>
                  
-    <!--    lehrer navbar   -->
-    <nav class="navbar navbar-expand-lg fixed-bottom navfarbe">
-        <div class="row icon_line pt-2">
-            <div class="col-4">
-                <a href="#">
-                    <i class="fa fa-chevron-left fa-2x"  onclick="backbutt()" aria-hidden="true"></i></a>
+        <!--    lehrer navbar L9   -->
+        <nav class="navbar navbar-expand-lg fixed-bottom navfarbe">
+            <div class="row icon_line pt-2">
+                <div class="col-4">
+                    <a href="#">
+                        <audio id="sbutback" src="sound_files/button_back.mp3" preload="auto"></audio>
+                        <i class="fa fa-chevron-left fa-2x" onclick="document.getElementById('sbutback').play(); backbutt()"; aria-hidden="true"></i></a>
+                </div>
+                <div class="col-4">
+                    <a href="#">
+                        <audio id="sbuthome" src="sound_files/button_home.mp3" preload="auto"></audio>
+                        <i class="fa fa-home fa-2x" onclick="document.getElementById('sbuthome').play(); hideelem('L4','L9')" aria-hidden="true"></i></a>
+                </div>
+                <div class="col-4">
+                    <a href="#">
+                        <audio id="sbutset" src="sound_files/button_setting.mp3" preload="auto"></audio>
+                        <i class="fa fa-cog fa-2x" onclick="document.getElementById('sbutset').play(); hideelem('L5.3','L9')" aria-hidden="true"></i></a>
+                </div>
             </div>
-            <div class="col-4">
-                <a href="#">
-                    <i class="fa fa-home fa-2x"  onclick="hideelem('L4','L9')" aria-hidden="true"></i></a>
-            </div>
-            <div class="col-4">
-                <a href="#">
-                    <i class="fa fa-cog fa-2x"  onclick="hideelem('L5.3','L9')" aria-hidden="true"></i></a>
-            </div>
-        </div>
-    </nav>
-            
+        </nav>
     </div>
     
- 
     
     <!-- Zustand S4 "Lobby-warten auf Admin, teilnehmen nicht klickbar siehe S5" (Wenn bei S3/L3 klick auf Spieler)-->
         
@@ -873,7 +891,8 @@
     <div class="container pb-5 pt-5"></div>
     <div id="navSchueler">
     <nav class="navbar navbar-expand-lg fixed-bottom navfarbe">
-        <button type="button" class="btn btn-secondary btn-sm ml-auto" onclick="backbutt()">Zurück</button>
+        <audio id="sbutback" src="sound_files/button_back.mp3" preload="auto"></audio>
+        <button type="button" class="btn btn-secondary btn-sm ml-auto" onclick="document.getElementById('sbutback').play(); backbutt()">Zurück</button>
     </nav>
     </div>
     </div>
@@ -1043,7 +1062,8 @@
         </div>
     </div>
     <nav class="navbar navbar-expand-lg fixed-bottom navfarbe">
-        <button type="button" class="btn btn-secondary btn-sm ml-auto" onclick="hideelem('S4','S12')">Zurück zur Lobby</button>
+            <audio id="sbuthome" src="sound_files/button_home.mp3" preload="auto"></audio>
+            <button type="button" class="btn btn-secondary btn-sm ml-auto" onclick="document.getElementById('sbuthome').play(); hideelem('')" aria-hidden="true">Zurück zur Lobby</button>
     </nav>
 </div>   
     
