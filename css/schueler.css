@@ -10,7 +10,7 @@
     height:50px !important;
 }
 .hintergrbild{
-    background-image: url(bilder/hintergrund1.png);
+    background-image: url(../bilder/hintergrund1.png);
     background-size: 100% 100% ;
     color:white;
 }
@@ -61,7 +61,7 @@
 
 /*Zustand S4.1*/
 .platz{
-    background-image: url(bilder/hintergrund3.png) ;
+    background-image: url(../bilder/hintergrund3.png) ;
     background-size: 100% 100% !important;
     color:white;
     border-bottom: 7px solid #ffffff;
@@ -69,7 +69,7 @@
 }
 /*Zustand S6*/
 .CountDownTrigger{
-    background-image: url(bilder/hintergrund2.png);
+    background-image: url(../bilder/hintergrund2.png);
     background-size: 100% 100% ;
     width: 150px;
     height:150px;
@@ -98,15 +98,16 @@
     color:white;
     padding: 10px;
     background-size: 100% 100%;
-    background-image: url(bilder/hintergrund3.png); 
+    background-image: url(../bilder/hintergrund3.png); 
 }
 
 /*Zustand S12*/
 .hintergrbildgelb{
-    background-image: url(bilder/hintergrund3.png);
+    background-image: url(../bilder/hintergrund3.png);
     background-size: 100% 100% ;
     color:white;
 }
+
 /*Zustand L5.1*/
 .buttoncss2{
     background-color:#575da1!important;
@@ -120,7 +121,7 @@
 }
 /*Zustand L5.3*/
 .linkfarbe{
-    color:#575da1;
+    color:#575da1!important;
 }
 .linkfarbe:focus{
     color:#575da1 !important;
