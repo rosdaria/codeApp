@@ -148,7 +148,7 @@ br.clear {                      /*nächste Zeile*/
 }
 
 div.anfangstext{
-    background-image: url(bilder/hintergrund1.png);
+    background-image: url(../bilder/hintergrund1.png);
     background-size: 100% 100% ;
     padding: 2px;
     padding-bottom: 100px;
@@ -236,7 +236,7 @@ div.anfangstext{
     display: inline;
     float:right;
     margin: 1%;
-    background-image:url(bilder/hintergrund2.png);
+    background-image:url(../bilder/hintergrund2.png);
     background-size: 100% 100% ;
     height:40px;
     width:40px;
@@ -285,7 +285,7 @@ img#spielbeginnt{
     height:120px;
 }
 .CountDownTrigger{
-    background-image: url(bilder/hintergrund2.png);
+    background-image: url(../bilder/hintergrund2.png);
     background-size: 100% 100% ;
     color: white;
     font-family: 'Roboto', sans-serif;
@@ -313,17 +313,17 @@ img#countdown15{
     text-align: left;
     padding: 10px;
     background-size: 100% 100%;
-    background-image: url(bilder/hintergrund3.png); 
+    background-image: url(../bilder/hintergrund3.png); 
 }
 #AntwortenCounter{
     margin:10px; 
     text-align: left;
     padding: 10px;
     background-size: 100% 100%;
-    background-image: url(bilder/hintergrund3.png);
+    background-image: url(../bilder/hintergrund3.png);
 }
 .CountDownTrigger3{
-    background-image: url(bilder/hintergrund2.png);
+    background-image: url(../bilder/hintergrund2.png);
     background-size: 100% 100% ;
     color: white;
     font-family: 'Roboto', sans-serif;
@@ -362,7 +362,7 @@ img#countdown15{
     text-align: left;
     padding: 10px;
     background-size: 100% 100%;
-    background-image: url(bilder/hintergrund3.png); 
+    background-image: url(../bilder/hintergrund3.png); 
 }
 #counterx3{
     margin:10px;  
@@ -375,7 +375,7 @@ img#countdown15{
     margin-bottom: 10px;
 }
 .CountDownTrigger2{
-    background-image: url(bilder/hintergrund2.png);
+    background-image: url(../bilder/hintergrund2.png);
     background-size: 100% 100% ;
     color: white;
     font-family: 'Roboto', sans-serif;
@@ -409,7 +409,7 @@ img#countdown15{
     text-align: left;
     padding: 10px;
     background-size: 100% 100%;
-    background-image: url(bilder/hintergrund3.png); 
+    background-image: url(../bilder/hintergrund3.png); 
 }
 img#countdown2{
     height:300px;
@@ -463,7 +463,7 @@ img#highscoretitel{
     padding-right: 20px;
 }
 td.platz{
-    background-image: url(bilder/hintergrund3.png);
+    background-image: url(../bilder/hintergrund3.png);
     background-size: 100% 100%;
     color:white;
     border: 10px solid #ffffff;
