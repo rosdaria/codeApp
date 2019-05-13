@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="schueler.css" type="text/css" media="screen" />
     
     <!-- jQuery -->
-     <script src="js/jquery.js"></script>
+<!--     <script src="js/jquery.js"></script>-->
     
     <!-- Bootstrap JS -->
     <script src="js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
@@ -30,19 +30,23 @@
 </head>
 
 <body>
+  
+<!--     audio deklaration <hoang>    -->
+        <audio id="sstart" src="sound_files/click_gamestart.mp3" preload="auto"></audio>
+        <audio id="ssub" src="sound_files/click_submit.mp3" preload="auto"></audio>
+        <audio id="sbuthome" src="sound_files/button_home.mp3" preload="auto"></audio>
+        <audio id="sbutset" src="sound_files/button_setting.mp3" preload="auto"></audio>
+        <audio id="sbutback" src="sound_files/button_back.mp3" preload="auto"></audio>
+        <audio id="stimer" src="sound_files/timer_loop_mixdown.mp3" preload="auto"></audio>
+  
    <!--Zustand L2/S2 "Willkommen" (Bei Lehrer und Schüler gleich)-->
    <!--lehrer/schueler gleich-->
 
-    <div id="L2S2" onload="setTimeout(function(){ hideelem('L3S3','L2S2') },3000);" class="hid">  
+    <div id="L2S2" onload="setTimeout(function(){ hideelem('L3S3','L2S2') },3000);" class="hide">  
     <div class="container-fluid pt-5 pb-5 mb-3 hintergrbild"> 
         <h1 class="text-center" id="willk">Willkommen!</h1>
     </div>
-    
-<iframe src="sound_files/funk_beamerscreen.mp3" allow="autoplay" id="audio" style="display:none"></iframe>
-<audio id="player" autoplay loop>
-    <source src="audio/source.mp3" type="audio/mp3">
-</audio>
-   
+  
     <div class="container mt-5 mb-3">
         <img src="bilder/LogoSpiel.png" class="img-fluid mx-auto d-block" id="logogross">
     </div>  
@@ -63,7 +67,7 @@
 <!--Zustand L3/S3 "Admin/Spieler wählen" (Bei Lehrer und Schüler gleich)-->
 <!--lehrer/schueler gleich-->
 
-<div id="L3S3" class="hide" >
+<div id="L3S3" class="hid" >
     
     <div class="container-fluid pt-5 pb-5 mb-5 hintergrbild"> <!--@hoang diese div kannst du immer als überschrift kopieren für alle screens -->
         <h2 class="text-center">Bitte auswählen.</h2>
@@ -72,10 +76,13 @@
     <div class="container pt-2"></div>      <!--abstand-->
     <div class="container">
     <div class="container mt-5">
-        <button type="button" class="btn btn-secondary btn-lg btn-block buttoncss pt-5 pb-5" onclick="hideelem('L4','L3S3')">Admin</button>
+        <a href="#">
+            <button type="button" class="btn btn-secondary btn-lg btn-block buttoncss pt-5 pb-5" onclick="document.getElementById('ssub').play(); hideelem('L4','L3S3')"; aria-hidden="true"; replacenav();
+           >Admin</button></a>
     </div>
     <div class="container mt-3">
-        <button type="button" class="btn btn-secondary btn-lg btn-block buttoncss pt-5 pb-5" onclick="hideelem('S4','L3S3'); replacenav();">Spieler</button>
+       <a href="#">
+            <button type="button" class="btn btn-secondary btn-lg btn-block buttoncss pt-5 pb-5" onclick="document.getElementById('ssub').play(); hideelem('S4','L3S3')"; aria-hidden="true"; replacenav(); >Spieler</button></a>
     </div>
     </div>
     </div>
@@ -91,24 +98,28 @@
             <div class="row text-center">
                 <div class="col-6 pt-3 pr-2">
                     <div class="but">
-                        <button type="button" class="btn btn-secondary btn-xs btn-block buttoncss pt-5 pb-5" onclick="hideelem('L5_1','L4')">Buzzerspiel</button>
+                       <a href="#">
+                           <button type="button" class="btn btn-secondary btn-xs btn-block buttoncss pt-5 pb-5" onclick="document.getElementById('ssub').play(); hideelem('L5_1','L4')"; aria-hidden="true"; replacenav();>Buzzerspiel</button></a>
                     </div>
                 </div>
                 <div class="col-6 pt-3 pl-2">
                     <div class="but">
-                        <button type="button" class="btn btn-secondary btn-xs btn-block buttoncss pt-5 pb-5">Pantomime</button>
-                    </div>
+                    <a href="#">
+                            <button type="button" class="btn btn-secondary btn-xs btn-block buttoncss pt-5 pb-5" onclick="document.getElementById('ssub').play(); hideelem()"; aria-hidden="true"; replacenav();>Pantomime</button></a>
+                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-6 pt-3 pr-2">
                     <div class="but">
-                        <button type="button" class="btn btn-secondary btn-xs btn-block buttoncss pt-5 pb-5" onclick="hideelem('L5.2','L4')">Highscore</button>
-                    </div>
+                       <a href="#">
+                            <button type="button" class="btn btn-secondary btn-xs btn-block buttoncss pt-5 pb-5" onclick="document.getElementById('ssub').play(); hideelem('L5.2','L4')"; aria-hidden="true"; replacenav();>Highscore</button></a>
+                      </div>
                 </div>
                 <div class="col-6 pt-3 pl-2">
                     <div class="but">
-                        <button type="button" class="btn btn-secondary btn-xs btn-block buttoncss pt-5 pb-5" onclick="hideelem('L5.3','L4')">Einstellungen</button>
+                       <a href="#">
+                           <button type="button" class="btn btn-secondary btn-xs btn-block buttoncss pt-5 pb-5" onclick="document.getElementById('ssub').play(); hideelem('L5.3','L4')"; aria-hidden="true"; replacenav();>Einstellungen</button></a>
                     </div>
                 </div>
             </div>
@@ -119,18 +130,15 @@
             <div class="row icon_line pt-2">
                 <div class="col-4">
                     <a href="#">
-                        <audio id="sbutback" src="sound_files/button_back.mp3" preload="auto"></audio>
-                        <i class="fa fa-chevron-left fa-2x" onclick="document.getElementById('sbutback').play(); backbutt()"; aria-hidden="true"></i></a>
+                         <i class="fa fa-chevron-left fa-2x" onclick="document.getElementById('sbutback').play(); backbutt()"; aria-hidden="true"></i></a>
                 </div>
                 <div class="col-4">
                     <a href="#">
-                        <audio id="sbuthome" src="sound_files/button_home.mp3" preload="auto"></audio>
                         <i class="fa fa-home fa-2x" onclick="document.getElementById('sbuthome').play();" aria-hidden="true"></i></a>
                 </div>
                 <div class="col-4">
                     <a href="#">
-                        <audio id="sbutset" src="sound_files/button_setting.mp3" preload="auto"></audio>
-                        <i class="fa fa-cog fa-2x" onclick="document.getElementById('sbutset').play(); hideelem('L5.3','L4')" aria-hidden="true"></i></a>
+                          <i class="fa fa-cog fa-2x" onclick="document.getElementById('sbutset').play(); hideelem('L5.3','L4')" aria-hidden="true"></i></a>
                 </div>
             </div>
         </nav>
@@ -144,7 +152,8 @@
         </div>
     <div class="container row mt-3 pr-0">
      <div class="col col-8 mt-2">
-     <button type="button" onclick="hideelem('L6','L5_1');counter7();setTimeout(function(){ hideelem('L7','L6') },6000);" class="btn btn-secondary btn-block buttoncss2">Spiel starten</button>
+     <a href="#">
+                    <button type="button" class="btn btn-secondary btn-block buttoncss2" onclick="document.getElementById('sstart').play(); document.getElementById('stimer').play(); hideelem('L6','L5_1');counter7();setTimeout(function(){ hideelem('L7','L6') },6000);" aria-hidden="true"; replacenav();>Spiel starten</button></a>
      </div>
      <div class="col col-4 pr-0">
      <p id="usercount">Spieler: 10</p>
@@ -204,18 +213,15 @@
             <div class="row icon_line pt-2">
                 <div class="col-4">
                     <a href="#">
-                        <audio id="sbutback" src="sound_files/button_back.mp3" preload="auto"></audio>
-                        <i class="fa fa-chevron-left fa-2x" onclick="document.getElementById('sbutback').play(); backbutt()" aria-hidden="true"></i></a>
+                         <i class="fa fa-chevron-left fa-2x" onclick="document.getElementById('sbutback').play(); backbutt()" aria-hidden="true"></i></a>
                 </div>
                 <div class="col-4">
                     <a href="#">
-                        <audio id="sbuthome" src="sound_files/button_home.mp3" preload="auto"></audio>
                         <i class="fa fa-home fa-2x" onclick="document.getElementById('sbuthome').play(); hideelem('L4','L5_1')" aria-hidden="true"></i></a>
                 </div>
                 <div class="col-4">
                     <a href="#">
-                        <audio id="sbutset" src="sound_files/button_setting.mp3" preload="auto"></audio>
-                        <i class="fa fa-cog fa-2x" onclick="document.getElementById('sbutset').play(); hideelem('L5.3','L5_1')" aria-hidden="true"></i></a>
+                         <i class="fa fa-cog fa-2x" onclick="document.getElementById('sbutset').play(); hideelem('L5.3','L5_1')" aria-hidden="true"></i></a>
                 </div>
             </div>
         </nav>
@@ -232,7 +238,7 @@
  <div class="container mt-4">     
  <ul class="nav nav-tabs" role="tablist">
    <li class="nav-item active">
-      <a class="nav-link textd" data-toggle="tab"
+      <a class="nav-link textd" data-toggle="tab" 
          href="#buzzL"
          role="tab">
       Buzzerspiel
@@ -379,18 +385,15 @@
                 <div class="row icon_line pt-2">
                     <div class="col-4">
                         <a href="#">
-                            <audio id="sbutback" src="sound_files/button_back.mp3" preload="auto"></audio>
                             <i class="fa fa-chevron-left fa-2x" onclick="document.getElementById('sbutback').play(); hideelem('L4','L5.2'); backbutt()" ; aria-hidden="true"></i></a>
                     </div>
                     <div class="col-4">
                         <a href="#">
-                            <audio id="sbuthome" src="sound_files/button_home.mp3" preload="auto"></audio>
-                            <i class="fa fa-home fa-2x" onclick="document.getElementById('sbuthome').play(); hideelem('L4','L5.2')" aria-hidden="true"></i></a>
+                             <i class="fa fa-home fa-2x" onclick="document.getElementById('sbuthome').play(); hideelem('L4','L5.2')" aria-hidden="true"></i></a>
                     </div>
                     <div class="col-4">
                         <a href="#">
-                            <audio id="sbutset" src="sound_files/button_setting.mp3" preload="auto"></audio>
-                            <i class="fa fa-cog fa-2x" onclick="document.getElementById('sbutset').play(); hideelem('L5.3','L5.2')" aria-hidden="true"></i></a>
+                             <i class="fa fa-cog fa-2x" onclick="document.getElementById('sbutset').play(); hideelem('L5.3','L5.2')" aria-hidden="true"></i></a>
                     </div>
                 </div>
             </nav>
@@ -677,17 +680,14 @@
             <div class="row icon_line pt-2">
                 <div class="col-4">
                     <a href="#">
-                        <audio id="sbutback" src="sound_files/button_back.mp3" preload="auto"></audio>
                         <i class="fa fa-chevron-left fa-2x" onclick="document.getElementById('sbutback').play(); backbutt()" ; aria-hidden="true"></i></a>
                 </div>
                 <div class="col-4">
                     <a href="#">
-                        <audio id="sbuthome" src="sound_files/button_home.mp3" preload="auto"></audio>
-                        <i class="fa fa-home fa-2x" onclick="document.getElementById('sbuthome').play(); hideelem('L4','L5.3')" aria-hidden="true"></i></a>
+                         <i class="fa fa-home fa-2x" onclick="document.getElementById('sbuthome').play(); hideelem('L4','L5.3')" aria-hidden="true"></i></a>
                 </div>
                 <div class="col-4">
                     <a href="#">
-                        <audio id="sbutset" src="sound_files/button_setting.mp3" preload="auto"></audio>
                         <i class="fa fa-cog fa-2x" onclick="document.getElementById('sbutset').play();" aria-hidden="true"></i></a>
                 </div>
             </div>
@@ -714,26 +714,32 @@
         </div>
     <div class="container nachhinten row ml-0 mt-4">
     <div class="container col col-6">
-        <button type="button" onclick="meldung('#stop','stop')" class="btn btn-secondary btn-block buttoncss btnsteuerung">Spiel abbrechen</button>
+            <a href="#">
+           <button type="button" class="btn btn-secondary btn-block buttoncss btnsteuerung" onclick="document.getElementById('ssub').play(); meldung('#stop','stop')"; aria-hidden="true"; replacenav(); >Spiel abbrechen</button></a>
     </div>
     <div class="container col col-6">
-        <button type="button" onclick="meldung('#reset','reset')" class="btn btn-secondary btn-block buttoncss btnsteuerung">Reset</button>
+       <a href="#">
+           <button type="button" class="btn btn-secondary btn-block buttoncss btnsteuerung" onclick="document.getElementById('ssub').play(); meldung('#reset','reset')"; aria-hidden="true"; replacenav(); >Reset</button></a>
     </div>
     </div>
     <div class="container nachhinten row ml-0 mt-4">
     <div class="container col col-6">
-        <button type="button" onclick="meldungpause('#pause')" class="btn btn-secondary btn-block buttoncss btnsteuerung">Spiel anhalten</button>
+       <a href="#">
+           <button type="button" class="btn btn-secondary btn-block buttoncss btnsteuerung" onclick="document.getElementById('ssub').play(); meldungpause('#pause')"; aria-hidden="true";>Spiel anhalten</button></a>
     </div>
     <div class="container col col-6">
-        <button type="button" onclick="meldung('#lastrunde','lastrunde')" class="btn btn-secondary btn-block buttoncss btnsteuerung">letzte Runde</button>
+            <a href="#">
+           <button type="button" class="btn btn-secondary btn-block buttoncss btnsteuerung" onclick="document.getElementById('ssub').play(); meldung('#lastrunde','lastrunde')"; aria-hidden="true" >letzte Runde</button></a>
     </div>
     </div>
       <div class="container nachhinten row ml-0 mt-4">
     <div class="container col col-6">
-        <button type="button" class="btn btn-secondary btn-block buttoncss btnsteuerung" onclick="meldung('#frageskip','frageskip')">Frage skippen</button>
+            <a href="#">
+           <button type="button" class="btn btn-secondary btn-block buttoncss btnsteuerung" onclick="document.getElementById('ssub').play(); meldung('#frageskip','frageskip')"; aria-hidden="true";>Frage überspringen</button></a>
     </div>
     <div class="container col col-6">
-        <button type="button" class="btn btn-secondary btn-block buttoncss btnsteuerung"  onclick="hideelem('L8','L7')">Spiel zu Ende</button>
+       <a href="#">
+           <button type="button" class="btn btn-secondary btn-block buttoncss btnsteuerung" onclick="document.getElementById('ssub').play(); hideelem('L8','L7')"; aria-hidden="true";>Spiel zu Ende</button></a>
     </div>
     </div>
      
@@ -764,18 +770,15 @@
             <div class="row icon_line pt-2">
                 <div class="col-4">
                     <a href="#">
-                        <audio id="sbutback" src="sound_files/button_back.mp3" preload="auto"></audio>
-                        <i class="fa fa-chevron-left fa-2x" onclick="document.getElementById('sbutback').play(); hideelem('L4','L8')" aria-hidden="true"></i></a>
+                         <i class="fa fa-chevron-left fa-2x" onclick="document.getElementById('sbutback').play(); hideelem('L4','L8')" aria-hidden="true"></i></a>
                 </div>
                 <div class="col-4">
                     <a href="#">
-                        <audio id="sbuthome" src="sound_files/button_home.mp3" preload="auto"></audio>
-                        <i class="fa fa-home fa-2x" onclick="document.getElementById('sbuthome').play(); hideelem('L4','L8')" aria-hidden="true"></i></a>
+                         <i class="fa fa-home fa-2x" onclick="document.getElementById('sbuthome').play(); hideelem('L4','L8')" aria-hidden="true"></i></a>
                 </div>
                 <div class="col-4">
                     <a href="#">
-                        <audio id="sbutset" src="sound_files/button_setting.mp3" preload="auto"></audio>
-                        <i class="fa fa-cog fa-2x" onclick="document.getElementById('sbutset').play(); hideelem('L5.3','L8')" aria-hidden="true"></i></a>
+                          <i class="fa fa-cog fa-2x" onclick="document.getElementById('sbutset').play(); hideelem('L5.3','L8')" aria-hidden="true"></i></a>
                 </div>
             </div>
         </nav>
@@ -850,18 +853,15 @@
             <div class="row icon_line pt-2">
                 <div class="col-4">
                     <a href="#">
-                        <audio id="sbutback" src="sound_files/button_back.mp3" preload="auto"></audio>
-                        <i class="fa fa-chevron-left fa-2x" onclick="document.getElementById('sbutback').play(); backbutt()"; aria-hidden="true"></i></a>
+                          <i class="fa fa-chevron-left fa-2x" onclick="document.getElementById('sbutback').play(); backbutt()"; aria-hidden="true"></i></a>
                 </div>
                 <div class="col-4">
                     <a href="#">
-                        <audio id="sbuthome" src="sound_files/button_home.mp3" preload="auto"></audio>
-                        <i class="fa fa-home fa-2x" onclick="document.getElementById('sbuthome').play(); hideelem('L4','L9')" aria-hidden="true"></i></a>
+                           <i class="fa fa-home fa-2x" onclick="document.getElementById('sbuthome').play(); hideelem('L4','L9')" aria-hidden="true"></i></a>
                 </div>
                 <div class="col-4">
                     <a href="#">
-                        <audio id="sbutset" src="sound_files/button_setting.mp3" preload="auto"></audio>
-                        <i class="fa fa-cog fa-2x" onclick="document.getElementById('sbutset').play(); hideelem('L5.3','L9')" aria-hidden="true"></i></a>
+                          <i class="fa fa-cog fa-2x" onclick="document.getElementById('sbutset').play(); hideelem('L5.3','L9')" aria-hidden="true"></i></a>
                 </div>
             </div>
         </nav>
@@ -881,18 +881,19 @@
         <input type="email" class="form-control" id="Inputnickprev" aria-describedby="emailHelp" placeholder="nickname">
         </div>
     <div class="container mt-5">
-        <button type="button" class="btn btn-secondary btn-lg btn-block pt-5 pb-5 disabled" >Teilnehmen</button>
+              <a href="#">
+           <button type="button" class="btn btn-secondary btn-lg btn-block pt-5 pb-5 disabled" onclick="document.getElementById('ssub').play(); hideelem()"; aria-hidden="true"; replacenav(); >Teilnehmen</button></a>
     </div>
     <div class="container mt-3 mb-5">
-        <button type="button" class="btn btn-secondary btn-lg btn-block buttoncss pt-5 pb-5" onclick="hideelem('L5.2','S4')">Highscore anzeigen</button> 
+       <a href="#">
+           <button type="button" class="btn btn-secondary btn-lg btn-block buttoncss pt-5 pb-5" onclick="document.getElementById('ssub').play(); hideelem('L5.2','S4')"; aria-hidden="true"; replacenav(); >Highscore anzeigen</button></a>
     </div>
     </div>
     <a class="ml-5" onclick="hideelem('S5','S4');inputwert();">Wenn admin Spiel gewählt hat</a>
     <div class="container pb-5 pt-5"></div>
     <div id="navSchueler">
     <nav class="navbar navbar-expand-lg fixed-bottom navfarbe">
-        <audio id="sbutback" src="sound_files/button_back.mp3" preload="auto"></audio>
-        <button type="button" class="btn btn-secondary btn-sm ml-auto" onclick="document.getElementById('sbutback').play(); backbutt()">Zurück</button>
+          <button type="button" class="btn btn-secondary btn-sm ml-auto" onclick="document.getElementById('sbutback').play(); backbutt()">Zurück</button>
     </nav>
     </div>
     </div>
@@ -1062,8 +1063,7 @@
         </div>
     </div>
     <nav class="navbar navbar-expand-lg fixed-bottom navfarbe">
-            <audio id="sbuthome" src="sound_files/button_home.mp3" preload="auto"></audio>
-            <button type="button" class="btn btn-secondary btn-sm ml-auto" onclick="document.getElementById('sbuthome').play(); hideelem('')" aria-hidden="true">Zurück zur Lobby</button>
+             <button type="button" class="btn btn-secondary btn-sm ml-auto" onclick="document.getElementById('sbuthome').play(); hideelem('')" aria-hidden="true">Zurück zur Lobby</button>
     </nav>
 </div>   
     

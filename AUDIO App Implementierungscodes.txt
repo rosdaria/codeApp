@@ -1,0 +1,20 @@
+                    <a href="#">
+                       <audio id="sbutback" src="sound_files/button_back.mp3" preload="auto"></audio>
+                        <i class="fa fa-chevron-left fa-2x" onclick="document.getElementById('sbutback').play(); backbutt()"; aria-hidden="true"></i></a>
+                </div>
+                <div class="col-4">
+                    <a href="#">
+                        <audio id="sbuthome" src="sound_files/button_home.mp3" preload="auto"></audio>
+                        <i class="fa fa-home fa-2x" onclick="document.getElementById('sbuthome').play();" aria-hidden="true"></i></a>
+                </div>
+                <div class="col-4">
+                    <a href="#">
+                        <audio id="sbutset" src="sound_files/button_setting.mp3" preload="auto"></audio>
+                        <i class="fa fa-cog fa-2x" onclick="document.getElementById('sbutset').play(); hideelem('L5.3','L4')" aria-hidden="true"></i></a>
+
+
+CLICK SUBMIT SOUND
+
+<audio id="ssub" src="sound_files/click_submit.mp3" preload="auto"></audio>
+           <button type="button" class="btn btn-secondary btn-lg btn-block buttoncss pt-5 pb-5" onclick="document.getElementById('ssub').play(); 
+		hideelem ('S4','L3S3')"; aria-hidden="true"; replacenav(); >Spieler</button></a>

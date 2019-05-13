@@ -16,7 +16,11 @@
 
 <body>
 <!--Zustand SC1 "Willkommen, bitte im Wlan einloggen"-->
-<div id="SC1"  class="hide">
+<div id="SC1"  class="hid">
+<iframe src="sound_files/funk_beamerscreen.mp3" allow="autoplay" id="audio" style="display:none"></iframe>
+<audio id="player" autoplay loop>
+    <source src="audio/source.mp3" type="audio/mp3">
+</audio>
 	<div class="Logo1_gross"><img id="logogr1" src="bilder/LogoSpiel.png"></div><br class="clear" />
 	<div class="Logo2_klein"><img id="logoklerasmus1" src="bilder/logoERASMUS.jpg"></div>
 	<div class="Logo3_klein"><img id="logoklgsg1"  src="bilder/logoGSG.jpg"></div>
@@ -181,7 +185,7 @@
 </div>
 
 <!-- Zustand SC10 "Score" (Wird angezeigt, bis Admin auf "Zurück zur Spieleauswahl" klickt )-->
-<div id="SC10">
+<div id="SC10" class="hide">
     <div class="Logo1_links"><img id="logokl5" src="bilder/LogoSpiel.png"></div><br class="clear"/>
     <div><img id="highscoretitel" src="bilder/highscore.png"></div>
     <div id="Score1">
