@@ -15,6 +15,5 @@
 
 CLICK SUBMIT SOUND
 
-<audio id="ssub" src="sound_files/click_submit.mp3" preload="auto"></audio>
-           <button type="button" class="btn btn-secondary btn-lg btn-block buttoncss pt-5 pb-5" onclick="document.getElementById('ssub').play(); 
-		hideelem ('S4','L3S3')"; aria-hidden="true"; replacenav(); >Spieler</button></a>
+       <a href="#">
+           <button type="button" class="btn btn-secondary btn-lg btn-block buttoncss pt-5 pb-5" onclick="document.getElementById('ssub').play(); hideelem('L5.2','S4')"; aria-hidden="true"; replacenav(); >Highscore anzeigen</button></a>
