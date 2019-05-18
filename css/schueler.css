@@ -8,6 +8,7 @@
 }
 .logosklein{
     height:50px !important;
+    width:auto;
 }
 .hintergrbild{
     background-image: url(../bilder/hintergrund1.png);
