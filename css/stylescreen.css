@@ -98,9 +98,10 @@ html, body {
 .Logo1_gross{                   /*Logo Spiel in gross*/    
     text-align: left;
     display: inline-block;
-    height: 30%;
+    height: 40%;
     width: auto;
     margin: 3%;
+    margin-top: 50px;
    
  }
 
@@ -119,6 +120,7 @@ br.clear {                      /*nächste Zeile*/
     height: 10%;
     width: auto;
     margin:1%;
+    margin-top:10px;
 }
 
 #logoklerasmus1{
@@ -130,6 +132,7 @@ br.clear {                      /*nächste Zeile*/
     height: 10%;
     width: auto;
     margin:1%;
+    margin-top:10px;
 }
 
 #logoklgsg1{
@@ -142,6 +145,7 @@ br.clear {                      /*nächste Zeile*/
     height: 10%;
     width: auto;
     margin:1%;
+    margin-top:10px;
 }
 
 #logoklhfu1{
@@ -157,7 +161,7 @@ div.anfangstext{
     position: fixed;
     bottom: 0;
     width: 100%;
-    height:40%
+    height:35%
 }
 
                                                         /*Zustand SC2*/
