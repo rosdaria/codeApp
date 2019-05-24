@@ -15,7 +15,7 @@
 
 <body>
 <!--Zustand SC1 "Willkommen, bitte im Wlan einloggen"-->
-<div id="SC1"  class="hide">
+<div id="SC1"  class="hid">
 <iframe src="sound_files/funk_beamerscreen.mp3" allow="autoplay" id="audio" style="display:none"></iframe>
 <audio id="player" autoplay loop>
     <source src="audio/source.mp3" type="audio/mp3">
@@ -45,7 +45,7 @@
 </div>
 
 <!--Zustand SC3 "Willkommen @Admin Spiel wählen..." (Sobald ein Nutzer bei S3/L3 auf Admin geklickt hat) -->
-<div id="SC3"  class="hid">
+<div id="SC3"  class="hide">
 	<div class="Logo1_gross"><img id="logogr3" src="bilder/LogoSpiel.png"></div><br class="clear" />
     <div class="Logo4_klein"><img id="logoklerasmus2" src="bilder/Erasmus2.jpg"></div>
 	<div class="Logo2_klein"><img id="logoklerasmus3" src="bilder/logoERASMUS.jpg"></div>
@@ -125,7 +125,9 @@
                 }, 1000)
         </script>
     <div id="Frage"><p id="fragetitel" class="Titel3">Wie lautet die richtige Antwort?</p>
-    <div id="frageteil"><p id="fragewort" class="Titel1">Hier erscheint die Frage/ das Wort/ Bild</p><img id="fragebild" src=""></div>
+    <div id="frageteil">
+        <!--<p id="fragewort" class="Titel1">Hier erscheint die Frage/ das Wort/ Bild</p><img id="fragebild" src=""></div>-->
+         <img class="fragebild" src="bilder/Fragebilder/test.jpg">
     </div>
 </div>
   
