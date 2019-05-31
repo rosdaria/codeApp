@@ -15,7 +15,7 @@
 
 <body>
 <!--Zustand SC1 "Willkommen, bitte im Wlan einloggen"-->
-<div id="SC1"  class="hide">
+<div id="SC1"  class="hid">
 <iframe src="sound_files/funk_beamerscreen.mp3" allow="autoplay" id="audio" style="display:none"></iframe>
 <audio id="player" autoplay loop>
     <source src="audio/source.mp3" type="audio/mp3">
@@ -46,7 +46,8 @@
 
 <!--Zustand SC3 "Willkommen @Admin Spiel wählen..." (Sobald ein Nutzer bei S3/L3 auf Admin geklickt hat) -->
 <div id="SC3"  class="hide">
-	<div class="Logo1_gross"><img id="logogr3" src="bilder/LogoSpiel.png"></div><br class="clear" />
+	<div class="Logo1_gross"><img id="logogr3" src="bilder/qrcode.png"></div><br class="clear" />
+    <div class="Logo4_klein"><img id="logoklspiel" src="bilder/LogoSpiel.png"></div>
     <div class="Logo4_klein"><img id="logoklerasmus2" src="bilder/Erasmus2.jpg"></div>
 	<div class="Logo2_klein"><img id="logoklerasmus3" src="bilder/logoERASMUS.jpg"></div>
 	<div class="Logo3_klein"><img id="logoklgsg3" src="bilder/logoGSG.jpg"></div>
@@ -109,7 +110,7 @@
 </div>
  
 <!-- Zustand SC6 "Frage"-->
-<div id="SC6" class="hid">
+<div id="SC6" class="hide">
     <div class="Logo1_links"><img id="logokl2" src="bilder/LogoSpiel.png"></div>
     <div class="countrechts">
     <p class="Titel3w" id="RundenCounter">Runde: 5</p>
@@ -130,6 +131,7 @@
          <img class="fragebild" src="bilder/Fragebilder/test.jpg">
     </div>
 </div>
+    </div>
   
 <!-- Zustand SC7 "Lösung" (Spieler, die richtig lagen, geordnet nach Schnelligkeit-->
 <div id="SC7" class="hide">
@@ -214,6 +216,7 @@
         </table>
     </div>
 </div>
+
     
 
 <!-- meine JavaScript -->
