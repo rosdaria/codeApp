@@ -1,4 +1,3 @@
-  <script type="text/javascript">
               function del(){
                 var data = null;
                 var xmlhttp = new XMLHttpRequest();
@@ -38,20 +37,4 @@
               xhttp.send();
             };
 
-      </script>
 
-    <title>PHONE SCREEN BT</title>
-</head>
-
-<body>
-
-<button type="button" id="post" onclick="post();">Post</button>
-<button type="button" id="get" onclick="get();">GET</button>
-<button type="button" id="put" onclick="put();">Put</button>
-<button type="button" id="del" onclick="del();">Delete</button>
-<p id="result"></p>
-<p id="result2"></p>
-
-</body>
-
-</html>
