@@ -95,12 +95,15 @@ function counter6(){
 //Screens S8,S9 S10 , wieder S7 werden nacheinander gezeigt
 var showS10;
 var counterTimeout;
+var showS9;
+var showS7;
 function nacheinander(){
-    hideelem('S9','S8');
-    showS10 = setTimeout("hideelem('S10','S9')", 3000);
-    counterTimeout = setTimeout("counter6()",3000); // wie zeile oben nach 3sec soll counter starten
-    showS7 = setTimeout("hideelem('S7','S10')", 9000);
-   // plus 6sec für counter
+    var antwortdauer=15000; // 15 sec zeit zu antworten
+    showS9 = setTimeout("hideelem('S9','S7');nurhide('S8');", antwortdauer);
+    showS10 = setTimeout("hideelem('S10','S9')", antwortdauer+5000);
+    counterTimeout = setTimeout("counter6()",antwortdauer+5000); // wie zeile oben! nach 3sec soll counter starten
+    showS7 = setTimeout("hideelem('S7','S10');nacheinander();", antwortdauer+11000);// muss 6sec!
+   // plus 6sec für counter   
 }
 
 //nach runde 15..
@@ -108,8 +111,11 @@ function stopNacheinander(){
     clearTimeout(showS10);
     clearTimeout(counterTimeout);
     clearTimeout(showS7);
+    clearTimeout(showS9);
     nurhide(S10);
     nurhide(S7);
+    nurhide(S8);
+    nurhide(S9);
 }
 
 // L7 Meldungen bei Steuerung

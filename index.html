@@ -938,7 +938,7 @@
         <button type="button" class="btn btn-secondary btn-lg btn-block buttoncssJS pt-5 pb-5" >Teilgenommen</button>
     </div>
     
-     <a class="ml-5" onclick="hideelem('L6','S5');counter7();setTimeout(function(){ hideelem('S7','L6') },6000);">Wenn Lehrer Spiel startet</a>
+     <a class="ml-5" onclick="hideelem('L6','S5');counter7();setTimeout(function(){ hideelem('S7','L6') },6000); setTimeout(function(){ nacheinander()},9000); ">Wenn Lehrer Spiel startet</a>
     <div class="mt-5 pt-5"></div>
         
     </div>
@@ -1004,7 +1004,6 @@
 </div>
     
     <div class="mt-5"></div>
-    <a id="timerabgelaufen" class="ml-5" onclick="nacheinander()">Wenn Timer abgelaufen ist</a>
 
 </div>
 
@@ -1070,7 +1069,7 @@
         </div>
     </div>
     <nav class="navbar navbar-expand-lg fixed-bottom navfarbe">
-             <button type="button" class="btn btn-secondary btn-sm ml-auto" onclick="document.getElementById('sbuthome').play(); hideelem('')" aria-hidden="true">Zurück zur Lobby</button>
+             <button type="button" class="btn btn-secondary btn-sm ml-auto" onclick="document.getElementById('sbuthome').play(); hideelem('S5','S12')" aria-hidden="true">Zurück zur Lobby</button>
     </nav>
 </div>   
     
