@@ -5,14 +5,26 @@ $(document).ready(function(){
   var myfunction = pause("L3S3", "L2S2", 6000);
 });
 
+
+//alles wird gehidet, Zustand L3S3 wird gezeigt (z.B bei Abbruch)
+function hideall(){ 
+    for (var i = 0; i < document.querySelectorAll(".hideall").length; i++) {
+    document.querySelectorAll(".hideall")[i].style.display = "none"; }
+    var x = document.getElementById("L3S3");
+    x.classList.remove("hide");
+}
+
+
+
 function hideelem(elem, helem){
     var x = document.getElementById(elem);
     x.classList.remove("hide");
     var y = document.getElementById(helem);
-    y.classList.add("hide")
+    y.classList.add("hide");
     prevelem= helem;
     jtzelem= elem;
 }
+
 
 function nurhide(helem){
     var y = document.getElementById(helem);
