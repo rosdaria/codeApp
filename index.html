@@ -161,8 +161,8 @@
      <a href="#">
                     <button type="button" class="btn btn-secondary btn-block buttoncss2" onclick="document.getElementById('sstart').play(); document.getElementById('stimer').play(); hideelem('L6','L5_1');counter7();setTimeout(function(){ hideelem('L7','L6') },6000);" aria-hidden="true"; replacenav();>Spiel starten</button></a>
      </div>
-     <div class="col col-4 pr-0">
-     <p id="usercount">Spieler: 10</p>
+     <div id="usercount" class=" hintergrbildgelb hoehe col col-4 pr-0">
+     <p>Spieler: 10</p>
      </div>
     </div>
   
@@ -961,7 +961,7 @@
         <button type="button" class="btn btn-secondary btn-block buttoncss btnantworten" onclick="hideelem('S8','S7')">tea</button>
     </div>
     <div class="container col col-6">
-        <button type="button" class="btn btn-secondary btn-block buttoncss btnantworten" onclick="hideelem('S8','S7')">tree</button>
+        <button type="button" class="btn btn-secondary btn-block buttoncss btnantworten" onclick="hideelem('S8','S7');buttonantwort(this)">tree</button>
     </div>
 </div>
     
@@ -1004,7 +1004,7 @@
 </div>
     
     <div class="mt-5"></div>
-    <a class="ml-5" onclick="nacheinander()">Wenn Timer abgelaufen ist</a>
+    <a id="timerabgelaufen" class="ml-5" onclick="nacheinander()">Wenn Timer abgelaufen ist</a>
 
 </div>
 
