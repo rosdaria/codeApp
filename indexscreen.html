@@ -8,14 +8,14 @@
 <link rel="stylesheet" href="css/stylescreen.css" type="text/css" media="screen" />
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/screen.js"></script>
 <script src="js/jquery.min.js"></script>
 <script  src="js/jQuery.js"></script>
 </head>
 
 <body>
 <!--Zustand SC1 "Willkommen, bitte im Wlan einloggen"-->
-<div id="SC1"  class="hid">
+<div id="SC1"  class="hide">
 <iframe src="sound_files/funk_beamerscreen.mp3" allow="autoplay" id="audio" style="display:none"></iframe>
 <audio id="player" autoplay loop>
     <source src="audio/source.mp3" type="audio/mp3">
@@ -60,7 +60,7 @@
 
 <!--Zustand SC4 "Liste Teilnehmer" (Sobald Admin bei L4 auf Buzzerspiel klickt) -->
 
-<div id="SC4" class="hide">
+<div id="SC4" class="hid">
     <div class="Logo1_links"><img id="logogr4" src="bilder/LogoSpiel.png"></div>
 	<div class="Logo_rechts"><img id="logoklhfu4" src="bilder/logoHFU2.png"></div>
     <div class="Logo_rechts"><img id="logoklgsg4" src="bilder/logoGSG.jpg"></div>
@@ -72,7 +72,7 @@
 	<div id="SpielerTeilnahme" class="Titel3w">
         <table id= "tabelleNick">
             <tr>
-                <td>nickname1</td><td>nickname2</td><td>nickname3</td><td>nickname4</td><td>nickname5</td>
+                <td >nickname1</td><td>nickname2</td><td>nickname3</td><td>nickname4</td><td>nickname5</td>
             </tr>
             <tr>
                 <td>nickname6</td><td>nickname7</td><td>nickname8</td><td>nickname9</td><td>nickname10</td>
@@ -98,15 +98,6 @@
     <div class="Logo1_links"><img id="logogr5" src="bilder/LogoSpiel.png"></div><br class="clear"/>
     <div><img id="spielbeginnt" src="bilder/spielbeginnt.png"></div>
     <div class="CountDownTrigger" id="counterx1">5</div>
-    
-   <script type="text/javascript">
-      var seconds1 = document.getElementById("counterx1").textContent;
-      var countdown1 = setInterval(function() {
-           seconds1--;
-        document.getElementById("counterx1").textContent = seconds1;
-        if (seconds1 <= 0) clearInterval(countdown1);
-       }, 1000)
-   </script>
 </div>
  
 <!-- Zustand SC6 "Frage"-->
@@ -117,20 +108,12 @@
     <p class="Titel3w" id="AntwortenCounter">Antworten: 2</p>
     </div><br class="clear"/>
     <div class="CountDownTrigger3" id="counterx4">15</div>
-        <script type="text/javascript">
-              var seconds4 = document.getElementById("counterx4").textContent;
-              var countdown4 = setInterval(function() {
-                seconds4--;
-                document.getElementById("counterx4").textContent = seconds4;
-                if (seconds4 <= 0) clearInterval(countdown4);
-                }, 1000)
-        </script>
     <div id="Frage"><p id="fragetitel" class="Titel3">Wie lautet die richtige Antwort?</p>
     <div id="frageteil">
         <!--<p id="fragewort" class="Titel1">Hier erscheint die Frage/ das Wort/ Bild</p><img id="fragebild" src=""></div>-->
          <img class="fragebild" src="bilder/Fragebilder/test.jpg">
+    </div>         
     </div>
-</div>
     </div>
   
 <!-- Zustand SC7 "Lösung" (Spieler, die richtig lagen, geordnet nach Schnelligkeit-->
@@ -139,14 +122,6 @@
     <div class="countrechts">
     <div class="Titel3w" id="RundenCounter2">Runde: 5</div>
     <div id="counterx3" class="CountDownTrigger2">15</div>
-          <script type="text/javascript">
-              var seconds3 = document.getElementById("counterx3").textContent;
-              var countdown3 = setInterval(function() {
-                seconds3--;
-                document.getElementById("counterx3").textContent = seconds3;
-                if (seconds3 <= 0) clearInterval(countdown3);
-                }, 1000)
-        </script>
     </div><br class="clear"/>
     <div id="loesung" class="Titel2"> Die korrekte Antwort ist: "Lösungswort"</div>
     <div id="titelXrichtige" class="Titel3"><span id="richtigeantworten">12 </span>Spieler wussten die korrekte Antwort.</div>
@@ -172,17 +147,7 @@
     <div class="Titel3w" id="RundenCounter3">Runde: 6</div>
     </div><br class="clear"/>
     <div><img id="nextfrage" src="bilder/nextfrage.png"></div>
-    <div class="CountDownTrigger" id="counterx2">15</div>
-    
-    <script type="text/javascript">
-      var seconds2 = document.getElementById("counterx2").textContent;
-      var countdown2 = setInterval(function() {
-           seconds2--;
-        document.getElementById("counterx2").textContent = seconds2;
-        if (seconds2 <= 0) clearInterval(countdown2);
-       }, 1000)
-   </script>
-    
+    <div class="CountDownTrigger" id="counterx2">5</div>
 </div>
 
 <!-- Zustand SC9 "Spiel zu Ende" (nach der 15. Runde)-->
