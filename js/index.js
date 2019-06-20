@@ -7,7 +7,7 @@ $(document).ready(function(){
 
 
 //alles wird gehidet, Zustand L3S3 wird gezeigt (z.B bei Abbruch)
-function hideall(){ 
+function hideall(){
     for (var i = 0; i < document.querySelectorAll(".hideall").length; i++) {
     document.querySelectorAll(".hideall")[i].style.display = "none"; }
     var x = document.getElementById("L3S3");
@@ -99,12 +99,13 @@ var counterTimeout;
 var showS9;
 var showS7;
 function nacheinander(){
+  //TODO antwortdauer aus DB ziehen
     var antwortdauer=15000; // 15 sec zeit zu antworten
     showS9 = setTimeout("hideelem('S9','S7');nurhide('S8');", antwortdauer);
     showS10 = setTimeout("hideelem('S10','S9')", antwortdauer+5000);
     counterTimeout = setTimeout("counter6()",antwortdauer+5000); // wie zeile oben! nach 3sec soll counter starten
     showS7 = setTimeout("hideelem('S7','S10');nacheinander();", antwortdauer+11000);// muss 6sec!
-   // plus 6sec für counter   
+   // plus 6sec für counter
 }
 
 

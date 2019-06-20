@@ -285,7 +285,7 @@ var runde=1;
             var theUrl = "/spieletabelle";
             xmlhttp.open("POST", theUrl);
             xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xmlhttp.send(JSON.stringify({"id":2,"spiel_id":"buzzer","rundenzahlgesamt":15,"counter_zeit":20,"counter_runden":0,"antwortzeit":30,"gestartet":"true","level1":"true","level2":"true","level3":"true"}));
+            xmlhttp.send(JSON.stringify({"id":2,"spiel_id":"buzzer","rundenzahlgesamt":15,"counter_zeit":20,"counter_runden":1,"antwortzeit":30,"gestartet":"true","level1":"true","level2":"true","level3":"true"}));
 
             loop3=setInterval(function(){
           //  var ist = status;
@@ -310,7 +310,7 @@ var runde=1;
 
 
 
-          document.getElementById("usercount").innerHTML = myObj.response.length;
+          document.getElementById("usercount").innerHTML = "Spieler : " + myObj.response.length;
           for(var i=0; 10>i<myObj.response.length; i++){
 
 
@@ -355,7 +355,7 @@ var runde=1;
               var theUrl = "/spieletabelle";
               xmlhttp.open("POST", theUrl);
               xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-              xmlhttp.send(JSON.stringify({"id":2,"spiel_id":"buzzer","rundenzahlgesamt":15,"counter_zeit":20,"counter_runden":0,"antwortzeit":30,"gestartet":"playing","level1":"true","level2":"true","level3":"true"}));
+              xmlhttp.send(JSON.stringify({"id":2,"spiel_id":"buzzer","rundenzahlgesamt":15,"counter_zeit":20,"counter_runden":1,"antwortzeit":30,"gestartet":"playing","level1":"true","level2":"true","level3":"true"}));
 
 
             }
@@ -398,10 +398,11 @@ var runde=1;
             function spielabbruch3(){
 
               var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance
+              console.log("spielabbruch");
               var theUrl = "/spieletabelle";
               xmlhttp.open("POST", theUrl);
               xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-              xmlhttp.send(JSON.stringify({"id":2,"spiel_id":"buzzer","rundenzahlgesamt":15,"counter_zeit":20,"counter_runden":0,"antwortzeit":30,"gestartet":"false","level1":"true","level2":"true","level3":"true"}));
+              xmlhttp.send(JSON.stringify({"id":2,"spiel_id":"buzzer","rundenzahlgesamt":15,"counter_zeit":20,"counter_runden":1,"antwortzeit":30,"gestartet":"false","level1":"true","level2":"true","level3":"true"}));
 
             }
 
@@ -484,10 +485,11 @@ var runde=1;
                 spielabbruch();
 
                 var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance
+                console.log("unload");
                 var theUrl = "/spieletabelle";
                 xmlhttp.open("POST", theUrl);
                 xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-                xmlhttp.send(JSON.stringify({"id":2,"spiel_id":"buzzer","rundenzahlgesamt":15,"counter_zeit":20,"counter_runden":0,"antwortzeit":30,"gestartet":"false","level1":"true","level2":"true","level3":"true"}));
+                xmlhttp.send(JSON.stringify({"id":2,"spiel_id":"buzzer","rundenzahlgesamt":15,"counter_zeit":20,"counter_runden":1,"antwortzeit":30,"gestartet":"false","level1":"true","level2":"true","level3":"true"}));
 
               }
               //admins schließt --> spiel wird geschlossen
@@ -600,7 +602,7 @@ var runde=1;
 
             }
 
-            function pause(){
+            function paused(){
               var xhttp = new XMLHttpRequest();
               xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
@@ -611,7 +613,7 @@ var runde=1;
                   //console.log(myObj.response[0].spielinstanz);
                   //console.log(ist);
                   //console.log(soll);
-                  pause2(myObj);
+                  paused2(myObj);
                   // Typical action to be performed when the document is ready:
                 }
               };
@@ -619,17 +621,81 @@ var runde=1;
               xhttp.send();
             }
 
-            function pause2(myObj){
+            function paused2(myObj){
               if(myObj.response[0].gestartet == "playing"){
               myObj.response[0].gestartet = "paused";
+              document.getElementById("angehalten").innerHTML = "Spiel fortfahren";
             }
             else{
-              myObj.respnst[0].gestartet = "playing";
+              myObj.response[0].gestartet = "playing";
+              document.getElementById("angehalten").innerHTML = "Spiel anhalten";
             }
               var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance
+              console.log("pause");
               var theUrl = "/spieletabelle";
               xmlhttp.open("POST", theUrl);
               xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-              xmlhttp.send(JSON.stringify(myObj.response[i]));
+              xmlhttp.send(JSON.stringify(myObj.response[0]));
+
+            };
+
+            function lastround(){
+              var xhttp = new XMLHttpRequest();
+              xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                  //JSON Parse
+                  var myMessage = xhttp.responseText;
+                  var myObj = JSON.parse(myMessage);
+                  //console.log(myObj);
+                  //console.log(myObj.response[0].spielinstanz);
+                  //console.log(ist);
+                  //console.log(soll);
+                  lastround2(myObj);
+                  // Typical action to be performed when the document is ready:
+                }
+              };
+              xhttp.open("GET", "/spieletabelle/2", true);
+              xhttp.send();
+            };
+
+            function lastround2(myObj){
+              var gesamt = myObj.response[0].rundenzahlgesamt;
+              myObj.response[0].counter_runden = gesamt;
+              var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance
+              console.log("lastround");
+              var theUrl = "/spieletabelle";
+              xmlhttp.open("POST", theUrl);
+              xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+              xmlhttp.send(JSON.stringify(myObj.response[0]));
+            };
+
+            function settingsinit(){
+
+              //DB änderung: kategorien in spieletabelle einpflegen
+              var xhttp = new XMLHttpRequest();
+              xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                  //JSON Parse
+                  var myMessage = xhttp.responseText;
+                  var myObj = JSON.parse(myMessage);
+                  //console.log(myObj);
+                  //console.log(myObj.response[0].spielinstanz);
+                  //console.log(ist);
+                  //console.log(soll);
+                  settingsinit2(myObj);
+                  // Typical action to be performed when the document is ready:
+                }
+              };
+              xhttp.open("GET", "/spieletabelle/2", true);
+              xhttp.send();
+            };
+            function settingsinit2(myObj){
+
+              var gesamtrunden = myObj.response[0].rundenzahlgesamt;
+              var zeit = myObj.response[0].antwortzeit;
+              document.getElementById("antwortzeitwert").innerHTML = zeit;
+              document.getElementById("rundenwert").innerHTML = gesamtrunden;
+              document.getElementById("sliderantwortzeit").value = zeit;
+              document.getElementById("sliderrunden").value = gesamtrunden;
 
             }

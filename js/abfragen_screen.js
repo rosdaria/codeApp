@@ -486,6 +486,7 @@ var tempantwort;
                               var loopin = setTimeout("nacheinander2()",250);
                             }
                             //rundenloop
+                            //TODO reihenfolge abändern für pause funktionalität
                             if(status == play){
                             var antwortdauer=15000; // 15 sec zeit zu antworten
                             var showSC5 = setTimeout("hideelem('SC5','SC4')",0);
