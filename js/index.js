@@ -5,14 +5,26 @@ $(document).ready(function(){
   var myfunction = pause("L3S3", "L2S2", 6000);
 });
 
+
+//alles wird gehidet, Zustand L3S3 wird gezeigt (z.B bei Abbruch)
+function hideall(){
+    for (var i = 0; i < document.querySelectorAll(".hideall").length; i++) {
+    document.querySelectorAll(".hideall")[i].style.display = "none"; }
+    var x = document.getElementById("L3S3");
+    x.classList.remove("hide");
+}
+
+
+
 function hideelem(elem, helem){
     var x = document.getElementById(elem);
     x.classList.remove("hide");
     var y = document.getElementById(helem);
-    y.classList.add("hide")
+    y.classList.add("hide");
     prevelem= helem;
     jtzelem= elem;
 }
+
 
 function nurhide(helem){
     var y = document.getElementById(helem);
@@ -41,18 +53,19 @@ function replacenav() {
   }
 
 //CSS wenn button aktiv ist (S5)
-function buttclicked() {
+function buttclicked(Inputnick) {
     var x= document.getElementById('Inputnick');
     if(x.value.length==0){
         alert("Gib bitte deinen Nickname ein, danach kannst du Teilnehmen.");
        }else{
-     document.getElementById('btnTeilnehmen').innerHTML = document.getElementById('btnaktiv').innerHTML; x.setAttribute('disabled','disabled'); 
+     document.getElementById('btnTeilnehmen').innerHTML = document.getElementById('btnaktiv').innerHTML; x.setAttribute('disabled','disabled');
+     teilnehmen(Inputnick);
        }
 }
 
 //Inputvalue übernehmen von S4 zu S5
 function inputwert(){
-  document.getElementById('Inputnick').value = document.getElementById('Inputnickprev').value; 
+  document.getElementById('Inputnick').value = document.getElementById('Inputnickprev').value;
     }
 
 //codes für countdown
@@ -80,16 +93,7 @@ function counter6(){
          seconds6=5;}
 }
 
-//Screens S8,S9 S10 , wieder S7 werden nacheinander gezeigt
-var showS10;
-var counterTimeout;
-function nacheinander(){
-    hideelem('S9','S8');
-    showS10 = setTimeout("hideelem('S10','S9')", 3000);
-    counterTimeout = setTimeout("counter6()",3000); // wie zeile oben nach 3sec soll counter starten
-    showS7 = setTimeout("hideelem('S7','S10')", 9000);
-   // plus 6sec für counter
-}
+
 
 //nach runde 15..
 function stopNacheinander(){
@@ -117,6 +121,3 @@ function meldungpauseweg(x,y){
     setTimeout(function(){ document.getElementById(y).classList.add("hide");},500);
 }
 // Ende L7 Meldungen bei Steuerung
-
-
-

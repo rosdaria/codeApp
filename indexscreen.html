@@ -8,18 +8,25 @@
 <link rel="stylesheet" href="css/stylescreen.css" type="text/css" media="screen" />
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-<script type="text/javascript" src="js/main.js"></script>
-<script src="js/jquery.min.js"></script>
-<script  src="js/jQuery.js"></script>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/bootstrap-grid.css" />
+<link rel="stylesheet" href="js/bootstrap.bundle.js" />
+
+<!-- Bootstrap ICONS (fontawesome)-->
+<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+
+
+<script type="text/javascript" src="js/abfragen_screen.js"></script>
 </head>
 
-<body>
+<body onload="nacheinander();">
 <!--Zustand SC1 "Willkommen, bitte im Wlan einloggen"-->
-<div id="SC1"  class="hide">
-<iframe src="sound_files/funk_beamerscreen.mp3" allow="autoplay" id="audio" style="display:none"></iframe>
-<audio id="player" autoplay loop>
+<div id="SC1" class="hid">
+<!-- <iframe src="sound_files/funk_beamerscreen.mp3" allow="autoplay" id="audio" style="display:none"></iframe>
+ <audio id="player" autoplay loop>
     <source src="audio/source.mp3" type="audio/mp3">
-</audio>
+</audio> -->
 	<div class="Logo1_gross"><img id="logogr1" src="bilder/LogoSpiel.png"></div><br class="clear" />
     <div class="Logo4_klein"><img id="logoklerasmus2" src="bilder/Erasmus2.jpg"></div>
     <div class="Logo2_klein"><img id="logoklerasmus1" src="bilder/logoERASMUS.jpg"></div>
@@ -46,7 +53,8 @@
 
 <!--Zustand SC3 "Willkommen @Admin Spiel wählen..." (Sobald ein Nutzer bei S3/L3 auf Admin geklickt hat) -->
 <div id="SC3"  class="hide">
-	<div class="Logo1_gross"><img id="logogr3" src="bilder/LogoSpiel.png"></div><br class="clear" />
+	<div class="Logo1_gross"><img id="logogr3" src="bilder/qrcode.png"></div><br class="clear" />
+    <div class="Logo4_klein"><img id="logoklspiel" src="bilder/LogoSpiel.png"></div>
     <div class="Logo4_klein"><img id="logoklerasmus2" src="bilder/Erasmus2.jpg"></div>
 	<div class="Logo2_klein"><img id="logoklerasmus3" src="bilder/logoERASMUS.jpg"></div>
 	<div class="Logo3_klein"><img id="logoklgsg3" src="bilder/logoGSG.jpg"></div>
@@ -71,33 +79,33 @@
 	<div id="SpielerTeilnahme" class="Titel3w">
         <table id= "tabelleNick">
             <tr>
-                <td>nickname1</td><td>nickname2</td><td>nickname3</td><td>nickname4</td><td>nickname5</td>
+                <td id="nick0"></td><td id="nick1"></td><td id="nick2"></td><tdid="nick3"></td><td id="nick4"</td>
             </tr>
             <tr>
-                <td>nickname6</td><td>nickname7</td><td>nickname8</td><td>nickname9</td><td>nickname10</td>
+                <td id="nick5"></td><td id="nick6"></td><td id="nick7"></td><td id="nick8"></td><td id="nick9"></td>
             </tr>
             <tr>
-                <td>nickname11</td><td>nickname12</td><td>nickname13</td><td>nickname14</td><td>nickname15</td>
+                <td id="nick10"></td><td id="nick11"></td><td id="nick12"></td><td id="nick13"></td><td id="nick14"></td>
             </tr>
              <tr>
-                <td>nickname16</td><td>nickname17</td><td>nickname18</td><td>nickname16</td><td>nickname4</td>
+                <td></td><td></td><td></td><td></td><td</td>
             </tr>
              <tr>
-                <td>nickname19</td><td>nickname20</td><td>nickname21</td><td>nickname20</td><td>nickname4</td>
+                <td></td><td></td><td></td><td></td><td</td>
             </tr>
             <tr>
-                <td>nickname22</td><td>nickname23</td><td>nickname24</td><td>nickname25</td><td>nickname26</td>
+                <td></td><td></td><td></td><td></td><td</td>
             </tr>
         </table>
      </div>
 </div>
-    
+
 <!-- Zustand SC5 "Countdown" (Das Spiel beginnt, wenn bei L5.1 klick auf Startbutton)-->
 <div id="SC5" class="hide">
     <div class="Logo1_links"><img id="logogr5" src="bilder/LogoSpiel.png"></div><br class="clear"/>
     <div><img id="spielbeginnt" src="bilder/spielbeginnt.png"></div>
     <div class="CountDownTrigger" id="counterx1">5</div>
-    
+
    <script type="text/javascript">
       var seconds1 = document.getElementById("counterx1").textContent;
       var countdown1 = setInterval(function() {
@@ -107,9 +115,9 @@
        }, 1000)
    </script>
 </div>
- 
+
 <!-- Zustand SC6 "Frage"-->
-<div id="SC6" class="hid">
+<div id="SC6" class="hide">
     <div class="Logo1_links"><img id="logokl2" src="bilder/LogoSpiel.png"></div>
     <div class="countrechts">
     <p class="Titel3w" id="RundenCounter">Runde: 5</p>
@@ -126,11 +134,12 @@
         </script>
     <div id="Frage"><p id="fragetitel" class="Titel3">Wie lautet die richtige Antwort?</p>
     <div id="frageteil">
-        <!--<p id="fragewort" class="Titel1">Hier erscheint die Frage/ das Wort/ Bild</p><img id="fragebild" src=""></div>-->
+        <p id="fragewort" class="Titel1">Lesen</p><img id="fragebild" src=""></div>
          <img class="fragebild" src="bilder/Fragebilder/test.jpg">
     </div>
 </div>
-  
+    </div>
+
 <!-- Zustand SC7 "Lösung" (Spieler, die richtig lagen, geordnet nach Schnelligkeit-->
 <div id="SC7" class="hide">
     <div class="Logo1_links"><img id="logokl3" src="bilder/LogoSpiel.png"></div>
@@ -151,7 +160,7 @@
    <div class="Titel3w" id="RichtigeNickListe">
      <table id="tabellerichtige">
             <tr>
-                <td>1. nickname1</td><td>2. nickname2</td><td>3. nickname3</td><td>4. ickname4</td>
+                <td id="korrekt1">1. nickname1</td><td id="korrekt2">2. nickname2</td><td id="korrekt3">3. nickname3</td><td id="korrekt4">4. ickname4</td>
             </tr>
             <tr>
                 <td>5. nickname6</td><td>6. nickname7</td><td>7. nickname8</td><td>8. nickname9</td>
@@ -171,7 +180,7 @@
     </div><br class="clear"/>
     <div><img id="nextfrage" src="bilder/nextfrage.png"></div>
     <div class="CountDownTrigger" id="counterx2">15</div>
-    
+
     <script type="text/javascript">
       var seconds2 = document.getElementById("counterx2").textContent;
       var countdown2 = setInterval(function() {
@@ -180,7 +189,7 @@
         if (seconds2 <= 0) clearInterval(countdown2);
        }, 1000)
    </script>
-    
+
 </div>
 
 <!-- Zustand SC9 "Spiel zu Ende" (nach der 15. Runde)-->
@@ -214,7 +223,8 @@
         </table>
     </div>
 </div>
-    
+
+
 
 <!-- meine JavaScript -->
 </body>
