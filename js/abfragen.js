@@ -624,12 +624,12 @@ var runde=1;
               myObj.response[0].gestartet = "paused";
             }
             else{
-              myObj.respnst[0].gestartet = "playing";
+              myObj.response[0].gestartet = "playing";
             }
               var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance
               var theUrl = "/spieletabelle";
               xmlhttp.open("POST", theUrl);
               xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-              xmlhttp.send(JSON.stringify(myObj.response[i]));
+              xmlhttp.send(JSON.stringify(myObj.response[0]));
 
             }

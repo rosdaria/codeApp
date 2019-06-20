@@ -16,6 +16,23 @@ var countdown1 = setInterval(function() {
 //counter von Zustand SC6
 
 function counterx4(){
+//get aus DB
+
+xhttp.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+    //JSON Parse
+    var myMessage = xhttp.responseText;
+    var myObj = JSON.parse(myMessage);
+    console.log(myObj);
+    counterx42(myObj);
+    // Typical action to be performed when the document is ready:
+  }
+};
+xhttp.open("GET", "/spieletabelle/2", true);
+xhttp.send();
+};
+function counterx42(myObj){
+var length = myObj.response[0].antwortzeit;
 var seconds4 = document.getElementById("counterx4").textContent;
 var countdown4 = setInterval(function() {
         seconds4--;
@@ -23,6 +40,7 @@ var countdown4 = setInterval(function() {
         if (seconds4 <= 0) clearInterval(countdown4);
         }, 1000)
 //setz counter wieder auf 15 sec.
+//TODO Antwortzeit aus db ziehn
      if (seconds4 <= 0){
          document.getElementById("counterx4").textContent=15;
          seconds4=15;}
