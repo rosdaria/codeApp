@@ -75,7 +75,7 @@
 
 <div id="L3S3" class="hide" onunload="unload();" >
 
-    <div class="container-fluid pt-5 pb-5 mb-5 hintergrbild"> <!--@hoang diese div kannst du immer als überschrift kopieren für alle screens -->
+    <div class="container-fluid pt-5 pb-5 mb-5 hintergrbild"> 
         <h2 class="text-center">Bitte auswählen.</h2>
     </div>
 
@@ -83,7 +83,7 @@
     <div class="container">
     <div class="container mt-5">
         <a href="#">
-            <button type="button" class="btn btn-secondary btn-lg btn-block buttoncss pt-5 pb-5" onclick="document.getElementById('ssub').play(); adminlogin()"; aria-hidden="true";  >Admin</button></a>
+            <button type="button" class="btn btn-secondary btn-lg btn-block buttoncss pt-5 pb-5" onclick="document.getElementById('ssub').play(); adminlogin(); hideelem('L4','L3S3');"; aria-hidden="true";  >Admin</button></a>
     </div>
     <div class="container mt-3">
        <a href="#">
@@ -719,40 +719,28 @@
             <p  class="text-center">Das Spiel läuft...</p>
         </div>
     <div class="container nachhinten row ml-0 mt-4">
-    <div class="container col col-6">
+    <div class="container col col-12">
             <a href="#">
            <button type="button" class="btn btn-secondary btn-block buttoncss btnsteuerung" onclick="document.getElementById('ssub').play(); spielabbruch(); meldung('#stop','stop')"; aria-hidden="true"; replacenav(); >Spiel abbrechen</button></a>
     </div>
-    <div class="container col col-6">
-       <a href="#">
-           <button type="button" class="btn btn-secondary btn-block buttoncss btnsteuerung" onclick="document.getElementById('ssub').play(); meldung('#reset','reset')"; aria-hidden="true"; replacenav(); >Reset</button></a>
-    </div>
     </div>
     <div class="container nachhinten row ml-0 mt-4">
-    <div class="container col col-6">
+    <div class="container col col-12">
        <a href="#">
            <button type="button" id="angehalten" class="btn btn-secondary btn-block buttoncss btnsteuerung" onclick="document.getElementById('ssub').play(); paused(); meldungpause('#pause')"; aria-hidden="true";>Spiel anhalten</button></a>
     </div>
-    <div class="container col col-6">
+    </div>
+        
+    <div class="container nachhinten row ml-0 mt-4">
+    <div class="container col col-12">
             <a href="#">
            <button type="button" class="btn btn-secondary btn-block buttoncss btnsteuerung" onclick="document.getElementById('ssub').play(); lastround(); meldung('#lastrunde','lastrunde')"; aria-hidden="true" >letzte Runde</button></a>
     </div>
     </div>
-      <div class="container nachhinten row ml-0 mt-4">
-    <div class="container col col-6">
-            <a href="#">
-           <button type="button" class="btn btn-secondary btn-block buttoncss btnsteuerung" onclick="document.getElementById('ssub').play(); meldung('#frageskip','frageskip')"; aria-hidden="true";>Frage überspringen</button></a>
-    </div>
-    <div class="container col col-6">
-       <a href="#">
-           <button type="button" class="btn btn-secondary btn-block buttoncss btnsteuerung" onclick="document.getElementById('ssub').play(); hideelem('L8','L7')"; aria-hidden="true";>Spiel zu Ende</button></a>
-    </div>
-    </div>
+   
 
-    <div id="frageskip" class="hide nachvorne"><img src="bilder/frageskip.png" class=" img-fluid mx-auto d-block nachvorneimg"></div>
     <div id="lastrunde" class="hide nachvorne"><img src="bilder/letzterunde.png" class=" img-fluid mx-auto d-block nachvorneimg"></div>
     <div id="pause" class="hide nachvorne"><img src="bilder/pauseL.png" onclick="meldungpauseweg('#pause','pause')" class=" img-fluid mx-auto d-block nachvorneimg"></div>
-    <div id="reset" class="hide nachvorne"><img src="bilder/reset.png" class=" img-fluid mx-auto d-block nachvorneimg"></div>
     <div id="stop" class="hide nachvorne"><img src="bilder/stop.png" class=" img-fluid mx-auto d-block nachvorneimg"></div>
 
 </div>
