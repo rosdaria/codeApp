@@ -102,6 +102,19 @@
     background-image: url(../bilder/hintergrund3.png); 
 }
 
+/*Zustand S8*/
+#RundenCounter2{
+    margin-bottom: 40px;
+    margin-top:10px;
+    width: 100px;
+    text-align: left;
+    float: right;
+    color:white;
+    padding: 10px;
+    background-size: 100% 100%;
+    background-image: url(../bilder/hintergrund3.png); 
+}
+
 /*Zustand S12*/
 .hintergrbildgelb{
     background-image: url(../bilder/hintergrund3.png) !important;

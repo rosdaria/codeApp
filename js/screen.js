@@ -32,7 +32,24 @@ xhttp.open("GET", "/spieletabelle/2", true);
 xhttp.send();
 };
 function counterx42(myObj){
-var length = myObj.response[0].antwortzeit;
+var length = myObj.response[0].antwortzeit; //antwortzeit, welche admin einstellt
+var seconds4 = length;
+var countdown4 = setInterval(function() {
+        seconds4--;
+        document.getElementById("counterx4").textContent = seconds4;
+        if (seconds4 <= 0) clearInterval(countdown4);
+        }, 1000)
+//setz counter wieder auf 15 sec.
+//TODO Antwortzeit aus db ziehn
+     if (seconds4 <= 0){
+         document.getElementById("counterx4").textContent=length;
+         seconds4=length;}
+}
+
+
+//alte Version
+/*function counterx42(myObj){
+var length = myObj.response[0].antwortzeit; //antwortzeit, welche admin einstellt
 var seconds4 = document.getElementById("counterx4").textContent;
 var countdown4 = setInterval(function() {
         seconds4--;
@@ -42,9 +59,11 @@ var countdown4 = setInterval(function() {
 //setz counter wieder auf 15 sec.
 //TODO Antwortzeit aus db ziehn
      if (seconds4 <= 0){
-         document.getElementById("counterx4").textContent=15;
-         seconds4=15;}
+         document.getElementById("counterx4").textContent=length;
+         seconds4=length;}
 }
+*/
+
 
 //counter von Zustand SC7
 
