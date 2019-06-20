@@ -99,25 +99,25 @@ var counterTimeout;
 var showS9;
 var showS7;
 
-
-//get Antwortdauer aus der Datenbank
-function counterx4(){
-xhttp.onreadystatechange = function() {
-  if (this.readyState == 4 && this.status == 200) {
+function nacheinander(myObj){
+    
+    //get Antwortdauer aus der Datenbank
+    xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
     //JSON Parse
     var myMessage = xhttp.responseText;
     var myObj = JSON.parse(myMessage);
     console.log(myObj);
     counterx42(myObj);
     // Typical action to be performed when the document is ready:
-  }
-};
-xhttp.open("GET", "/spieletabelle/2", true);
-xhttp.send();
-};
-
-function nacheinander(myObj){
+    }
+    };
+    xhttp.open("GET", "/spieletabelle/2", true);
+    xhttp.send();
+    
     var length = myObj.response[0].antwortzeit;// Antwortdauer, je nachdem was der Admin einstellt
+    
+    //timer abhängig von der antwortdauer
     showS9 = setTimeout("hideelem('S9','S7');nurhide('S8');", length);
     showS10 = setTimeout("hideelem('S10','S9')", length+5000);
     counterTimeout = setTimeout("counter6()",length+5000); // wie zeile oben! nach 3sec soll counter starten

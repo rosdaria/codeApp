@@ -32,18 +32,13 @@ xhttp.open("GET", "/spieletabelle/2", true);
 xhttp.send();
 };
 function counterx42(myObj){
-var length = myObj.response[0].antwortzeit; //antwortzeit, welche admin einstellt
-var seconds4 = length;
-var countdown4 = setInterval(function() {
-        seconds4--;
-        document.getElementById("counterx4").textContent = seconds4;
-        if (seconds4 <= 0) clearInterval(countdown4);
+var seconds4 = myObj.response[0].antwortzeit; //antwortzeit, welche admin einstellt
+document.getElementById("counterx4").textContent= seconds4;//Inhalt von Counter 4 soll anfangs der vom Admin Eigestellte Startwert sein
+var countdown4 = setInterval(function() { //funktion für den countdown
+        seconds4--; //counterwert wird immer um 1 verringert
+        document.getElementById("counterx4").textContent = seconds4; //counter soll immer den aktuellen Wert von seconds 4 erhalten (der um 1 verringert wird)
+        if (seconds4 <= 0) clearInterval(countdown4); //resettet den countdown
         }, 1000)
-//setz counter wieder auf 15 sec.
-//TODO Antwortzeit aus db ziehn
-     if (seconds4 <= 0){
-         document.getElementById("counterx4").textContent=length;
-         seconds4=length;}
 }
 
 
