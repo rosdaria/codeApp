@@ -40,16 +40,16 @@
         <audio id="sbuthome" src="sound_files/button_home.mp3" preload="auto"></audio>
         <audio id="sbutset" src="sound_files/button_setting.mp3" preload="auto"></audio>
         <audio id="sbutback" src="sound_files/button_back.mp3" preload="auto"></audio>
-        <audio id="stimer" src="sound_files/timer_loop_mixdown.mp3" preload="auto"></audio>
-
+        <audio id="stimer" src="sound_files/timer_loop.wav" preload="auto"></audio>
+  
    <!--Zustand L2/S2 "Willkommen" (Bei Lehrer und Schüler gleich)-->
    <!--lehrer/schueler gleich-->
 
-    <div id="L2S2" onload="setTimeout(function(){ hideelem('L3S3','L2S2') },3000);" class="hid">
-    <div class="container-fluid pt-5 pb-5 mb-3 hintergrbild">
+    <div id="L2S2" onload="setTimeout(function(){ hideelem('L3S3','L2S2') },3000);" class="hid hideall">  
+    <div class="container-fluid pt-5 pb-5 mb-3 hintergrbild"> 
         <h1 class="text-center" id="willk">Willkommen!</h1>
     </div>
-
+        
     <div class="container mt-5 mb-3">
         <img src="bilder/LogoSpiel.png" class="img-fluid mx-auto d-block" id="logogross">
     </div>
@@ -93,7 +93,7 @@
     </div>
 
 <!-- Zustand L4 "Spieleauswahl Lehrer" (Wenn klick auf Admin) -->
-    <div id="L4" class="hide">
+    <div id="L4" class="hide hideall">
         <div class="container-fluid pt-5 pb-4 hintergrbild">
             <h2 class="text-center">Home</h2>
             <h5 class="text-center">Bitte Spiel auswählen.</h5>
@@ -150,7 +150,7 @@
     </div>
 
     <!--    Zustand L5.1 "warten auf einloggen der Schüler" (Wenn klick auf Buzzerspiel)    -->
-    <div id="L5_1" class="hide">
+    <div id="L5_1" class="hide hideall">
 
         <div class="container-fluid-xs pt-5 pb-5 hintergrbild">
             <h2 class="text-center">Warten auf Spieler...</h2>
@@ -160,8 +160,8 @@
      <a href="#">
                     <button type="button" class="btn btn-secondary btn-block buttoncss2" onclick="document.getElementById('sstart').play(); document.getElementById('stimer').play(); buzzerstart(); hideelem('L6','L5_1');counter7();setTimeout(function(){ hideelem('L7','L6') },6000);" aria-hidden="true"; replacenav();>Spiel starten</button></a>
      </div>
-     <div class="col col-4 pr-0">
-     <p id="usercount">Spieler: 10</p>
+     <div id="usercount" class=" hintergrbildgelb hoehe col col-4 pr-0">
+     <p>Spieler: 10</p>
      </div>
     </div>
 
@@ -235,7 +235,7 @@
 
 
  <!-- Zustand L5.2/S4.1 "Highscore anzeigen" (Wenn klick auf Highscore anzeigen)-->
- <div id="L5.2" class="hide">
+ <div id="L5.2" class="hide hideall">
     <div class="container-fluid pt-5 pb-5 hintergrbild">
         <h2 class="text-center">Highscore</h2>
     </div>
@@ -408,7 +408,7 @@
 
 
  <!-- Zustand L5.3 "Einstellungen" (Wenn klick auf Einstellungen)-->
-    <div id="L5.3" class="hide">
+    <div id="L5.3" class="hide hideall">
          <div class="container-fluid pt-5 pb-5 hintergrbild">
             <h2 class="text-center">Einstellungen</h2>
         </div>
@@ -704,8 +704,8 @@
 
 <!-- Zustand L6/S6 "Countdown" (Das Spiel beginnt, wenn bei L5.1 klick auf Startbutton)-->
 <!-- @hoang schon gemacht, weil bei lehrer und schueler gleich-->
-
-<div id="L6" class="hide">
+    
+<div id="L6" class="hide hideall">
     <div class="container mt-5 mb-5 pl-5 pr-5 pt-5">
     <img src="bilder/spielbeginnt.png" class="img-fluid mx-auto d-block">
     </div>
@@ -713,7 +713,7 @@
 </div>
 
 <!-- Zustand L7 "Steurung" (Bildschirm Lehrer während des Spiels)-->
-    <div id="L7" class="hide">
+    <div id="L7" class="hide hideall">
         <div class="container-fluid pt-5 pb-4 hintergrbild">
             <h2 class="text-center">Steuerung</h2>
             <p  class="text-center">Das Spiel läuft...</p>
@@ -758,7 +758,7 @@
 </div>
 
       <!-- Zustand L8 "Zurück zur Spieleauswahl" (Bildschirm Lehrer, wenn Spiel zu Ende)-->
-        <div id="L8" class="hide">
+        <div id="L8" class="hide hideall">
             <div class="container-fluid pt-5 pb-5 hintergrbild">
                  <h2 class="text-center">Das Spiel ist zu Ende.</h2>
              </div>
@@ -792,7 +792,7 @@
 
         <!-- Zustand L9 "Scores des letzten Spiels" (Wenn Lehrer auf "Highscore klickt")-->
         <!-- @Hoang schon gemacht-->
-        <div id="L9" class="hide">
+        <div id="L9" class="hide hideall">
             <div class="container-fluid pt-5 pb-5 hintergrbild">
                  <h2 class="text-center">Scores<br>des letzten Spieles</h2>
              </div>
@@ -875,8 +875,8 @@
 
 
     <!-- Zustand S4 "Lobby-warten auf Admin, teilnehmen nicht klickbar siehe S5" (Wenn bei S3/L3 klick auf Spieler)-->
-
-      <div id="S4" class="hide">
+        
+      <div id="S4" class="hide hideall">
     <div class="container-fluid pt-5 pb-1 hintergrbild">
         <h2 class="text-center">Lobby</h2>
         <p class="text-center mt-3">Sobald der Admin ein Spiel gewählt hat, kannst du teilnehmen. Wähle solange deinen Nickname.</p>
@@ -884,7 +884,7 @@
     <div class="container pt-2"></div>
     <div class="container">
         <div class="form-group container mt-5">
-        <input type="email" class="form-control" id="Inputnickprev" aria-describedby="emailHelp" placeholder="nickname">
+        <input type="" class="form-control" id="Inputnickprev" placeholder="nickname">
         </div>
     <div class="container mt-5">
               <a href="#">
@@ -909,8 +909,8 @@
 
 
  <!--Zustand S5 "Lobby Teilnehmen klickbar"-->
-
-    <div id="S5" class="hide">
+      
+    <div id="S5" class="hide hideall">
     <div class="container-fluid pt-5 pb-1 hintergrbild">
         <h2 class="text-center">Lobby</h2>
         <p class="text-center mt-3">Klicke auf "Teilnehmen", wenn du bereit bist.</p>
@@ -918,7 +918,7 @@
     <div class="container pt-2"></div>
     <div class="container">
         <div class="form-group container mt-5">
-        <input type="email" class="form-control" id="Inputnick" value="" aria-describedby="emailHelp" placeholder="nickname">
+        <input type="" class="form-control" id="Inputnick" value="" placeholder="nickname">
         </div>
     <div class="container mt-5" id="btnTeilnehmen">
         <button type="button" class="btn btn-secondary btn-lg btn-block buttoncss pt-5 pb-5" onclick="buttclicked(Inputnick); checkloop('S5','L6'); checkloopgame();">Teilnehmen</button>
@@ -943,8 +943,8 @@
 
 
 <!-- Zustand S7 "Antwortbuttons"-->
-
-<div id="S7" class="hide">
+    
+<div id="S7" class="hide hideall">
     <div class="container-fluid pt-4 pb-4 mb-2 hintergrbild">
         <h2 class="text-center mb-2">Wie lautet die richtige Antwort?</h2>
     </div>
@@ -974,7 +974,7 @@
 
 <!-- Zustand S8 "Antwort wurde abgegeben" (Wenn bei S7 auf eine Antwort gekklickt wurde)-->
 
-<div id="S8" class="hide">
+<div id="S8" class="hide hideall">
     <div class="container-fluid pt-4 pb-4 mb-2 hintergrbild">
         <h2 class="text-center mb-2">Deine Antwort wurde abgegeben!</h2>
     </div>
@@ -1005,8 +1005,8 @@
 </div>
 
 <!-- Zustand S9 "Richtig" (Wenn Countdown abgelaufen)-->
-
-<div id="S9" class="hide">
+    
+<div id="S9" class="hide hideall">
     <div class="container-fluid pt-5 pb-5 mb-2 hintergrbild">
         <h2 class="text-center mb-2">Deine Antwort ist richtig!</h2>
     </div>
@@ -1019,8 +1019,8 @@
 </div>
 
 <!--Zustand S9 "Antwort falsch"-->
-
-<div id="S9.1" class="hide">
+      
+<div id="S9.1" class="hide hideall">
     <div class="container-fluid pt-5 pb-5 mb-2 hintergrbild">
         <h2 class="text-center mb-2">Deine Antwort ist falsch!</h2>
     </div>
@@ -1030,8 +1030,8 @@
 </div>
 
 <!--Zustand S10 "nächste Frage countdown"-->
-
-<div id="S10" class="hide">
+      
+<div id="S10" class="hide hideall">
     <div class="container mt-5 mb-5 pl-5 pr-5 pt-5">
     <img src="bilder/nextfrage.png" class="img-fluid mx-auto d-block">
     </div>
@@ -1039,7 +1039,7 @@
 </div>
 
 <!--Zustand S11 "Spiel zu Ende"-->
-<div id="S11" class="hide">
+<div id="S11" class="hide hideall">
 <div class="container-fluid pt-5 pb-5 mb-2 hintergrbild">
         <h2 class="text-center mb-2">Das Spiel ist zu Ende.</h2>
     </div>
@@ -1050,8 +1050,8 @@
 </div>
 
 <!--Zustand S12 "persönlicher Score"-->
-
-<div id="S12" class="hide">
+      
+<div id="S12" class="hide hideall">
     <div class="container-fluid pt-5 pb-5 mb-5 hintergrbildgelb">
         <h2 class="text-center">Dein persönlicher Score</h2>
     </div>
@@ -1066,7 +1066,7 @@
         </div>
     </div>
     <nav class="navbar navbar-expand-lg fixed-bottom navfarbe">
-             <button type="button" class="btn btn-secondary btn-sm ml-auto" onclick="document.getElementById('sbuthome').play(); hideelem('')" aria-hidden="true">Zurück zur Lobby</button>
+             <button type="button" class="btn btn-secondary btn-sm ml-auto" onclick="document.getElementById('sbuthome').play(); hideelem('S5','S12')" aria-hidden="true">Zurück zur Lobby</button>
     </nav>
 </div>
 

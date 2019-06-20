@@ -198,6 +198,9 @@ div.anfangstext{
 #logoklerasmus3{
     height: 100%;
 }
+#logoklspiel{
+    height: 100%;
+}
 #logoklgsg3{
     height: 100%;
 }
@@ -268,6 +271,15 @@ div.anfangstext{
 
 #tabelleNick{                   
     text-align: left;
+}
+                    /*Zellenhimtergrund lila*/
+.zh{
+  background-color:#757db5;
+  background-size: 100% 100%;
+  border: 10px solid #575da1;
+  padding-top:1% !important;
+  padding-bottom:1% !important;
+  height: 55px;
 }
 
 td{
@@ -352,12 +364,21 @@ img#countdown15{
     margin-top: 1%;
 }
 #fragetitel{
-    padding-top: 1%;
+    padding-top:3%;
     padding-bottom:0%;
+    color:grey;
 }
 #fragewort{
-    margin: 5%;
+    background-color:#757db5;
+    color:white;
+    margin:5%;
+    margin-left:25%;
+    margin-right:25%;
+    padding-top:3%;
+    padding-bottom:3%;
+    word-wrap: break-word;
 }
+
 #fragebild{
     margin:0%;
     padding: 0%;
@@ -490,6 +511,7 @@ td.platz{
 }
 #tabellescore{                   
     text-align: left;
+    color:dimgray;
 }
 #Score1{                    /*Tabelle gewinner score*/
     display: flex;

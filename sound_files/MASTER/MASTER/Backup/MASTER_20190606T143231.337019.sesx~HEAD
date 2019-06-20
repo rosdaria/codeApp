@@ -3,7 +3,7 @@
 <sesx version="1.3">
 
   <session appBuild="10.0.0.130" appVersion="10.0" audioChannelType="stereo" bitDepth="32" duration="1440000" sampleRate="48000">
-    <name>timer_loop_20190513T145526.905742.sesx</name>
+    <name>MASTER_20190606T143231.337019.sesx</name>
     <tracks>
       <audioTrack automationLaneOpenState="false" id="10001" index="1" select="true" visible="true">
         <trackParameters trackHeight="134" trackHue="-1" trackMinimized="false">
@@ -12,18 +12,18 @@
         <trackAudioParameters audioChannelType="stereo" automationMode="1" monitoring="false" recordArmed="false" solo="false" soloSafe="false">
           <trackOutput outputID="10000" type="trackID"/>
           <trackInput inputID="1"/>
-          <component componentGuid="c32a1a1e-f901-4981-a694-fbee16db2e25" componentID="Audition.Fader" id="trackFader" name="volume" powered="true">
+          <component componentGuid="29a12e8b-c6e5-4f0c-9b92-343446578bed" componentID="Audition.Fader" id="trackFader" name="volume" powered="true">
             <parameter index="0" name="volume" parameterValue="1"/>
             <parameter index="1" name="static gain" parameterValue="1"/>
           </component>
-          <component componentGuid="c28b4781-939d-48f6-bdb2-389c25ac1028" componentID="Audition.Mute" id="trackMute" name="Mute" powered="true">
+          <component componentGuid="b6e7399a-6982-45ef-aef7-14cc1bab99fa" componentID="Audition.Mute" id="trackMute" name="Mute" powered="true">
             <parameter index="0" parameterValue="0"/>
             <parameter index="1" name="mute" parameterValue="0"/>
           </component>
-          <component componentGuid="1d00f375-07c0-4257-86ca-67ae334f70ba" componentID="Audition.StereoPanner" id="trackPan" name="StereoPanner" powered="true">
+          <component componentGuid="acacf127-c058-464f-8df4-457836f6d1b1" componentID="Audition.StereoPanner" id="trackPan" name="StereoPanner" powered="true">
             <parameter index="0" name="Pan" parameterValue="0"/>
           </component>
-          <component componentGuid="d6c96a0c-e16d-4d1a-8073-3b1a4dd27c7e" componentID="Audition.EQ" id="trackEQ" name="EQ" powered="false">
+          <component componentGuid="5b0e65f4-d827-44c5-aaf6-57a32fb012fd" componentID="Audition.EQ" id="trackEQ" name="EQ" powered="false">
             <parameter index="0" name="Low Shelf Frequency" parameterValue="0.000834"/>
             <parameter index="1" name="Low Shelf Gain" parameterValue="0.5"/>
             <parameter index="2" name="High Shelf Frequency" parameterValue="0.7497915"/>
@@ -74,112 +74,112 @@
         <editParameter parameterIndex="0" slotIndex="4294967280"/>
         <sendList>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="0">
-            <component componentGuid="6f449550-57f8-4309-989b-bdc18b368657" id="sendComponent" powered="false">
+            <component componentGuid="ea351abc-81b4-4f73-ba1c-11d4c3f0718a" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="1">
-            <component componentGuid="e3aa763f-084d-45eb-ad80-399ec3ff8787" id="sendComponent" powered="false">
+            <component componentGuid="0414c036-f7af-4e05-a5dd-2f01b704ea05" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="2">
-            <component componentGuid="d6040e94-df50-4202-9e00-fd0eab4a3014" id="sendComponent" powered="false">
+            <component componentGuid="6d85c5d0-e871-4313-a255-c9ee23137e36" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="3">
-            <component componentGuid="0d8a21ff-af2d-4ddd-874d-b2dfc288719d" id="sendComponent" powered="false">
+            <component componentGuid="bfa1b701-213c-4f6b-b952-ded11cec0a16" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="4">
-            <component componentGuid="e2110be9-e557-4b89-8490-b3ded2f26997" id="sendComponent" powered="false">
+            <component componentGuid="080e0b26-0414-4aed-85f2-26a32425a699" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="5">
-            <component componentGuid="15b3d1a4-6a38-4afb-b79c-a33ede9df61a" id="sendComponent" powered="false">
+            <component componentGuid="334d9658-a7b9-46f2-acec-f0285dc23909" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="6">
-            <component componentGuid="292ec4ef-6fa4-40a1-a546-d5ce24afc440" id="sendComponent" powered="false">
+            <component componentGuid="a9430dbb-2c32-45db-94eb-25bc86a1ad55" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="7">
-            <component componentGuid="6e70276a-3391-4961-841c-01b3a677bcff" id="sendComponent" powered="false">
+            <component componentGuid="61dac592-bec8-46ff-a26d-5d838fd7bcb9" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="8">
-            <component componentGuid="2c76f0e9-5876-468e-8acb-d8a0a6fcf2c6" id="sendComponent" powered="false">
+            <component componentGuid="eda1c087-e672-424f-a535-b68cf1ec664c" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="9">
-            <component componentGuid="468b61ac-0f40-447a-be7a-4399ac2cec4b" id="sendComponent" powered="false">
+            <component componentGuid="b33c5c11-9100-4900-b4d7-4ef1dbb92493" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="10">
-            <component componentGuid="376a1042-0487-4359-a1ba-e07257436e71" id="sendComponent" powered="false">
+            <component componentGuid="795671f5-5da3-4196-be3c-4b64e93d0b02" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="11">
-            <component componentGuid="dcb8d789-bd13-49f1-bb8a-dc369559efbc" id="sendComponent" powered="false">
+            <component componentGuid="ee6b450a-2668-4e61-86d5-9556d461509d" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="12">
-            <component componentGuid="ac5efb7b-0c8b-45ac-8c59-2642ad6e5898" id="sendComponent" powered="false">
+            <component componentGuid="85175ee7-4f8b-4cbc-b3c5-d8a3810dd5e7" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="13">
-            <component componentGuid="f01a3bf1-f407-4779-8056-62a32b0303c6" id="sendComponent" powered="false">
+            <component componentGuid="8c9fd41b-fbec-4811-bf63-6ee6d4daf144" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="14">
-            <component componentGuid="bbb02926-da6a-4c8f-be10-ef46e53dfe59" id="sendComponent" powered="false">
+            <component componentGuid="977f278c-4a55-46e6-a2a7-5f80a828988d" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="15">
-            <component componentGuid="f998d535-75ac-4749-8461-4be460e89b76" id="sendComponent" powered="false">
+            <component componentGuid="2d058641-ddcf-4d15-b1c8-6702d38bd27c" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
@@ -188,24 +188,24 @@
         </sendList>
       </audioTrack>
       <audioTrack automationLaneOpenState="false" id="10002" index="2" select="false" visible="true">
-        <trackParameters trackHeight="134" trackHue="188.2218503952026367" trackMinimized="false">
+        <trackParameters trackHeight="134" trackHue="290.327153205871582" trackMinimized="false">
           <name>Track 2</name>
         </trackParameters>
         <trackAudioParameters audioChannelType="stereo" automationMode="1" monitoring="false" recordArmed="false" solo="false" soloSafe="false">
           <trackOutput outputID="10000" type="trackID"/>
           <trackInput inputID="1"/>
-          <component componentGuid="0c1eb896-31a3-4da0-a502-d0f22990bd8f" componentID="Audition.Fader" id="trackFader" name="volume" powered="true">
+          <component componentGuid="d1b91221-bd24-45cc-b0ea-4223b7ccced5" componentID="Audition.Fader" id="trackFader" name="volume" powered="true">
             <parameter index="0" name="volume" parameterValue="1"/>
             <parameter index="1" name="static gain" parameterValue="1"/>
           </component>
-          <component componentGuid="4de733b0-5f98-4831-b573-bba7124c36b0" componentID="Audition.Mute" id="trackMute" name="Mute" powered="true">
+          <component componentGuid="cac0fad3-565a-4317-87f7-14a7d6a32f91" componentID="Audition.Mute" id="trackMute" name="Mute" powered="true">
             <parameter index="0" parameterValue="0"/>
             <parameter index="1" name="mute" parameterValue="0"/>
           </component>
-          <component componentGuid="caec70e0-6cfa-417f-8a21-93e3c1b16e52" componentID="Audition.StereoPanner" id="trackPan" name="StereoPanner" powered="true">
+          <component componentGuid="6c4187c9-d3e1-4281-b3ea-30b4844c33fe" componentID="Audition.StereoPanner" id="trackPan" name="StereoPanner" powered="true">
             <parameter index="0" name="Pan" parameterValue="0"/>
           </component>
-          <component componentGuid="0e20b623-eb33-4fc7-b7e8-f8711d846d2c" componentID="Audition.EQ" id="trackEQ" name="EQ" powered="false">
+          <component componentGuid="171cd877-e4ee-4adc-9869-2e83cdac9e07" componentID="Audition.EQ" id="trackEQ" name="EQ" powered="false">
             <parameter index="0" name="Low Shelf Frequency" parameterValue="0.000834"/>
             <parameter index="1" name="Low Shelf Gain" parameterValue="0.5"/>
             <parameter index="2" name="High Shelf Frequency" parameterValue="0.7497915"/>
@@ -256,112 +256,112 @@
         <editParameter parameterIndex="0" slotIndex="4294967280"/>
         <sendList>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="0">
-            <component componentGuid="3daa64a2-f40d-453b-ac8b-4643e3541bab" id="sendComponent" powered="false">
+            <component componentGuid="c2384f50-b9bb-4615-a910-ad152ab3b098" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="1">
-            <component componentGuid="862d01dc-9db3-4438-badf-de4c67849736" id="sendComponent" powered="false">
+            <component componentGuid="eda89e6f-4795-4bd2-8634-3b592f7ac009" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="2">
-            <component componentGuid="3fdd6839-3c68-4dde-9e13-b045a32c570c" id="sendComponent" powered="false">
+            <component componentGuid="657f091d-6906-4bea-8828-f8544bdfc0d8" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="3">
-            <component componentGuid="2321b3aa-9e24-4462-b0ec-6492f3fb0e82" id="sendComponent" powered="false">
+            <component componentGuid="a81e9bc7-02f9-4a0f-a133-4289a484f117" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="4">
-            <component componentGuid="932f636a-3c5b-45b0-bce9-286181507491" id="sendComponent" powered="false">
+            <component componentGuid="b9e54741-00b7-4ddb-b107-dcb9ccf1de6f" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="5">
-            <component componentGuid="1076c4ef-060e-4b1e-bb3f-375a7ea174b7" id="sendComponent" powered="false">
+            <component componentGuid="3f639016-c7ec-4f8b-a69e-de098238679d" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="6">
-            <component componentGuid="a4c422df-3def-465d-89d3-4fe4f33d6ce0" id="sendComponent" powered="false">
+            <component componentGuid="7e376b4c-8f94-45f6-bdf6-1e62b785bad4" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="7">
-            <component componentGuid="d4d24a89-9937-4ea3-b2b9-95c83017f632" id="sendComponent" powered="false">
+            <component componentGuid="b1d8ddde-dfc1-43c9-8851-64fbfc6f6ebe" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="8">
-            <component componentGuid="9ae7276b-fb14-4984-82be-194954a79a75" id="sendComponent" powered="false">
+            <component componentGuid="af12cf8b-dadc-42ce-b5c1-1e86ee618362" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="9">
-            <component componentGuid="37943b24-c682-4558-ab4b-55d4367f39a4" id="sendComponent" powered="false">
+            <component componentGuid="5fe14d50-4c7f-4c56-bd16-1d5f190eb725" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="10">
-            <component componentGuid="a1d46acb-0bc2-40b0-9682-e4154629ba2f" id="sendComponent" powered="false">
+            <component componentGuid="4b321ee1-6b1b-449d-a8cb-e96a9d97b9b7" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="11">
-            <component componentGuid="19090f0b-0a48-486d-839d-1630b5644bbf" id="sendComponent" powered="false">
+            <component componentGuid="54e5d40f-e821-47a5-9234-f45991d95de0" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="12">
-            <component componentGuid="95f8d288-c695-4423-b0f9-af90f41d5214" id="sendComponent" powered="false">
+            <component componentGuid="7a85a382-2cba-41f4-a948-3b497409cb43" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="13">
-            <component componentGuid="21799fb7-968c-40bb-a511-92d6faa95546" id="sendComponent" powered="false">
+            <component componentGuid="6bd2d89a-b24b-4ba4-9704-3ff37b67266a" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="14">
-            <component componentGuid="3faf2b94-16f1-418b-a2f1-4698073f93fc" id="sendComponent" powered="false">
+            <component componentGuid="3316f125-c29c-4dc2-943f-bad36726fe11" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="15">
-            <component componentGuid="a8722fe8-cfe8-4edf-8b48-b5cb72262295" id="sendComponent" powered="false">
+            <component componentGuid="026446da-1acd-42e5-ba3f-2d3ea15b2cf5" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
@@ -370,24 +370,24 @@
         </sendList>
       </audioTrack>
       <audioTrack automationLaneOpenState="false" id="10003" index="3" select="false" visible="true">
-        <trackParameters trackHeight="134" trackHue="168.0042171478271484" trackMinimized="false">
+        <trackParameters trackHeight="134" trackHue="80.9941720962524414" trackMinimized="false">
           <name>Track 3</name>
         </trackParameters>
         <trackAudioParameters audioChannelType="stereo" automationMode="1" monitoring="false" recordArmed="false" solo="false" soloSafe="false">
           <trackOutput outputID="10000" type="trackID"/>
           <trackInput inputID="1"/>
-          <component componentGuid="2259b572-7fda-4e97-82e4-a5f830e2b136" componentID="Audition.Fader" id="trackFader" name="volume" powered="true">
+          <component componentGuid="ece881dc-fd37-4b12-a66d-bb6b5a542576" componentID="Audition.Fader" id="trackFader" name="volume" powered="true">
             <parameter index="0" name="volume" parameterValue="1"/>
             <parameter index="1" name="static gain" parameterValue="1"/>
           </component>
-          <component componentGuid="1386a670-50e4-4a4d-9920-b7de616e278f" componentID="Audition.Mute" id="trackMute" name="Mute" powered="true">
+          <component componentGuid="f36905f0-6e6f-4a72-9973-45b387e8d04b" componentID="Audition.Mute" id="trackMute" name="Mute" powered="true">
             <parameter index="0" parameterValue="0"/>
             <parameter index="1" name="mute" parameterValue="0"/>
           </component>
-          <component componentGuid="16e32233-6dca-4882-a63d-d8db238fe306" componentID="Audition.StereoPanner" id="trackPan" name="StereoPanner" powered="true">
+          <component componentGuid="28c207a9-e307-4922-9984-7c20435d4944" componentID="Audition.StereoPanner" id="trackPan" name="StereoPanner" powered="true">
             <parameter index="0" name="Pan" parameterValue="0"/>
           </component>
-          <component componentGuid="f243a3c5-7216-45d4-8879-ee2075ee1f39" componentID="Audition.EQ" id="trackEQ" name="EQ" powered="false">
+          <component componentGuid="8356638b-6c47-4a33-b66a-4d91acb7a318" componentID="Audition.EQ" id="trackEQ" name="EQ" powered="false">
             <parameter index="0" name="Low Shelf Frequency" parameterValue="0.000834"/>
             <parameter index="1" name="Low Shelf Gain" parameterValue="0.5"/>
             <parameter index="2" name="High Shelf Frequency" parameterValue="0.7497915"/>
@@ -438,112 +438,112 @@
         <editParameter parameterIndex="0" slotIndex="4294967280"/>
         <sendList>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="0">
-            <component componentGuid="5c32e9b3-d40c-4602-8854-2db2067e0c9b" id="sendComponent" powered="false">
+            <component componentGuid="21fc9f8f-6309-4025-9faa-8c8b57231dc3" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="1">
-            <component componentGuid="05049afc-ba97-45f2-9292-f3eddeaa0539" id="sendComponent" powered="false">
+            <component componentGuid="4dbabb96-0117-4974-a9b7-42172b4e7076" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="2">
-            <component componentGuid="f8c47e0f-ef26-42ce-9bf2-5cced6d439ff" id="sendComponent" powered="false">
+            <component componentGuid="73f77243-c0ec-42d1-8fcd-e851a1d23f1d" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="3">
-            <component componentGuid="52df24d3-54b4-4a0e-b3db-acff1427d744" id="sendComponent" powered="false">
+            <component componentGuid="1917f070-5cc6-439b-9a30-8f109589dfcc" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="4">
-            <component componentGuid="9acc4b14-cfb3-499e-8ae5-995d9eec5386" id="sendComponent" powered="false">
+            <component componentGuid="29d4e442-95b3-46e5-841a-e3f813008964" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="5">
-            <component componentGuid="bde5ee3d-6023-4dbe-bcb1-c71334ffe23c" id="sendComponent" powered="false">
+            <component componentGuid="abd019e1-7c02-4c82-bbd4-238e7879d9b2" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="6">
-            <component componentGuid="f3661ee3-4ea3-48ce-8f1f-f364033d2484" id="sendComponent" powered="false">
+            <component componentGuid="8631a557-c297-4ad1-a220-e1473456cf79" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="7">
-            <component componentGuid="c64fa809-fd8a-4631-b6c2-52f4fe3391ae" id="sendComponent" powered="false">
+            <component componentGuid="f3fad2de-e96e-4857-983d-90afe337f0f6" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="8">
-            <component componentGuid="364fb579-ae23-489a-a368-43a1b533f27d" id="sendComponent" powered="false">
+            <component componentGuid="b74569f3-3430-4f2f-81b8-5d047709647b" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="9">
-            <component componentGuid="0b746812-f1aa-4ef4-83d6-a5c24b6373e2" id="sendComponent" powered="false">
+            <component componentGuid="c2a77596-1b5f-44f4-8413-9ea5debd2784" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="10">
-            <component componentGuid="89e99450-4732-4d2b-8b6b-d218b89d98ae" id="sendComponent" powered="false">
+            <component componentGuid="3dff141f-eae3-4902-b161-ed626f133ce1" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="11">
-            <component componentGuid="5c755044-6348-413a-8d33-d94ef760a833" id="sendComponent" powered="false">
+            <component componentGuid="9caaa3ae-4a82-4c2c-b3db-a9a7ffee0218" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="12">
-            <component componentGuid="d6d792ba-b19a-4b1e-b036-50878325fbbb" id="sendComponent" powered="false">
+            <component componentGuid="323ad467-92a6-448d-8bb5-5f7b10d46944" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="13">
-            <component componentGuid="aae6c4fe-47f8-40f3-9609-b4ee0a2b5b75" id="sendComponent" powered="false">
+            <component componentGuid="17437148-e8ef-4eaa-91b7-4f2321a7552c" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="14">
-            <component componentGuid="05dddce0-082c-4d10-8f26-7a4def280507" id="sendComponent" powered="false">
+            <component componentGuid="58349683-067b-4bb8-a158-77dda21a2854" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="15">
-            <component componentGuid="5246035b-e728-42ed-88e6-e974ae038f58" id="sendComponent" powered="false">
+            <component componentGuid="2f2b43b1-0c75-4883-8147-2331578c2dad" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
@@ -552,24 +552,24 @@
         </sendList>
       </audioTrack>
       <audioTrack automationLaneOpenState="false" id="10004" index="4" select="false" visible="true">
-        <trackParameters trackHeight="134" trackHue="205.6296014785766602" trackMinimized="false">
+        <trackParameters trackHeight="134" trackHue="337.2160720825195313" trackMinimized="false">
           <name>Track 4</name>
         </trackParameters>
         <trackAudioParameters audioChannelType="stereo" automationMode="1" monitoring="false" recordArmed="false" solo="false" soloSafe="false">
           <trackOutput outputID="10000" type="trackID"/>
           <trackInput inputID="1"/>
-          <component componentGuid="34121021-c39f-4c67-98ac-43f76ac59a14" componentID="Audition.Fader" id="trackFader" name="volume" powered="true">
+          <component componentGuid="d0541211-c2b4-4894-93e0-a41a6e0aa94b" componentID="Audition.Fader" id="trackFader" name="volume" powered="true">
             <parameter index="0" name="volume" parameterValue="1"/>
             <parameter index="1" name="static gain" parameterValue="1"/>
           </component>
-          <component componentGuid="020e023e-4cab-4a05-acb0-d7e78256de1b" componentID="Audition.Mute" id="trackMute" name="Mute" powered="true">
+          <component componentGuid="5c25a014-6957-43e0-b067-dd98011c8613" componentID="Audition.Mute" id="trackMute" name="Mute" powered="true">
             <parameter index="0" parameterValue="0"/>
             <parameter index="1" name="mute" parameterValue="0"/>
           </component>
-          <component componentGuid="52df42ba-f30a-449e-b79d-e1313a2f1dbf" componentID="Audition.StereoPanner" id="trackPan" name="StereoPanner" powered="true">
+          <component componentGuid="eb551fa9-5b22-4e65-a373-38d9ec59b345" componentID="Audition.StereoPanner" id="trackPan" name="StereoPanner" powered="true">
             <parameter index="0" name="Pan" parameterValue="0"/>
           </component>
-          <component componentGuid="56e33ff7-041a-4c87-92b1-680f1d44f9ec" componentID="Audition.EQ" id="trackEQ" name="EQ" powered="false">
+          <component componentGuid="4848b901-5a9d-4be7-a71d-3372663e26b9" componentID="Audition.EQ" id="trackEQ" name="EQ" powered="false">
             <parameter index="0" name="Low Shelf Frequency" parameterValue="0.000834"/>
             <parameter index="1" name="Low Shelf Gain" parameterValue="0.5"/>
             <parameter index="2" name="High Shelf Frequency" parameterValue="0.7497915"/>
@@ -620,112 +620,112 @@
         <editParameter parameterIndex="0" slotIndex="4294967280"/>
         <sendList>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="0">
-            <component componentGuid="14843536-a164-4c37-a7a6-9c6d11978549" id="sendComponent" powered="false">
+            <component componentGuid="365dd685-621a-40a6-993a-4974db89df85" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="1">
-            <component componentGuid="8f87ad10-591c-4f94-9dd9-d45310f95165" id="sendComponent" powered="false">
+            <component componentGuid="681e7bdc-82eb-45d6-b754-53dceec7671d" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="2">
-            <component componentGuid="2a851251-365b-440a-9bb9-2002572cafe5" id="sendComponent" powered="false">
+            <component componentGuid="cb68dd51-6bdd-4ea1-8922-28c90d7cc561" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="3">
-            <component componentGuid="33e8ff4e-c58e-4846-917f-bab9cbfa1ae5" id="sendComponent" powered="false">
+            <component componentGuid="860bb5f2-f6bb-47d2-9ab4-1360b083248f" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="4">
-            <component componentGuid="e26d7f54-c20b-4c72-af99-aa3fdefb0373" id="sendComponent" powered="false">
+            <component componentGuid="1f85e1c8-60c3-4e30-929d-24ecc140629a" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="5">
-            <component componentGuid="50d69d95-173b-4f48-b764-1356789e0e1c" id="sendComponent" powered="false">
+            <component componentGuid="019f00ea-6ed2-48a7-b9bb-ef4513cb10eb" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="6">
-            <component componentGuid="ca81203b-b23b-433e-97f6-dddd8ed7d564" id="sendComponent" powered="false">
+            <component componentGuid="122406e4-17b2-4974-ba5a-2ee7e13b0083" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="7">
-            <component componentGuid="5836d559-8476-4ef4-ab9b-6646e2796129" id="sendComponent" powered="false">
+            <component componentGuid="36317530-4864-402b-bb93-7f86b8e26813" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="8">
-            <component componentGuid="dcd13804-0eca-45e4-8b9f-68d112ebd090" id="sendComponent" powered="false">
+            <component componentGuid="ed6a9fb0-d563-4b36-81d7-8bd8928e3a40" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="9">
-            <component componentGuid="d1ea0e28-1d85-4c9b-9ccf-c3720b25deba" id="sendComponent" powered="false">
+            <component componentGuid="581b8ebd-e69d-4282-b1fb-a29d516c7dc1" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="10">
-            <component componentGuid="98eea483-aff4-4599-9dc9-bc6db19fc9a2" id="sendComponent" powered="false">
+            <component componentGuid="2b96837f-cd50-4ce6-98e2-fbb7bcce2ce0" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="11">
-            <component componentGuid="899dbbe5-884f-4ae0-881a-56ca679cc1cc" id="sendComponent" powered="false">
+            <component componentGuid="723b6a7d-5d27-4e12-ae53-efa7398b15b2" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="12">
-            <component componentGuid="d0689c2e-133a-4daa-8f0b-3ae1f2dbeba7" id="sendComponent" powered="false">
+            <component componentGuid="65d4d687-6186-4c8c-a046-0e516ea2ba01" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="13">
-            <component componentGuid="0d679a1a-61fe-4dee-9db9-9b1fb681cede" id="sendComponent" powered="false">
+            <component componentGuid="936d2f8c-18e5-4c91-a564-d8548b7e3e96" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="14">
-            <component componentGuid="e4c29a6a-d9b3-4eac-b6f7-d49eec68ee63" id="sendComponent" powered="false">
+            <component componentGuid="150c981c-ceae-4f42-aeb1-4043789f8a94" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="15">
-            <component componentGuid="2acab0de-84ad-46d0-9329-2f13acef514d" id="sendComponent" powered="false">
+            <component componentGuid="5ec64f9f-efbe-4098-94fb-bb1cf318046c" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
@@ -734,24 +734,24 @@
         </sendList>
       </audioTrack>
       <audioTrack automationLaneOpenState="false" id="10005" index="5" select="false" visible="true">
-        <trackParameters trackHeight="134" trackHue="38.5223150253295898" trackMinimized="false">
+        <trackParameters trackHeight="134" trackHue="158.2920026779174805" trackMinimized="false">
           <name>Track 5</name>
         </trackParameters>
         <trackAudioParameters audioChannelType="stereo" automationMode="1" monitoring="false" recordArmed="false" solo="false" soloSafe="false">
           <trackOutput outputID="10000" type="trackID"/>
           <trackInput inputID="1"/>
-          <component componentGuid="5caae6b4-d2da-4462-9262-d44c3f50bc2c" componentID="Audition.Fader" id="trackFader" name="volume" powered="true">
+          <component componentGuid="454c3bf1-d6f8-44fd-a9af-f993966c4d17" componentID="Audition.Fader" id="trackFader" name="volume" powered="true">
             <parameter index="0" name="volume" parameterValue="1"/>
             <parameter index="1" name="static gain" parameterValue="1"/>
           </component>
-          <component componentGuid="69bd039b-e21e-45d2-8f15-39978dba9313" componentID="Audition.Mute" id="trackMute" name="Mute" powered="true">
+          <component componentGuid="373e2ddc-8e61-4f32-b886-6cd1a4f9b7dc" componentID="Audition.Mute" id="trackMute" name="Mute" powered="true">
             <parameter index="0" parameterValue="0"/>
             <parameter index="1" name="mute" parameterValue="0"/>
           </component>
-          <component componentGuid="2fa40e2c-2268-4be4-9288-1a98de1229d5" componentID="Audition.StereoPanner" id="trackPan" name="StereoPanner" powered="true">
+          <component componentGuid="36ebf1ca-d3ad-4c9d-a34a-f2605662b1c0" componentID="Audition.StereoPanner" id="trackPan" name="StereoPanner" powered="true">
             <parameter index="0" name="Pan" parameterValue="0"/>
           </component>
-          <component componentGuid="dccd6fb6-7abb-4cc3-acc1-ececed688f64" componentID="Audition.EQ" id="trackEQ" name="EQ" powered="false">
+          <component componentGuid="e95cc4c7-1ce9-4f72-9108-60b043094240" componentID="Audition.EQ" id="trackEQ" name="EQ" powered="false">
             <parameter index="0" name="Low Shelf Frequency" parameterValue="0.000834"/>
             <parameter index="1" name="Low Shelf Gain" parameterValue="0.5"/>
             <parameter index="2" name="High Shelf Frequency" parameterValue="0.7497915"/>
@@ -802,112 +802,112 @@
         <editParameter parameterIndex="0" slotIndex="4294967280"/>
         <sendList>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="0">
-            <component componentGuid="35b6b75f-801c-4205-942a-8447afab4548" id="sendComponent" powered="false">
+            <component componentGuid="a2770746-2459-49d4-ba64-e975b84bc079" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="1">
-            <component componentGuid="03595853-cded-4322-9c84-32e20b594e79" id="sendComponent" powered="false">
+            <component componentGuid="ed73eabf-232b-4e0c-97d6-ec30d98de387" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="2">
-            <component componentGuid="2f38f69f-2356-42be-8075-9a9a4930c459" id="sendComponent" powered="false">
+            <component componentGuid="12bba167-1bd5-4556-b180-cd0099287513" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="3">
-            <component componentGuid="95f25fca-d269-4027-8881-12888048fbd0" id="sendComponent" powered="false">
+            <component componentGuid="69a61025-7a8b-4dc7-91ea-36e22620fd56" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="4">
-            <component componentGuid="bb4e8c4b-54dd-4f71-99e0-5b5e25b9f2cb" id="sendComponent" powered="false">
+            <component componentGuid="8e24ac16-50d5-4f6e-b935-406468242efa" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="5">
-            <component componentGuid="27649984-34ae-4d35-97b7-7b8448fb9961" id="sendComponent" powered="false">
+            <component componentGuid="ee8fbf5f-3246-437f-be79-4fe455e774c3" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="6">
-            <component componentGuid="c2ea61d1-ce46-4553-9014-d491a7681ffd" id="sendComponent" powered="false">
+            <component componentGuid="b760c5a1-209f-4122-8ab0-70e1c8d830fc" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="7">
-            <component componentGuid="5de8af53-e553-4fad-bbdb-dae650ff7683" id="sendComponent" powered="false">
+            <component componentGuid="3408170d-8d10-431b-b679-08ecf4f431bd" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="8">
-            <component componentGuid="194bd77b-f8ff-479d-b17f-f74b261e4494" id="sendComponent" powered="false">
+            <component componentGuid="f554d3e8-5713-49d6-99c1-9d136e0ce42a" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="9">
-            <component componentGuid="32063d69-b9ea-4721-b06b-873e61c04a8f" id="sendComponent" powered="false">
+            <component componentGuid="7423cead-3fa4-4a33-919a-3ac63bd5c79b" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="10">
-            <component componentGuid="eed05b25-7f55-4360-b8bc-1f59485d07bb" id="sendComponent" powered="false">
+            <component componentGuid="b13fc89e-01c4-4dc7-9ce8-d962a35faf5c" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="11">
-            <component componentGuid="39f2ae78-6051-40a0-9099-1863f2de4169" id="sendComponent" powered="false">
+            <component componentGuid="ca873a2c-cc6f-4f0f-ba74-400df4da356b" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="12">
-            <component componentGuid="566e5cf7-2cb7-4589-b870-2861ac9b6611" id="sendComponent" powered="false">
+            <component componentGuid="5e9c2446-e762-440a-967f-5a986dc04bec" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="13">
-            <component componentGuid="bb125da9-9264-4e9f-b88f-e1616e8674e6" id="sendComponent" powered="false">
+            <component componentGuid="2e8ee5cd-4dc1-41fc-a9e7-7e86d7732a68" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="14">
-            <component componentGuid="63f69f19-2c14-416b-a147-8c7671037e68" id="sendComponent" powered="false">
+            <component componentGuid="80684ffb-1dad-4d17-940c-260565097d8c" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="15">
-            <component componentGuid="be053d0c-feb6-48e0-8719-c47b54869ac9" id="sendComponent" powered="false">
+            <component componentGuid="8fb80643-6055-4f71-afc4-88ad67cad7be" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
@@ -916,24 +916,24 @@
         </sendList>
       </audioTrack>
       <audioTrack automationLaneOpenState="false" id="10006" index="6" select="false" visible="true">
-        <trackParameters trackHeight="134" trackHue="90.6671619415283203" trackMinimized="false">
+        <trackParameters trackHeight="134" trackHue="275.0275754928588867" trackMinimized="false">
           <name>Track 6</name>
         </trackParameters>
         <trackAudioParameters audioChannelType="stereo" automationMode="1" monitoring="false" recordArmed="false" solo="false" soloSafe="false">
           <trackOutput outputID="10000" type="trackID"/>
           <trackInput inputID="1"/>
-          <component componentGuid="cddebc5e-85f0-45cc-a743-0bd3607f7dbd" componentID="Audition.Fader" id="trackFader" name="volume" powered="true">
+          <component componentGuid="70a2067f-5724-4117-9f98-2f6a358fb936" componentID="Audition.Fader" id="trackFader" name="volume" powered="true">
             <parameter index="0" name="volume" parameterValue="1"/>
             <parameter index="1" name="static gain" parameterValue="1"/>
           </component>
-          <component componentGuid="aea4b8e0-dfb0-496c-8d70-e39c10817073" componentID="Audition.Mute" id="trackMute" name="Mute" powered="true">
+          <component componentGuid="531711ed-9211-4e5d-9143-19978976b3c0" componentID="Audition.Mute" id="trackMute" name="Mute" powered="true">
             <parameter index="0" parameterValue="0"/>
             <parameter index="1" name="mute" parameterValue="0"/>
           </component>
-          <component componentGuid="f40cad18-f526-483c-9322-d82d09f2180d" componentID="Audition.StereoPanner" id="trackPan" name="StereoPanner" powered="true">
+          <component componentGuid="da8de2c4-14f6-43ea-91ce-f91be476c0c6" componentID="Audition.StereoPanner" id="trackPan" name="StereoPanner" powered="true">
             <parameter index="0" name="Pan" parameterValue="0"/>
           </component>
-          <component componentGuid="114bc963-8f9f-45e2-809e-ce0a35851130" componentID="Audition.EQ" id="trackEQ" name="EQ" powered="false">
+          <component componentGuid="ae22db20-78ea-4734-9bb2-118e01f330b8" componentID="Audition.EQ" id="trackEQ" name="EQ" powered="false">
             <parameter index="0" name="Low Shelf Frequency" parameterValue="0.000834"/>
             <parameter index="1" name="Low Shelf Gain" parameterValue="0.5"/>
             <parameter index="2" name="High Shelf Frequency" parameterValue="0.7497915"/>
@@ -984,112 +984,112 @@
         <editParameter parameterIndex="0" slotIndex="4294967280"/>
         <sendList>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="0">
-            <component componentGuid="0f621ca1-5d0a-4858-ac4f-abd198bc5dd8" id="sendComponent" powered="false">
+            <component componentGuid="f0869ff5-e8a4-4e18-a969-31d6a2478e30" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="1">
-            <component componentGuid="80ade7d1-46d4-4ae3-937d-ba2d8129791e" id="sendComponent" powered="false">
+            <component componentGuid="bad0f031-1918-48f8-b471-a252c3ca39dd" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="2">
-            <component componentGuid="b794a63c-2603-4b7c-afcc-40c4867d1baf" id="sendComponent" powered="false">
+            <component componentGuid="7a4fe321-1f9a-4065-9992-00e1fa6774a9" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="3">
-            <component componentGuid="b5ffa655-dc4c-4211-83fb-c6a98b0d43ac" id="sendComponent" powered="false">
+            <component componentGuid="8d664412-06d9-4df1-9326-c43966742ab0" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="4">
-            <component componentGuid="aa52f061-3c0e-440e-89bd-6eaac18c76b9" id="sendComponent" powered="false">
+            <component componentGuid="2a4f5104-db18-43db-98f7-c267bd8d98aa" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="5">
-            <component componentGuid="d18a5d63-aa81-40f4-9b49-86e0171545bc" id="sendComponent" powered="false">
+            <component componentGuid="f1ff323d-cd04-4ceb-9f80-c93dbdf10ec6" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="6">
-            <component componentGuid="4038ad1e-6427-433d-9e08-fed88d6a6a95" id="sendComponent" powered="false">
+            <component componentGuid="c3ef1d91-c289-488d-b02e-4954c114b7f9" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="7">
-            <component componentGuid="33488d3f-050a-43e4-a2c8-4df961a6ec0f" id="sendComponent" powered="false">
+            <component componentGuid="9206567f-dd55-4e8b-8772-9e60d023b48c" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="8">
-            <component componentGuid="f6448075-9eba-480f-9e28-414c85f39228" id="sendComponent" powered="false">
+            <component componentGuid="0e5c00fd-2eb3-4067-b60d-d7b7da638040" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="9">
-            <component componentGuid="2c56915f-3e73-468d-b550-dac1da41493f" id="sendComponent" powered="false">
+            <component componentGuid="bf4836b1-e6db-4080-8550-075397b349fa" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="10">
-            <component componentGuid="a804c9d1-43ba-41c4-909f-8a8d50386ec0" id="sendComponent" powered="false">
+            <component componentGuid="a0b8dbce-7564-4535-9d0a-f1668a26138b" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="11">
-            <component componentGuid="b1a7ef26-991b-464f-b115-ba68141fd542" id="sendComponent" powered="false">
+            <component componentGuid="d2b74469-1090-4dcf-aede-09e12417d98d" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="12">
-            <component componentGuid="75bbe7b2-a173-40e6-96af-97746dbe2064" id="sendComponent" powered="false">
+            <component componentGuid="4c50765c-b4d8-4a08-b5d6-81a37b36fc8b" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="13">
-            <component componentGuid="da4587fc-f862-4429-a1a2-2a8e4e6ca046" id="sendComponent" powered="false">
+            <component componentGuid="0705add0-6bf7-4291-971e-e096395d3eff" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="14">
-            <component componentGuid="940a13be-5718-463b-9062-ff567147d59d" id="sendComponent" powered="false">
+            <component componentGuid="c61125b8-87c3-4eae-b31e-ddc6d2adc580" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="15">
-            <component componentGuid="83c1dffb-dd9c-4d53-9501-8e8bed9164ed" id="sendComponent" powered="false">
+            <component componentGuid="04dc7905-b383-4e91-84eb-3e82ad8eb1c9" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
@@ -1104,18 +1104,18 @@
         <trackAudioParameters audioChannelType="stereo" automationMode="1" monitoring="false" recordArmed="false" solo="false" soloSafe="true">
           <trackOutput outputID="1" type="hardwareOutput"/>
           <trackInput inputID="-1"/>
-          <component componentGuid="62254e12-4596-45ad-8226-d0f574fe362a" componentID="Audition.Fader" id="trackFader" name="volume" powered="true">
+          <component componentGuid="1435c3e1-d971-48d5-b126-5852cfaa30d2" componentID="Audition.Fader" id="trackFader" name="volume" powered="true">
             <parameter index="0" name="volume" parameterValue="1"/>
             <parameter index="1" name="static gain" parameterValue="1"/>
           </component>
-          <component componentGuid="529aa098-7e64-4fa3-88d7-f45ce05bd84f" componentID="Audition.Mute" id="trackMute" name="Mute" powered="true">
+          <component componentGuid="ec63f484-96f6-45cb-83fe-6f05c44b6988" componentID="Audition.Mute" id="trackMute" name="Mute" powered="true">
             <parameter index="0" parameterValue="0"/>
             <parameter index="1" name="mute" parameterValue="0"/>
           </component>
-          <component componentGuid="b0d4afc6-f4f0-4c81-b86a-46d67a5176b6" componentID="Audition.StereoPanner" id="trackPan" name="StereoPanner" powered="true">
+          <component componentGuid="11c68016-62c1-437e-ae73-031a8a8a1d44" componentID="Audition.StereoPanner" id="trackPan" name="StereoPanner" powered="true">
             <parameter index="0" name="Pan" parameterValue="0"/>
           </component>
-          <component componentGuid="49985e88-8f7c-47a3-9378-06c69273bbcb" componentID="Audition.EQ" id="trackEQ" name="EQ" powered="false">
+          <component componentGuid="d7e1968b-1f3c-4526-9da8-9dba211fa173" componentID="Audition.EQ" id="trackEQ" name="EQ" powered="false">
             <parameter index="0" name="Low Shelf Frequency" parameterValue="0.000834"/>
             <parameter index="1" name="Low Shelf Gain" parameterValue="0.5"/>
             <parameter index="2" name="High Shelf Frequency" parameterValue="0.7497915"/>
@@ -1183,55 +1183,55 @@
             xmlns:dc="http://purl.org/dc/elements/1.1/"
             xmlns:xmpDM="http://ns.adobe.com/xmp/1.0/DynamicMedia/">
          <xmp:CreatorTool>Adobe Audition CC 2017.0 (Windows)</xmp:CreatorTool>
-         <xmp:CreateDate>2019-05-13T14:55:26+02:00</xmp:CreateDate>
-         <xmp:MetadataDate>2019-05-13T14:55:26+02:00</xmp:MetadataDate>
-         <xmp:ModifyDate>2019-05-13T14:55:26+02:00</xmp:ModifyDate>
-         <xmpMM:InstanceID>xmp.iid:a099a4bc-2a7f-844b-80a8-e075295afd26</xmpMM:InstanceID>
-         <xmpMM:DocumentID>xmp.did:a099a4bc-2a7f-844b-80a8-e075295afd26</xmpMM:DocumentID>
-         <xmpMM:OriginalDocumentID>xmp.did:3cbf1d50-2d57-af4d-8fe9-d90c2e0d7f31</xmpMM:OriginalDocumentID>
+         <xmp:CreateDate>2019-06-06T14:32:29+02:00</xmp:CreateDate>
+         <xmp:MetadataDate>2019-06-06T14:32:31+02:00</xmp:MetadataDate>
+         <xmp:ModifyDate>2019-06-06T14:32:31+02:00</xmp:ModifyDate>
+         <xmpMM:InstanceID>xmp.iid:9c120e90-496f-784b-966c-a8f254b9a3cf</xmpMM:InstanceID>
+         <xmpMM:DocumentID>xmp.did:9c120e90-496f-784b-966c-a8f254b9a3cf</xmpMM:DocumentID>
+         <xmpMM:OriginalDocumentID>xmp.did:96a401db-f330-104b-b08d-c2635f5d65b1</xmpMM:OriginalDocumentID>
          <xmpMM:History>
             <rdf:Seq>
                <rdf:li rdf:parseType="Resource">
                   <stEvt:action>saved</stEvt:action>
-                  <stEvt:instanceID>xmp.iid:3cbf1d50-2d57-af4d-8fe9-d90c2e0d7f31</stEvt:instanceID>
-                  <stEvt:when>2019-05-13T14:55:26+02:00</stEvt:when>
+                  <stEvt:instanceID>xmp.iid:96a401db-f330-104b-b08d-c2635f5d65b1</stEvt:instanceID>
+                  <stEvt:when>2019-06-06T14:32:30+02:00</stEvt:when>
                   <stEvt:softwareAgent>Adobe Audition CC 2017.0 (Windows)</stEvt:softwareAgent>
                   <stEvt:changed>/metadata</stEvt:changed>
                </rdf:li>
                <rdf:li rdf:parseType="Resource">
                   <stEvt:action>saved</stEvt:action>
-                  <stEvt:instanceID>xmp.iid:f66d3444-dd54-bd46-b490-55792dc2a853</stEvt:instanceID>
-                  <stEvt:when>2019-05-13T14:55:26+02:00</stEvt:when>
+                  <stEvt:instanceID>xmp.iid:9a8a89dc-afcb-1847-b1c1-b45ae46996e8</stEvt:instanceID>
+                  <stEvt:when>2019-06-06T14:32:31+02:00</stEvt:when>
                   <stEvt:softwareAgent>Adobe Audition CC 2017.0 (Windows)</stEvt:softwareAgent>
                   <stEvt:changed>/metadata</stEvt:changed>
                </rdf:li>
                <rdf:li rdf:parseType="Resource">
                   <stEvt:action>saved</stEvt:action>
-                  <stEvt:instanceID>xmp.iid:1a8f6869-b1b4-3e40-af74-3885cd4bb0e7</stEvt:instanceID>
-                  <stEvt:when>2019-05-13T14:55:26+02:00</stEvt:when>
+                  <stEvt:instanceID>xmp.iid:e66d39dd-16c5-ba48-948b-a966665fc6a6</stEvt:instanceID>
+                  <stEvt:when>2019-06-06T14:32:31+02:00</stEvt:when>
                   <stEvt:softwareAgent>Adobe Audition CC 2017.0 (Windows)</stEvt:softwareAgent>
                   <stEvt:changed>/</stEvt:changed>
                </rdf:li>
                <rdf:li rdf:parseType="Resource">
                   <stEvt:action>saved</stEvt:action>
-                  <stEvt:instanceID>xmp.iid:ae319326-8322-7f4d-b486-1199272dc1d7</stEvt:instanceID>
-                  <stEvt:when>2019-05-13T14:55:26+02:00</stEvt:when>
+                  <stEvt:instanceID>xmp.iid:8fe55c48-4c78-ac49-8c5f-1b508a39d83e</stEvt:instanceID>
+                  <stEvt:when>2019-06-06T14:32:31+02:00</stEvt:when>
                   <stEvt:softwareAgent>Adobe Audition CC 2017.0 (Windows)</stEvt:softwareAgent>
                   <stEvt:changed>/metadata</stEvt:changed>
                </rdf:li>
                <rdf:li rdf:parseType="Resource">
                   <stEvt:action>saved</stEvt:action>
-                  <stEvt:instanceID>xmp.iid:a099a4bc-2a7f-844b-80a8-e075295afd26</stEvt:instanceID>
-                  <stEvt:when>2019-05-13T14:55:26+02:00</stEvt:when>
+                  <stEvt:instanceID>xmp.iid:9c120e90-496f-784b-966c-a8f254b9a3cf</stEvt:instanceID>
+                  <stEvt:when>2019-06-06T14:32:31+02:00</stEvt:when>
                   <stEvt:softwareAgent>Adobe Audition CC 2017.0 (Windows)</stEvt:softwareAgent>
                   <stEvt:changed>/</stEvt:changed>
                </rdf:li>
             </rdf:Seq>
          </xmpMM:History>
          <xmpMM:DerivedFrom rdf:parseType="Resource">
-            <stRef:instanceID>xmp.iid:ae319326-8322-7f4d-b486-1199272dc1d7</stRef:instanceID>
-            <stRef:documentID>xmp.did:1a8f6869-b1b4-3e40-af74-3885cd4bb0e7</stRef:documentID>
-            <stRef:originalDocumentID>xmp.did:3cbf1d50-2d57-af4d-8fe9-d90c2e0d7f31</stRef:originalDocumentID>
+            <stRef:instanceID>xmp.iid:8fe55c48-4c78-ac49-8c5f-1b508a39d83e</stRef:instanceID>
+            <stRef:documentID>xmp.did:e66d39dd-16c5-ba48-948b-a966665fc6a6</stRef:documentID>
+            <stRef:originalDocumentID>xmp.did:96a401db-f330-104b-b08d-c2635f5d65b1</stRef:originalDocumentID>
          </xmpMM:DerivedFrom>
          <dc:format>application/xml</dc:format>
          <xmpDM:Tracks>
@@ -1287,18 +1287,18 @@
         <trackAudioParameters audioChannelType="mono" automationMode="1" monitoring="false" recordArmed="false" solo="false" soloSafe="true">
           <trackOutput outputID="10000" type="trackID"/>
           <trackInput inputID="-1"/>
-          <component componentGuid="660f4e52-1667-45aa-a99d-de27f979bb2b" componentID="Audition.Fader" id="trackFader" name="volume" powered="true">
+          <component componentGuid="8fd1d411-36a2-405b-a6ed-879463fb7cf2" componentID="Audition.Fader" id="trackFader" name="volume" powered="true">
             <parameter index="0" name="volume" parameterValue="0.5011872"/>
             <parameter index="1" name="static gain" parameterValue="1"/>
           </component>
-          <component componentGuid="25f916a5-e1a3-4f42-b1b9-9bd3b1b466c5" componentID="Audition.Mute" id="trackMute" name="Mute" powered="true">
+          <component componentGuid="6fcf4200-f351-45cb-a6de-74a6cdb8e5af" componentID="Audition.Mute" id="trackMute" name="Mute" powered="true">
             <parameter index="0" parameterValue="0"/>
             <parameter index="1" name="mute" parameterValue="0"/>
           </component>
-          <component componentGuid="803ff2b9-5cde-41c4-ab37-6b9fcec9cd99" componentID="Audition.StereoPanner" id="trackPan" name="StereoPanner" powered="true">
+          <component componentGuid="316db4f8-58b1-4ae9-820b-e4efb45fe39f" componentID="Audition.StereoPanner" id="trackPan" name="StereoPanner" powered="true">
             <parameter index="0" name="Pan" parameterValue="0"/>
           </component>
-          <component componentGuid="a949ebc1-c78a-48a5-80dd-11ab226af66b" componentID="Audition.EQ" id="trackEQ" name="EQ" powered="false">
+          <component componentGuid="083614e4-2be0-49bb-91da-5bf969361afc" componentID="Audition.EQ" id="trackEQ" name="EQ" powered="false">
             <parameter index="0" name="Low Shelf Frequency" parameterValue="0.000834"/>
             <parameter index="1" name="Low Shelf Gain" parameterValue="0.5"/>
             <parameter index="2" name="High Shelf Frequency" parameterValue="0.7497915"/>
@@ -1349,112 +1349,112 @@
         <editParameter parameterIndex="0" slotIndex="4294967280"/>
         <sendList>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="0">
-            <component componentGuid="883d8bcf-2e9d-413f-8a7c-1e569132b713" id="sendComponent" powered="false">
+            <component componentGuid="2983092d-6f8b-49a9-8114-5fcbada91fae" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="1">
-            <component componentGuid="e3213541-4eca-470a-b980-fe82fc22fba5" id="sendComponent" powered="false">
+            <component componentGuid="c5c5b2c3-6490-4ae6-84b1-19585945e03e" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="2">
-            <component componentGuid="0e1d67b9-3f2d-441a-9c87-7b13524a5b18" id="sendComponent" powered="false">
+            <component componentGuid="aa5cbd6e-72b2-4369-b50b-18eb989afc9e" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="3">
-            <component componentGuid="19d05786-1f19-4a46-b3f6-7154eb982b51" id="sendComponent" powered="false">
+            <component componentGuid="7a613c60-8ccc-41c0-be52-bd9c411f2826" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="4">
-            <component componentGuid="c79dd686-a625-42ec-b904-163a15dd2adb" id="sendComponent" powered="false">
+            <component componentGuid="cdd00359-a824-40ce-b774-3c1a7d145cad" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="5">
-            <component componentGuid="5ed2ff9e-2a07-4497-a464-30adc11ed134" id="sendComponent" powered="false">
+            <component componentGuid="e3b17ac8-a8b2-4979-ad16-86fab33dc933" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="6">
-            <component componentGuid="a6ca1cad-6716-48f6-b7e3-0538a242cbd2" id="sendComponent" powered="false">
+            <component componentGuid="bb90bc97-0163-4a71-ac74-4b074549f7e3" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="7">
-            <component componentGuid="fd93f641-1252-4b01-ae5e-b292d1e1e23b" id="sendComponent" powered="false">
+            <component componentGuid="4fecbd01-155c-4dad-89fc-304712346b0a" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="8">
-            <component componentGuid="1c345eb6-dc94-470b-ab14-c44faa4241a9" id="sendComponent" powered="false">
+            <component componentGuid="1833596d-8b1a-49e3-91c2-d6f4ab3f99a6" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="9">
-            <component componentGuid="ca544ef8-a00b-4ffb-afa2-6515ef9142ef" id="sendComponent" powered="false">
+            <component componentGuid="40f8daf3-d6bc-4d10-97d7-2bec8ef5f46c" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="10">
-            <component componentGuid="4991eebc-9a78-49cd-a29f-44997f8660fc" id="sendComponent" powered="false">
+            <component componentGuid="3fa136cb-0573-43c1-9474-bd97f77b2c72" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="11">
-            <component componentGuid="eb9b9260-a963-417e-af8f-8a4af7c45e71" id="sendComponent" powered="false">
+            <component componentGuid="3e439d62-cce3-470a-82a7-a8b82a81e19a" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="12">
-            <component componentGuid="d86c218d-2823-4fa7-a7a6-831a134bb649" id="sendComponent" powered="false">
+            <component componentGuid="f966db41-e0b3-4d34-8b42-b031f265b085" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="13">
-            <component componentGuid="25673240-ce5e-4a20-9d2c-324ce12c7277" id="sendComponent" powered="false">
+            <component componentGuid="b05d996e-e782-4f87-b315-29ff07a69831" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="14">
-            <component componentGuid="836066b7-e41a-4656-953f-dc15b5e412c7" id="sendComponent" powered="false">
+            <component componentGuid="77be8e50-638a-426d-943e-96e6d46a3776" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
             <component id="sendPan" powered="true"/>
           </sendSlot>
           <sendSlot preFader="false" sendOutputID="0" slotIndex="15">
-            <component componentGuid="52cd2162-c80b-4994-bb0c-07b2add1a5d8" id="sendComponent" powered="false">
+            <component componentGuid="1c8442b9-f065-4be0-9a97-79a4f5b6e5c2" id="sendComponent" powered="false">
               <parameter index="0" name="Power On/Off" parameterValue="0"/>
               <parameter index="1" name="Level" parameterValue="0"/>
             </component>
@@ -1470,16 +1470,12 @@
 
   <files/>
 
-  <audioDevice inputID="2BF0039D-64F6-4FBB-AD3B-05E7C3A49CEF" outputID="0FCBF7C3-728A-4DF6-8630-B8C163AEB8F2">
-    <inputPort id="1" name="Default Stereo Input"/>
-    <inputPort id="2" name="[01M] Eingang (ASUS Xonar DGX Audio Device) 1"/>
-    <inputPort id="3" name="[02M] Eingang (ASUS Xonar DGX Audio Device) 2"/>
-    <inputPort id="4" name="[01S] Eingang (ASUS Xonar DGX Audio Device) 1"/>
+  <audioDevice inputID="00000000-0000-0000-0000-00000000" outputID="BFCA4E08-0AD0-408D-B235-58FEFAD5B6BB">
     <outputPort id="1" name="Default Output"/>
-    <outputPort id="2" name="[01M] Lautsprecher (ASUS Xonar DGX Audio Device) 1"/>
-    <outputPort id="3" name="[02M] Lautsprecher (ASUS Xonar DGX Audio Device) 2"/>
+    <outputPort id="2" name="[01M] Lautsprecher (Realtek High Definition Audio) 1"/>
+    <outputPort id="3" name="[02M] Lautsprecher (Realtek High Definition Audio) 2"/>
     <outputPort id="4" name="Default Stereo Output"/>
-    <outputPort id="5" name="[01S] Lautsprecher (ASUS Xonar DGX Audio Device) 1"/>
+    <outputPort id="5" name="[01S] Lautsprecher (Realtek High Definition Audio) 1"/>
     <outputPort id="6" name="Default Surround Output"/>
   </audioDevice>
 
