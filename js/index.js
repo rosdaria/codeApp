@@ -116,12 +116,12 @@ function nacheinander(myObj){
     xhttp.send();
     
     var length = myObj.response[0].antwortzeit;// Antwortdauer, je nachdem was der Admin einstellt
-    
+    var antwortdauerms= lengt*1000;// weil hier Angaben in millisec.!
     //timer abhängig von der antwortdauer
-    showS9 = setTimeout("hideelem('S9','S7');nurhide('S8');", length);
-    showS10 = setTimeout("hideelem('S10','S9')", length+5000);
-    counterTimeout = setTimeout("counter6()",length+5000); // wie zeile oben! nach 3sec soll counter starten
-    showS7 = setTimeout("hideelem('S7','S10');nacheinander();", length+11000);// muss 6sec!
+    showS9 = setTimeout("hideelem('S9','S7');nurhide('S8');", antwortdauerms);
+    showS10 = setTimeout("hideelem('S10','S9')", antwortdauerms+5000);
+    counterTimeout = setTimeout("counter6()",antwortdauerms+5000); // wie zeile oben! nach 3sec soll counter starten
+    showS7 = setTimeout("hideelem('S7','S10');nacheinander();", antwortdauemsr+11000);// muss 6sec!
    // plus 6sec für counter
 }
 
