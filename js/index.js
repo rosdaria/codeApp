@@ -31,6 +31,46 @@ function nurhide(helem){
     y.classList.add("hide")
 }
 
+//counter von Zustand SC6
+
+function countdown(elem){
+//get aus DB
+//var elem = elem;
+var xhttp = new XMLHttpRequest();
+
+xhttp.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+    //JSON Parse
+    var myMessage = xhttp.responseText;
+    var myObj = JSON.parse(myMessage);
+    console.log(myObj);
+    counterx42(myObj,elem);
+    // Typical action to be performed when the document is ready:
+  }
+};
+xhttp.open("GET", "/spieletabelle/2", true);
+xhttp.send();
+};
+function counterx42(myObj,elem){
+var seconds4 = myObj.response[0].antwortzeit; //antwortzeit, welche admin einstellt
+document.getElementById(elem).textContent= seconds4;//Inhalt von Counter 4 soll anfangs der vom Admin Eigestellte Startwert sein
+var countdown4 = setInterval(function() { //funktion für den countdown
+        seconds4--; //counterwert wird immer um 1 verringert
+        document.getElementById(elem).textContent = seconds4; //counter soll immer den aktuellen Wert von seconds 4 erhalten (der um 1 verringert wird)
+        if (seconds4 <= 0) clearInterval(countdown4); //resettet den countdown
+        }, 1000)
+}
+
+function countdownfix(time,elem){
+var seconds4 = time; //antwortzeit, welche admin einstellt
+document.getElementById(elem).textContent= seconds4;//Inhalt von Counter 4 soll anfangs der vom Admin Eigestellte Startwert sein
+var countdown4 = setInterval(function() { //funktion für den countdown
+        seconds4--; //counterwert wird immer um 1 verringert
+        document.getElementById(elem).textContent = seconds4; //counter soll immer den aktuellen Wert von seconds 4 erhalten (der um 1 verringert wird)
+        if (seconds4 <= 0) clearInterval(countdown4); //resettet den countdown
+        }, 1000)
+}
+
 //wenn screen tmsec lang gezeigt werden soll "bleibe t sec auf y, zeige dann x"
 function pause(elem, helem, times){
   var x = elem;
@@ -100,7 +140,7 @@ var showS9;
 var showS7;
 
 function nacheinander(myObj){
-    
+
     //get Antwortdauer aus der Datenbank
     xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
@@ -114,7 +154,7 @@ function nacheinander(myObj){
     };
     xhttp.open("GET", "/spieletabelle/2", true);
     xhttp.send();
-    
+
     var length = myObj.response[0].antwortzeit;// Antwortdauer, je nachdem was der Admin einstellt
     var antwortdauerms= lengt*1000;// weil hier Angaben in millisec.!
     //timer abhängig von der antwortdauer

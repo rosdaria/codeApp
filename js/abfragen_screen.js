@@ -219,7 +219,7 @@ var tempantwort;
           };
             if(ist == weiter){
               console.log("loop");
-            hideelem('SC5','SC4');
+          //  hideelem('SC5','SC4');
             clearInterval(loop2);
             clearInterval(loop4);
             looprule = 0;
@@ -484,18 +484,36 @@ var tempantwort;
                             //pausenloop
                             if(status == pause){
                               var loopin = setTimeout("nacheinander2()",250);
+                              console.log("pauseloop");
                             }
                             //rundenloop
                             //TODO reihenfolge abändern für pause funktionalität
                             if(status == play){
-                            var antwortdauer=15000; // 15 sec zeit zu antworten
-                            var showSC5 = setTimeout("hideelem('SC5','SC4')",0);
+                            var antwortdauer= myObj.response[0].antwortzeit; // 15 sec zeit zu antworten
+                            antwortdauer= antwortdauer *1000;
+                              var showfragengen = setTimeout("fragengenerator()",0);
+                              var showSC5 = setTimeout("hideelem('SC5','SC4')",0);
+                              countdownfix(5,"counterx1");
+                              var showSC6 = setTimeout("hideelem('SC6','SC5')", 5000);
+                              var fragencountdown = setTimeout("countdown('counterx4');", 5000);
+                              var getkor = setTimeout("getkorrekt();",antwortdauer+5000);
+                              var showSC7 = setTimeout("hideelem('SC7','SC6')",antwortdauer+5000);
+                              var loopin = setTimeout("nacheinander2()",antwortdauer+10000);
+
+
+
+
+                              //var showSC8 = setTimeout("hideelem('SC8','SC7')",20000);
+
+
+
+                          /*  var showSC5 = setTimeout("hideelem('SC5','SC4')",0);
                             var showSC6 = setTimeout("hideelem('SC6','SC5')", 5000);
                             var getkor = setTimeout("getkorrekt();",20000);
                             var showSC7 = setTimeout("hideelem('SC7','SC6')",20000);
                             //var showSC8 = setTimeout("hideelem('SC8','SC7')",20000);
                             var showfragengen = setTimeout("fragengenerator()",20000);
-                            var loopin = setTimeout("nacheinander2()",25000);
+                            var loopin = setTimeout("nacheinander2()",25000);*/
                           }
                           //spielabbruch
                           if(status == abbruch){
@@ -552,7 +570,7 @@ var tempantwort;
                   //console.log(myObj.response[0].spielinstanz);
                   //console.log(ist);
                   //console.log(soll);
-                  console.log(myObj);
+                  console.log("fragengen");
                   fragengenerator1(myObj);
                   // Typical action to be performed when the document is ready:
                 }

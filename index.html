@@ -74,7 +74,7 @@
 
 <div id="L3S3" class="hide" onunload="unload();" >
 
-    <div class="container-fluid pt-5 pb-5 mb-5 hintergrbild"> 
+    <div class="container-fluid pt-5 pb-5 mb-5 hintergrbild">
         <h2 class="text-center">Bitte auswählen.</h2>
     </div>
 
@@ -729,17 +729,17 @@
            <button type="button" id="angehalten" class="btn btn-secondary btn-block buttoncss btnsteuerung" onclick="document.getElementById('ssub').play(); paused(); meldungpause('#pause')"; aria-hidden="true";>Spiel anhalten</button></a>
     </div>
     </div>
-        
+
     <div class="container nachhinten row ml-0 mt-4">
     <div class="container col col-12">
             <a href="#">
            <button type="button" class="btn btn-secondary btn-block buttoncss btnsteuerung" onclick="document.getElementById('ssub').play(); lastround(); meldung('#lastrunde','lastrunde')"; aria-hidden="true" >letzte Runde</button></a>
     </div>
     </div>
-   
+
 
     <div id="lastrunde" class="hide nachvorne"><img src="bilder/letzterunde.png" class=" img-fluid mx-auto d-block nachvorneimg"></div>
-    <div id="pause" class="hide nachvorne"><img src="bilder/pauseL.png" onclick="meldungpauseweg('#pause','pause')" class=" img-fluid mx-auto d-block nachvorneimg"></div>
+    <div id="pause" class="hide nachvorne"><img src="bilder/pauseL.png" onclick="meldungpauseweg('#pause','pause')"; class=" img-fluid mx-auto d-block nachvorneimg"></div>
     <div id="stop" class="hide nachvorne"><img src="bilder/stop.png" class=" img-fluid mx-auto d-block nachvorneimg"></div>
 
 </div>
@@ -955,7 +955,6 @@
     <div class="container col col-6">
         <button type="button" id="antwortBtn4" class="btn btn-secondary btn-block buttoncss btnantworten" onclick="hideelem('S8','S7'); answered(this.innerHTML);">trees</button>
     </div>
-    <p id="testbtn" onclick="spielende()">Sprung zum Highscore</p>
 </div>
 </div>
 
@@ -1001,7 +1000,6 @@
         <img src="bilder/richtig.png" class="img-fluid mx-auto d-block">
     </div>
 
-    <a class="ml-5" onclick="hideelem('S11','S9'); pause('S12', 'S11', '4000'); stopNacheinander();">Nach der 15. Runde</a>
 
 </div>
 

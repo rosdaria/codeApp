@@ -164,7 +164,7 @@ var runde=1;
                 var theUrl = "/nicknamestabelle";
                 xmlhttp.open("POST", theUrl);
                 xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-                xmlhttp.send(JSON.stringify({"id":0,"nickname":""+user.value+"","spiel_id":"buzzerspiel","teilnahme":"true","spielinstanz":"S5","persoenlicher_highscore":0,"highscore_buzzer":0,"admin":"false","antwortzeit":"0"}));
+                xmlhttp.send(JSON.stringify({"id":0,"nickname":""+user.value+"","spiel_id":"buzzerspiel","teilnahme":"true","spielinstanz":"S5","persoenlicher_highscore":0,"highscore_buzzer":0,"admin":"false","antwortzeit":"0","antwort":"false"}));
                 teilnehmen(user);
                   }
                 };
@@ -204,10 +204,13 @@ var runde=1;
               s6change=1;
               console.log(soll);
               //clearInterval(loop2);
-              hideelem('L6','S5');
+          //    hideelem('S6','S5');
               fragengen();
+              console.log("checkloopgame fragengen");
               counter7();
-              setTimeout(function(){ hideelem('S7','L6') },6000);
+              showS101 = setTimeout("hideelem('S10','S5')",0);
+
+          //    setTimeout(function(){ hideelem('S7','L6') },6000);
             };
             if(ist != soll && s6change != 0){
               s6change=0;
@@ -251,13 +254,14 @@ var runde=1;
                 var gestartet = myObj.response[0].gestartet;
                 var roundcounter = myObj.response[0].counter_runden;
                 var rundenmax = myObj.response[0].rundenzahlgesamt;
+                console.log(gestartet);
                 console.log(runde);
                 console.log(rundenmax);
                 console.log(roundcounter);
                 if(roundcounter != runde){
                   runde = roundcounter;
                   fragengen();
-                  if(runde!= 0){
+                  if(gestartet == "playing"){
                     nacheinander();
                   }
                 };
@@ -285,7 +289,7 @@ var runde=1;
             var theUrl = "/spieletabelle";
             xmlhttp.open("POST", theUrl);
             xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xmlhttp.send(JSON.stringify({"id":2,"spiel_id":"buzzer","rundenzahlgesamt":15,"counter_zeit":20,"counter_runden":1,"antwortzeit":30,"gestartet":"true","level1":"true","level2":"true","level3":"true"}));
+            xmlhttp.send(JSON.stringify({"id":2,"spiel_id":"buzzer","rundenzahlgesamt":15,"counter_zeit":20,"counter_runden":0,"antwortzeit":30,"gestartet":"true","level1":"true","level2":"true","level3":"true"}));
 
             loop3=setInterval(function(){
           //  var ist = status;
@@ -317,7 +321,7 @@ var runde=1;
           document.getElementById("platz"+i).innerHTML = myObj.response[i].nickname;
 
           }
-              //user werden in html eingebunden
+              //TODO user werden in html eingebunden
           };
 
           function buzzerstart(){
@@ -355,7 +359,7 @@ var runde=1;
               var theUrl = "/spieletabelle";
               xmlhttp.open("POST", theUrl);
               xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-              xmlhttp.send(JSON.stringify({"id":2,"spiel_id":"buzzer","rundenzahlgesamt":15,"counter_zeit":20,"counter_runden":1,"antwortzeit":30,"gestartet":"playing","level1":"true","level2":"true","level3":"true"}));
+              xmlhttp.send(JSON.stringify({"id":2,"spiel_id":"buzzer","rundenzahlgesamt":15,"counter_zeit":20,"counter_runden":0,"antwortzeit":30,"gestartet":"playing","level1":"true","level2":"true","level3":"true"}));
 
 
             }
@@ -402,7 +406,7 @@ var runde=1;
               var theUrl = "/spieletabelle";
               xmlhttp.open("POST", theUrl);
               xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-              xmlhttp.send(JSON.stringify({"id":2,"spiel_id":"buzzer","rundenzahlgesamt":15,"counter_zeit":20,"counter_runden":1,"antwortzeit":30,"gestartet":"false","level1":"true","level2":"true","level3":"true"}));
+              xmlhttp.send(JSON.stringify({"id":2,"spiel_id":"buzzer","rundenzahlgesamt":15,"counter_zeit":20,"counter_runden":0,"antwortzeit":30,"gestartet":"false","level1":"true","level2":"true","level3":"true"}));
 
             }
 
@@ -489,7 +493,7 @@ var runde=1;
                 var theUrl = "/spieletabelle";
                 xmlhttp.open("POST", theUrl);
                 xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-                xmlhttp.send(JSON.stringify({"id":2,"spiel_id":"buzzer","rundenzahlgesamt":15,"counter_zeit":20,"counter_runden":1,"antwortzeit":30,"gestartet":"false","level1":"true","level2":"true","level3":"true"}));
+                xmlhttp.send(JSON.stringify({"id":2,"spiel_id":"buzzer","rundenzahlgesamt":15,"counter_zeit":20,"counter_runden":0,"antwortzeit":30,"gestartet":"false","level1":"true","level2":"true","level3":"true"}));
 
               }
               //admins schließt --> spiel wird geschlossen
@@ -502,53 +506,76 @@ var runde=1;
             };
 
             function nacheinander(){
+              var xhttp = new XMLHttpRequest();
+              xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                  //JSON Parse
+                  var myMessage = xhttp.responseText;
+                  var myObj = JSON.parse(myMessage);
+                  nacheinander11(myObj);
+                  // Typical action to be performed when the document is ready:
+                }
+              };
+              xhttp.open("GET", "/spieletabelle", true);
+              xhttp.send();
+            };
+            function nacheinander11(myObj){
+               var antwortdauer = myObj.response[0].antwortzeit;
+               antwortdauer = antwortdauer*1000;
                console.log(korrekt);
                console.log(antwort);
-                var antwortdauer=15000; // 15 sec zeit zu antworten
-                if(antwort == korrekt){
-                showS9 = setTimeout("hideelem('S9','S7');nurhide('S8');", 0);
-                showS10 = setTimeout("hideelem('S10','S9')", 5000);
+               countdownfix(5,"counterx6");
+               showS101 = setTimeout("hideelem('S10','S7')",0);
+               showS10 = setTimeout("hideelem('S10','S9')", 0);
+               showS102 = setTimeout("hideelem('S10','S9.1')", 0);
+               showS7 = setTimeout("hideelem('S7','S10');", 5000);// muss 6sec!
+               rightwrong = setTimeout(function(){
+                 if(antwort == korrekt){
+                 showS9 = setTimeout("hideelem('S9','S7');nurhide('S8');", 0);
+                 var xhttp = new XMLHttpRequest();
+                 xhttp.onreadystatechange = function() {
+                   if (this.readyState == 4 && this.status == 200) {
+                     //JSON Parse
+                     var myMessage = xhttp.responseText;
+                     var myObj = JSON.parse(myMessage);
+                     nacheinander2(myObj);
+                     // Typical action to be performed when the document is ready:
+                   }
+                 };
+                 xhttp.open("GET", "nicknamestabelle/"+userid, true);
+                 xhttp.send();
 
-                var xhttp = new XMLHttpRequest();
-                xhttp.onreadystatechange = function() {
-                  if (this.readyState == 4 && this.status == 200) {
-                    //JSON Parse
-                    var myMessage = xhttp.responseText;
-                    var myObj = JSON.parse(myMessage);
-                    nacheinander2(myObj);
-                    // Typical action to be performed when the document is ready:
-                  }
-                };
-                xhttp.open("GET", "nicknamestabelle/"+userid, true);
-                xhttp.send();
+                 //TODO SCOREBECRECHNUNG HIER
+                 //GET Fragentabelle
+               /*  var xhttp = new XMLHttpRequest();
+                 xhttp.onreadystatechange = function() {
+                   if (this.readyState == 4 && this.status == 200) {
+                     //JSON Parse
+                     var myMessage = xhttp.responseText;
+                     var myObj = JSON.parse(myMessage);
+                     console.log(myObj.response[0]);
+                     teilnehmen2(myObj, user);
 
-                //TODO SCOREBECRECHNUNG HIER
-                //GET Fragentabelle
-              /*  var xhttp = new XMLHttpRequest();
-                xhttp.onreadystatechange = function() {
-                  if (this.readyState == 4 && this.status == 200) {
-                    //JSON Parse
-                    var myMessage = xhttp.responseText;
-                    var myObj = JSON.parse(myMessage);
-                    console.log(myObj.response[0]);
-                    teilnehmen2(myObj, user);
+                     // Typical action to be performed when the document is ready:
+                   }
+                 }
+                 //ohne fragenid wird komplette liste gezogen
+                 xhttp.open("GET", '/nicknamestabelle/name/'+fragenid, true);
+                 xhttp.send();
+                 */
+                 innerScore ++;
+               }
+               else{
+                 showS91 = setTimeout("hideelem('S9.1','S7');nurhide('S8');", 0);
 
-                    // Typical action to be performed when the document is ready:
-                  }
-                }
-                //ohne fragenid wird komplette liste gezogen
-                xhttp.open("GET", '/nicknamestabelle/name/'+fragenid, true);
-                xhttp.send();
-                */
-                innerScore ++;
-              }
-              else{
-                showS91 = setTimeout("hideelem('S9.1','S7');nurhide('S8');", 0);
-                showS10 = setTimeout("hideelem('S10','S9.1')", 5000);
-              }
-                fragengen();
-                counterTimeout = setTimeout("counter6()",5000); // wie zeile oben! nach 3sec soll counter starten
-                showS7 = setTimeout("hideelem('S7','S10');", 11000);// muss 6sec!
+               }
+                 fragengen();
+               },antwortdauer +5000);
+
+
+
+
+                //counterTimeout = setTimeout("counter6()",5000); // wie zeile oben! nach 3sec soll counter starten
                // plus 6sec für counter
             };
 
