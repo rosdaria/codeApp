@@ -21,7 +21,7 @@
 
 <body onload="nacheinander();">
 <!--Zustand SC1 "Willkommen, bitte im Wlan einloggen"-->
-<div id="SC1"  class="hide">
+<div id="SC1"  class="hid">
 <iframe src="sound_files/funk_beamerscreen.mp3" allow="autoplay" id="audio" style="display:none"></iframe>
 <audio id="player" autoplay loop>
     <source src="audio/source.mp3" type="audio/mp3">
@@ -66,7 +66,7 @@
 
 <!--Zustand SC4 "Liste Teilnehmer" (Sobald Admin bei L4 auf Buzzerspiel klickt) -->
 
-<div id="SC4" class="hid">
+<div id="SC4" class="hide">
     <div class="Logo1_links"><img id="logogr4" src="bilder/LogoSpiel.png"></div>
 	<div class="Logo_rechts"><img id="logoklhfu4" src="bilder/logoHFU2.png"></div>
     <div class="Logo_rechts"><img id="logoklgsg4" src="bilder/logoGSG.jpg"></div>
@@ -78,22 +78,46 @@
 	<div id="SpielerTeilnahme" class="Titel3w">
         <table id= "tabelleNick">
             <tr>
-                <td id="nick0" class="zh"></td><td id="nick1" class="zh"></td><td id="nick2" class="zh"></td><td id="nick3" class="zh"></td><td id="nick4" class="zh"></td>
+                <td id="nick0" class="zh"></td>
+                <td id="nick1" class="zh"></td>
+                <td id="nick2" class="zh"></td>
+                <td id="nick3" class="zh"></td>
+                <td id="nick4" class="zh"></td>
             </tr>
             <tr>
-                <td id="nick5" class="zh"></td><td id="nick6" class="zh"></td><td id="nick7" class="zh"></td><td id="nick8" class="zh"></td><td id="nick9" class="zh"></td>
+                <td id="nick5" class="zh"></td>
+                <td id="nick6" class="zh"></td>
+                <td id="nick7" class="zh"></td>
+                <td id="nick8" class="zh"></td>
+                <td id="nick9" class="zh"></td>
             </tr>
             <tr>
-                <td id="nick10" class="zh"></td><td id="nick11" class="zh"></td><td id="nick12" class="zh"></td><td id="nick13" class="zh"></td><td id="nick14" class="zh"></td>
+                <td id="nick10" class="zh"></td>
+                <td id="nick11" class="zh"></td>
+                <td id="nick12" class="zh"></td>
+                <td id="nick13" class="zh"></td>
+                <td id="nick14" class="zh"></td>
             </tr>
              <tr>
-                <td id="nick15" class="zh"></td><td id="nick16" class="zh"></td><td id="nick17" class="zh"></td><td id="nick18" class="zh"></td><td id="nick19" class="zh"></td>
+                <td id="nick15" class="zh"></td>
+                 <td id="nick16" class="zh"></td>
+                 <td id="nick17" class="zh"></td>
+                 <td id="nick18" class="zh"></td>
+                 <td id="nick19" class="zh"></td>
             </tr>
              <tr>
-                <td id="nick20" class="zh"></td><td id="nick21" class="zh"></td><td id="nick22" class="zh"></td><td id="nick23" class="zh"></td><td id="nick24" class="zh"></td>
+                <td id="nick20" class="zh"></td>
+                 <td id="nick21" class="zh"></td>
+                 <td id="nick22" class="zh"></td>
+                 <td id="nick23" class="zh"></td>
+                 <td id="nick24" class="zh"></td>
             </tr>
             <tr>
-                <td id="nick25" class="zh"></td><td id="nick26" class="zh"></td><td id="nick27" class="zh"></td><td id="nick28" class="zh"></td><td id="nick29" class="zh"></td>
+                <td id="nick25" class="zh"></td>
+                <td id="nick26" class="zh"></td>
+                <td id="nick27" class="zh"></td>
+                <td id="nick28" class="zh"></td>
+                <td id="nick29" class="zh"></td>
             </tr>
         </table>
      </div>
@@ -111,7 +135,6 @@
     <div class="Logo1_links"><img id="logokl2" src="bilder/LogoSpiel.png"></div>
     <div class="countrechts">
     <p class="Titel3w" id="RundenCounter">Runde: 5</p>
-    <p class="Titel3w" id="AntwortenCounter">Antworten: 2</p>
     </div><br class="clear"/>
     <div class="CountDownTrigger3" id="counterx4"></div>
     <div id="Frage">
@@ -128,29 +151,52 @@
     <div class="Logo1_links"><img id="logokl3" src="bilder/LogoSpiel.png"></div>
     <div class="countrechts">
     <div class="Titel3w" id="RundenCounter2">Runde: 5</div>
-    <div id="counterx3" class="CountDownTrigger2">15</div>
     </div><br class="clear"/>
     <div id="loesung" class="Titel2"> Die korrekte Antwort ist: "Lösungswort"</div>
     <div id="titelXrichtige" class="Titel3"><span id="richtigeantworten">12 </span>Spieler wussten die korrekte Antwort.</div>
    <div class="Titel3w" id="RichtigeNickListe">
      <table id="tabellerichtige">
             <tr>
-                <td class="zh" id="korrekt1">1. nickname1</td><td class="zh" id="korrekt2"></td><td id="korrekt3" class="zh"></td><td class="zh" id="korrekt4"></td><td class="zh" id="korrekt5"></td>
+                <td class="zh" id="korrekt1">1. nickname1</td>
+                <td class="zh" id="korrekt2"></td>
+                <td class="zh" id="korrekt3"></td>
+                <td class="zh" id="korrekt4"></td>
+                <td class="zh" id="korrekt5"></td>
             </tr>
             <tr>
-                <td class="zh" id="korrekt6"></td><td class="zh" id="korrekt7"></td><td class="zh" id="korrekt8"></td><td class="zh" id="korrekt9"></td><td class="zh" id="korrekt10"></td>
+                <td class="zh" id="korrekt6"></td>
+                <td class="zh" id="korrekt7"></td>
+                <td class="zh" id="korrekt8"></td>
+                <td class="zh" id="korrekt9"></td>
+                <td class="zh" id="korrekt10"></td>
             </tr>
             <tr>
-                <td class="zh" id="korrekt11"></td><td class="zh" id="korrekt12"></td><td class="zh" id="korrekt13"></td><td class="zh" id="korrekt14"></td><td class="zh" id="korrekt15"></td>
+                <td class="zh" id="korrekt11"></td>
+                <td class="zh" id="korrekt12"></td>
+                <td class="zh" id="korrekt13"></td>
+                <td class="zh" id="korrekt14"></td>
+                <td class="zh" id="korrekt15"></td>
             </tr>
              <tr>
-                <td class="zh" id="korrekt16"></td><td class="zh" id="korrekt17"></td><td class="zh" id="korrekt18"></td><td class="zh" id="korrekt19"></td><td class="zh" id="korrekt20"></td>
+                <td class="zh" id="korrekt16"></td>
+                 <td class="zh" id="korrekt17"></td>
+                 <td class="zh" id="korrekt18"></td>
+                 <td class="zh" id="korrekt19"></td>
+                 <td class="zh" id="korrekt20"></td>
             </tr>
              <tr>
-                <td class="zh" id="korrekt21"></td><td class="zh" id="korrekt22"></td><td class="zh" id="korrekt23"></td><td class="zh" id="korrekt24"></td><td class="zh" id="korrekt25"></td>
+                <td class="zh" id="korrekt21"></td>
+                 <td class="zh" id="korrekt22"></td>
+                 <td class="zh" id="korrekt23"></td>
+                 <td class="zh" id="korrekt24"></td>
+                 <td class="zh" id="korrekt25"></td>
             </tr>
              <tr>
-                <td class="zh" id="korrekt26"></td><td class="zh" id="korrekt27"></td><td class="zh" id="korrekt28"></td><td class="zh" id="korrekt29"></td><td class="zh" id="korrekt30"></td>
+                <td class="zh" id="korrekt26"></td>
+                 <td class="zh" id="korrekt27"></td>
+                 <td class="zh" id="korrekt28"></td>
+                 <td class="zh" id="korrekt29"></td>
+                 <td class="zh" id="korrekt30"></td>
             </tr>
         </table>
     </div>
@@ -186,13 +232,19 @@
     <div id="Score9">
         <table id="tabellescore">
             <tr class="marginweg2">
-                <td class="platz">2</td><td id="screenplatz2" class="minlength">nick</td><td id="screenscore2">2435</td><td></td><td class="platz">3</td><td id="screenplatz3" class="minlength"></td><td id="screenscore3"></td><td></td><td class="platz">4</td><td id="screenplatz4" class="minlength"></td><td id="screenscore4"></td>
+                <td class="platz">2</td><td id="screenplatz2" class="minlength">nick</td><td id="screenscore2">2435</td><td></td>
+                <td class="platz">3</td><td id="screenplatz3" class="minlength"></td><td id="screenscore3"></td><td></td>
+                <td class="platz">4</td><td id="screenplatz4" class="minlength"></td><td id="screenscore4"></td>
             </tr>
             <tr>
-                <td class="platz">5</td><td id="screenplatz5" class="minlength"></td><td id="screenscore5"></td><td></td><td class="platz">6</td><td id="screenplatz6" class="minlength"></td><td id="screenscore6"></td><td></td><td class="platz">7</td><td id="screenplatz7" class="minlength"></td><td id="screenscore7"></td>
+                <td class="platz">5</td><td id="screenplatz5" class="minlength"></td><td id="screenscore5"></td><td></td>
+                <td class="platz">6</td><td id="screenplatz6" class="minlength"></td><td id="screenscore6"></td><td></td>
+                <td class="platz">7</td><td id="screenplatz7" class="minlength"></td><td id="screenscore7"></td>
             </tr>
             <tr>
-                <td class="platz">8</td><td id="screenplatz8" class="minlength"></td><td id="screenscore8"></td><td></td><td class="platz">9</td><td id="screenplatz9" class="minlength"></td><td id="screenscore9"></td><td></td><td class="platz">10</td><td id="screenplatz10" class="minlength"></td><td id="screenscore10"></td>
+                <td class="platz">8</td><td id="screenplatz8" class="minlength"></td><td id="screenscore8"></td><td></td>
+                <td class="platz">9</td><td id="screenplatz9" class="minlength"></td><td id="screenscore9"></td><td></td>
+                <td class="platz">10</td><td id="screenplatz10" class="minlength"></td><td id="screenscore10"></td>
             </tr>
         </table>
     </div>
