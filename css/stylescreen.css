@@ -280,6 +280,7 @@ div.anfangstext{
   padding-top:1% !important;
   padding-bottom:1% !important;
   height: 55px;
+  min-width:200px;
 }
 
 td{
@@ -532,5 +533,8 @@ td.platz{
     color:white;
     width: 50px;
     height: 20px;
+}
+.minlength{
+    min-width: 150px;
 }
 
