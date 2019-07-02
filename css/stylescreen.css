@@ -337,6 +337,7 @@ img#countdown15{
    float: right;
 }
 #RundenCounter{
+    font-size: 2em;
     margin:10px;
     text-align: left;
     padding: 10px;
@@ -399,6 +400,7 @@ img#countdown15{
 }
 #RundenCounter2{
     margin:10px;
+    font-size: 2em;
     text-align: left;
     padding: 10px;
     background-size: 100% 100%;
@@ -424,6 +426,11 @@ img#countdown15{
     text-align: center !important;
 }
 
+#Loesungswort{
+    font-weight:bold;
+}
+
+
 #RichtigeNickListe{              /*Tabelle Spieler, die richtig lagen*/
     display: flex;
     align-items: center;
@@ -445,6 +452,7 @@ img#countdown15{
     height:100%; 
 }
 #RundenCounter3{
+    font-size: 2em;
     margin:10px;
     text-align: left;
     padding: 10px;
