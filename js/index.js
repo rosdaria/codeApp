@@ -107,6 +107,10 @@ function buttclicked(Inputnick) {
 function inputwert(){
   document.getElementById('Inputnick').value = document.getElementById('Inputnickprev').value;
     }
+//Antworttext übernehmen
+function antworttext(){
+  document.getElementById('eingabe').value = document.getElementById('eingabeprev').value;
+    }
 
 //codes für countdown
 function counter7(){

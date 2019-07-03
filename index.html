@@ -1022,6 +1022,10 @@
     <div class="container">
     <p id="RundenCounter">Runde: 5</p>
     </div>
+    </div>
+    
+<div id="antwortbuttons" class="hid">
+<div class="container row ml-0 mt-2">
     <div class="container col col-6">
         <button type="button" id="antwortBtn1" class="btn btn-secondary btn-block buttoncss btnantworten" onclick="hideelem('S8','S7'); answered(this.innerHTML);">tea</button>
     </div>
@@ -1040,6 +1044,17 @@
 </div>
 </div>
 
+<!-- mehrzeiliges Textfeld-->
+<div id="textfeld" class="m-4 hide">
+    <div class="form-group">
+        <label for="eingabe">Deine Antwort:</label>
+        <textarea id="eingabeprev" class="form-control" rows="3"></textarea>
+    </div>
+        <button type="button" id="absenden" class="btn btn-secondary btn-block buttoncss btnsteuerung" onclick="hideelem('S8','S7'); antworttext();">Antwort absenden</button>
+</div>
+  
+</div>
+
 <!-- Zustand S8 "Antwort wurde abgegeben" (Wenn bei S7 auf eine Antwort gekklickt wurde)-->
 
 <div id="S8" class="hide hideall">
@@ -1051,6 +1066,10 @@
     <div class="container">
     <p id="RundenCounter2">Runde: 5</p>
     </div>
+</div>
+
+<div id="antwortbuttonssend" class="hid">
+<div class="container row ml-0 mt-2">
     <div class="container col col-6">
         <button type="button" id="antwortBtn5" class=" disabled btn btn-secondary btn-block btnantworten">tea</button>
     </div>
@@ -1067,7 +1086,16 @@
         <button type="button" id="antwortBtn8" class="disabled btn btn-secondary btn-block btnantworten">trees</button>
     </div>
 </div>
-
+</div>
+    
+<!-- mehrzeiliges Textfeld abgesendet-->
+<div id="textfeld" class="m-4 hide">
+    <div class="form-group">
+        <label for="eingabe">Deine Antwort:</label>
+        <textarea disabled id="eingabe" class="form-control" rows="3"></textarea>
+    </div>
+        <button type="button" id="absenden" class="btn btn-secondary btn-block buttoncss btnsteuerung disabled" onclick="hideelem('S8','S7');">Antwort gesendet</button>
+</div>
     <div class="mt-5"></div>
 
 </div>
