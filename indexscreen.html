@@ -20,61 +20,78 @@
 </head>
 
 <body onload="nacheinander();">
+    
+    
 <!--Zustand SC1 "Willkommen, bitte im Wlan einloggen"-->
+    
 <div id="SC1"  class="hid">
+<!--Audio-->
 <iframe src="sound_files/funk_beamerscreen.mp3" allow="autoplay" id="audio" style="display:none"></iframe>
 <audio id="player" autoplay loop>
     <source src="audio/source.mp3" type="audio/mp3">
 </audio>
+<!--Logos-->
 	<div class="Logo1_gross"><img id="logogr1" src="bilder/LogoSpiel.png"></div><br class="clear" />
     <div class="Logo4_klein"><img id="logoklerasmus2" src="bilder/Erasmus2.jpg"></div>
     <div class="Logo2_klein"><img id="logoklerasmus1" src="bilder/logoERASMUS.jpg"></div>
 	<div class="Logo3_klein"><img id="logoklgsg1"  src="bilder/logoGSG.jpg"></div>
 	<div class="Logo4_klein"><img id="logoklhfu1"  src="bilder/logoHFU.png"></div>
+<!--Willkommenstext-->
     <div class="anfangstext">
 	<div class="Titel1w" id="willk">Willkommen</div>
 	<div class="Titel2w"id="willk2">Bitte im Wlan einloggen.</div>
     </div>
-</div>
+</div><!--Ende SC1-->
 
+    
 <!--Zustand SC2 "Willkommen"-->
+    
 <div id="SC2"  class="hide">
     <div class="Logo1_gross"><img id="logogr2" src="bilder/LogoSpiel.png"></div><br class="clear" />
     <div class="Logo4_klein"><img id="logoklerasmus2" src="bilder/Erasmus2.jpg"></div>
 	<div class="Logo2_klein"><img id="logoklerasmus2" src="bilder/logoERASMUS.jpg"></div>
 	<div class="Logo3_klein"><img id="logoklgsg2" src="bilder/logoGSG.jpg"></div>
 	<div class="Logo4_klein"><img id="logoklhfu2" src="bilder/logoHFU.png"></div>
+<!--Willkommenstext2-->
     <div class="anfangstext">
 	<div class="Titel1w">Willkommen</div>
     <div class="Titel2w">Die Vokabelspiele-App ohne Ermüdungsgefahr!</div>
     </div>
-</div>
+</div><!--Ende SC2-->
 
+    
 <!--Zustand SC3 "Willkommen @Admin Spiel wählen..." (Sobald ein Nutzer bei S3/L3 auf Admin geklickt hat) -->
+    
 <div id="SC3"  class="hide">
+<!--Logos-->
 	<div class="Logo1_gross"><img id="logogr3" src="bilder/qrcode.png"></div><br class="clear" />
     <div class="Logo4_klein"><img id="logoklspiel" src="bilder/LogoSpiel.png"></div>
     <div class="Logo4_klein"><img id="logoklerasmus2" src="bilder/Erasmus2.jpg"></div>
 	<div class="Logo2_klein"><img id="logoklerasmus3" src="bilder/logoERASMUS.jpg"></div>
 	<div class="Logo3_klein"><img id="logoklgsg3" src="bilder/logoGSG.jpg"></div>
 	<div class="Logo4_klein"><img id="logoklhfu3" src="bilder/logoHFU.png"></div>
+<!--Willkommenstext3-->
      <div class="anfangstext">
 	   <div class="Titel1w">Willkommen</div>
        <div class="Titel2w"><p id="nachrichtAdmin">@Admin: Wähle ein Spiel aus.</p><p id="nachrichtSpieler"> @Spieler: Lege deinen nickname fest.</p></div>
      </div>
-</div>
+</div><!--Ende SC3-->
 
+    
 <!--Zustand SC4 "Liste Teilnehmer" (Sobald Admin bei L4 auf Buzzerspiel klickt) -->
-
+    
 <div id="SC4" class="hide">
+<!--Logos oben-->
     <div class="Logo1_links"><img id="logogr4" src="bilder/LogoSpiel.png"></div>
 	<div class="Logo_rechts"><img id="logoklhfu4" src="bilder/logoHFU2.png"></div>
     <div class="Logo_rechts"><img id="logoklgsg4" src="bilder/logoGSG.jpg"></div>
     <div class="Logo_rechts"><img id="logoklerasmus4" src="bilder/logoERASMUS2.png"></div>
     <div class="Logo_rechts"><img id="logoklerasmus24" src="bilder/Erasmus2.jpg"></div><br class="clear" />
+<!--Überschrift, counter, ladeGIF-->
 	<div class="Titel2"id="titelspieler">Spieler</div>
 	<div id="Teilnehmercount" class="Titel2w">30</div><br>
     <img id="loadinggif" src="bilder/loading.gif">
+<!--Tabelle Teilnehmende Spieler-->
 	<div id="SpielerTeilnahme" class="Titel3w">
         <table id= "tabelleNick">
             <tr>
@@ -121,22 +138,29 @@
             </tr>
         </table>
      </div>
-</div>
+</div><!--Ende SC4-->
 
+    
 <!-- Zustand SC5 "Countdown" (Das Spiel beginnt, wenn bei L5.1 klick auf Startbutton)-->
+    
 <div id="SC5" class="hide">
     <div class="Logo1_links"><img id="logogr5" src="bilder/LogoSpiel.png"></div><br class="clear"/>
     <div><img id="spielbeginnt" src="bilder/spielbeginnt.png"></div>
     <div class="CountDownTrigger" id="counterx1">5</div>
-</div>
+</div><!--Ende SC5-->
 
+    
 <!-- Zustand SC6 "Frage"-->
+    
 <div id="SC6" class="hide">
+<!--Kopfzeile mit Logo links und Counter rechts-->
     <div class="Logo1_links"><img id="logokl2" src="bilder/LogoSpiel.png"></div>
     <div class="countrechts">
     <p class="Titel3w" id="RundenCounter">Runde: 5</p>
     </div><br class="clear"/>
+<!--Countdown (Antwortzeit wird heruntergezählt)-->
     <div class="CountDownTrigger3" id="counterx4"></div>
+<!--Fragebereich-->
     <div id="Frage">
       <p id="fragetitel" class="Titel3">Wie lautet die richtige Antwort?</p>
       <div id="frageteil">
@@ -144,16 +168,21 @@
         <!--<img class="fragebild" src="bilder/Fragebilder/test.jpg">-->
       </div>
     </div>
-    </div>
+    </div><!--Ende SC6-->
 
+    
 <!-- Zustand SC7 "Lösung" (Spieler, die richtig lagen, geordnet nach Schnelligkeit-->
+    
 <div id="SC7" class="hide">
+<!--Kopfzeile mit Logo links und Counter rechts-->
     <div class="Logo1_links"><img id="logokl3" src="bilder/LogoSpiel.png"></div>
     <div class="countrechts">
     <div class="Titel3w" id="RundenCounter2">Runde: 5</div>
     </div><br class="clear"/>
+<!--Anzeige der korrekten Antwort-->
     <div id="loesung" class="Titel2"> Die korrekte Antwort ist: <span id=Loesungswort>"Lösungswort"</span></div>
     <div id="titelXrichtige" class="Titel3"><span id="richtigeantworten">12 </span>Spieler wussten die korrekte Antwort.</div>
+<!--Tabelle mit Schülern, die richtig lagen-->
    <div class="Titel3w" id="RichtigeNickListe">
      <table id="tabellerichtige">
             <tr>
@@ -200,9 +229,11 @@
             </tr>
         </table>
     </div>
-</div>
+</div><!--Ende SC7-->
 
+    
 <!-- Zustand SC8 "Countdown nächste Frage" (14mal)-->
+    
 <div id="SC8" class="hide">
     <div class="Logo1_links"><img id="logokl4" src="bilder/LogoSpiel.png"></div>
     <div class="countrechts">
@@ -210,18 +241,24 @@
     </div><br class="clear"/>
     <div><img id="nextfrage" src="bilder/nextfrage.png"></div>
     <div class="CountDownTrigger" id="counterx2">5</div>
-</div>
+</div><!--Ende SC8-->
 
+    
 <!-- Zustand SC9 "Spiel zu Ende" (nach der 15. Runde)-->
+    
 <div id="SC9" class="hide">
     <div class="Logo1_links"><img id="logokl4" src="bilder/LogoSpiel.png"></div><br class="clear"/>
     <div><img id="gameover" src="bilder/gameover.png"></div>
-</div>
+</div><!--Ende SC9-->
 
+    
 <!-- Zustand SC10 "Score" (Wird angezeigt, bis Admin auf "Zurück zur Spieleauswahl" klickt )-->
+    
 <div id="SC10" class="hide">
     <div class="Logo1_links"><img id="logokl5" src="bilder/LogoSpiel.png"></div><br class="clear"/>
+    <!--Übersschrift-->
     <div><img id="highscoretitel" src="bilder/highscore.png"></div>
+    <!--Anzeige Score des Gewinners-->
     <div id="Score1">
         <table id="gewinner" class="Titel2w" >
             <tr>
@@ -229,6 +266,7 @@
             </tr>
             </table>
     </div>
+    <!--Anzeige Score von Platz 2 bis 10-->
     <div id="Score9">
         <table id="tabellescore">
             <tr class="marginweg2">
@@ -248,13 +286,8 @@
             </tr>
         </table>
     </div>
-</div>
+</div><!--Ende SC10-->
 
-
-
-
-
-<!-- meine JavaScript -->
 </body>
 
 </html>
