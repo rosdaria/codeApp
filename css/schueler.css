@@ -1,8 +1,11 @@
+/*alle ZUstände außer L2S2 zu Beginn versteckt*/
 .hide{
     display:none;
 }    
 
+
 /*Zustand S2/L2*/ 
+
 #logogross{
     height: 200px;
 }
@@ -36,31 +39,34 @@
 .buttoncss:active{
     background-color:#28214d !important;
 }
-
 .buttoncssJS{
     background-color:#28214d!important;
     border-style: none !important;
 }
 
+
 /*Zustand S4*/ 
+
 .disabled{
     box-shadow: none !important;
 }
-
 .btn-sm{
     background-color: grey !important;
 }
-
 .navfarbe{
     background-color: #e5e8e9 ;
 }
 
+
 /*Zustand S4*/
+
 .textd{
     color:#3b355d;
 }
 
+
 /*Zustand S4.1*/
+
 .platz{
     background-image: url(../bilder/hintergrund3.png) ;
     background-size: 100% 100% !important;
@@ -68,7 +74,10 @@
     border-bottom: 7px solid #ffffff;
     width: 25px !important;
 }
+
+
 /*Zustand S6*/
+
 .CountDownTrigger{
     background-image: url(../bilder/hintergrund2.png);
     background-size: 100% 100% ;
@@ -83,13 +92,14 @@
     padding-bottom: 0px !important;
 }
 
+
 /*Zustand S7*/
+
 .btnantworten{
      white-space: normal !important; 
      height:130px;
      word-wrap: break-word;
 }
-
 #RundenCounter{
     margin-bottom: 40px;
     margin-top:10px;
@@ -102,7 +112,9 @@
     background-image: url(../bilder/hintergrund3.png); 
 }
 
+
 /*Zustand S8*/
+
 #RundenCounter2{
     margin-bottom: 40px;
     margin-top:10px;
@@ -115,14 +127,18 @@
     background-image: url(../bilder/hintergrund3.png); 
 }
 
+
 /*Zustand S12*/
+
 .hintergrbildgelb{
     background-image: url(../bilder/hintergrund3.png) !important;
     background-size: 100% 100% ;
     color:white;
 }
 
+
 /*Zustand L5.1*/
+
 .buttoncss2{
     background-color:#575da1!important;
     border-style: none !important;
@@ -134,7 +150,10 @@
 .hoehe{
     height: 45px;
 } 
+
+
 /*Zustand L5.3*/
+
 .linkfarbe{
     color:#575da1!important;
 }
@@ -146,7 +165,9 @@
     border-color: #757db5;
 }
 
+
 /*Zustand L7*/
+
 .btnsteuerung{
      white-space: normal !important;
      height:100px;

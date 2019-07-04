@@ -4,11 +4,14 @@ html, body {
 body {
     overflow:hidden;
 }
-
 .hide{
 	display:none;
 }
-.Titel1w{                   /*Schriften in weiß*/    
+
+
+/*Schriften in weiß*/ 
+
+.Titel1w{                     
     color:white;
     text-align: center;
     font-size: 3rem;
@@ -30,7 +33,10 @@ body {
     color:white;
 }
 
-.Titel1{                    /*Schriften in schwarz*/                     
+
+/*Schriften in schwarz*/ 
+
+.Titel1{                                        
     text-align: center;
     font-size: 3rem;
     font-family: 'Roboto', sans-serif;
@@ -52,10 +58,13 @@ body {
     color: #333332;
 }
 
-#willk{                        /*Animation Willkommen*/ 
+
+/*Animation Willkommen*/
+
+#willk{                         
     animation: willkommen 5s 1;
 }
-@keyframes willkommen{
+    @keyframes willkommen{
     0%{
     }
     25%{
@@ -65,7 +74,11 @@ body {
         letter-spacing: 4px;
     }
 }
-#nachrichtAdmin{                        /*Animation @Admin*/ 
+
+
+/*Animation @Admin*/
+
+#nachrichtAdmin{                         
     animation: admin 5s 1;
 }
 @keyframes admin{
@@ -76,7 +89,11 @@ body {
         font-size: 30px;
     }   
 }
-#nachrichtSpieler{                        /*Animation @Spieler*/ 
+
+
+/*Animation @Spieler*/ 
+
+#nachrichtSpieler{                        
     animation: spieler 5s 1;
 }
 @keyframes spieler{
@@ -90,59 +107,52 @@ body {
         font-size: 30px;
     }  
 }
-                                                        /*Zustand SC1*/
+
+
+/*Zustand SC1*/
 
 #SC1{
     height:100%;
     width: 100%;
     text-align:center;
   }
-
-.Logo1_gross{                   /*Logo Spiel in gross*/    
+.Logo1_gross{ /*Logo Spiel in gross*/    
     text-align: left;
     display: inline-block;
     height: 40%;
     width: auto;
     margin: 3%;
-    margin-top: 50px;
-   
+    margin-top: 50px;  
  }
-
 #logogr1{
- height:100%; 
+    height:100%; 
 }
-
-br.clear {                      /*nächste Zeile*/      
+br.clear { /*nächste Zeile*/      
 	clear: both;
 	line-height: 0em;
 	height: 0px;
 }
-
-.Logo2_klein{                   /*Logo Erasmus+ in klein*/  
+.Logo2_klein{ /*Logo Erasmus+ in klein*/  
     display: inline-block;
     height: 10%;
     width: auto;
     margin:1%;
     margin-top:10px;
 }
-
 #logoklerasmus1{
     height: 100%;
 }
-
-.Logo3_klein{                   /*Logo GSG in klein*/  
+.Logo3_klein{ /*Logo GSG in klein*/  
     display: inline-block;
     height: 10%;
     width: auto;
     margin:1%;
     margin-top:10px;
 }
-
 #logoklgsg1{
     height: 100%;
 }
-
-.Logo4_klein{                 /*Logo HFU in klein*/  
+.Logo4_klein{ /*Logo HFU in klein*/  
     /*Logo HFU in klein*/  
     display: inline-block;
     height: 10%;
@@ -150,11 +160,9 @@ br.clear {                      /*nächste Zeile*/
     margin:1%;
     margin-top:10px;
 }
-
 #logoklhfu1{
     height: 100%;
 }
-
 div.anfangstext{
     background-image: url(../bilder/hintergrund1.png);
     background-size: 100% 100% ;
@@ -167,14 +175,15 @@ div.anfangstext{
     height:35%
 }
 
-                                                        /*Zustand SC2*/
+
+/*Zustand SC2*/
 
 #SC2{
     height:100%;
     text-align:center;
 }
 #logogr2{
- height:100%; 
+    height:100%; 
 }
 #logoklerasmus2{
     height: 100%;
@@ -186,14 +195,15 @@ div.anfangstext{
     height: 100%;
 }
 
-                                                        /*Zustand SC3*/
+
+/*Zustand SC3*/
 
 #SC3{
     height:100%;
     text-align:center;
 }
 #logogr3{
- height:100%; 
+    height:100%; 
 }
 #logoklerasmus3{
     height: 100%;
@@ -207,15 +217,16 @@ div.anfangstext{
 #logoklhfu3{
     height: 100%;
 }
-                                                    /*Zustand SC4*/
+
+
+/*Zustand SC4*/
 
 #SC4{
     height:100%;
     text-align:center;
 }
-
 #logogr4{
- height:100%; 
+    height:100%; 
 }
 #logoklerasmus4{
     height: 100%;
@@ -229,28 +240,24 @@ div.anfangstext{
 #logoklhfu4{
     height: 100%;
 }
-
-.Logo1_links{                   /*Logo links oben*/    
+.Logo1_links{ /*Logo links oben*/    
     float: left;
     display: inline-block;
     height: 20%;
     width: auto;
     margin: 1%;
 }
-
-.Logo_rechts{                   /*3 Logos rechts*/    
+.Logo_rechts{ /*3 Logos rechts*/    
     float: right;
     display: inline-block;
     height: 7%;
     width: auto;
     margin: 1%;
 }
-
 #titelspieler{
     display: inline;
 }
-
-#Teilnehmercount{               /*3 Teilnehmercounter*/
+#Teilnehmercount{ /*Teilnehmercounter*/
     display: inline;
     float:right;
     margin: 1%;
@@ -259,8 +266,7 @@ div.anfangstext{
     height:40px;
     width:40px;
 }
-
-#SpielerTeilnahme{              /*Nickname tabelle*/
+#SpielerTeilnahme{ /*Nickname tabelle*/
     display: flex;
     align-items: center;
     justify-content: center;
@@ -268,21 +274,18 @@ div.anfangstext{
     padding-bottom: 60%;
     padding-top:3%
 }
-
 #tabelleNick{                   
     text-align: left;
+}                  
+.zh{ /*Zellenhimtergrund lila*/
+    background-color:#757db5;
+    background-size: 100% 100%;
+    border: 10px solid #575da1;
+    padding-top:1% !important;
+    padding-bottom:1% !important;
+    height: 55px;
+    min-width:200px;
 }
-                    /*Zellenhimtergrund lila*/
-.zh{
-  background-color:#757db5;
-  background-size: 100% 100%;
-  border: 10px solid #575da1;
-  padding-top:1% !important;
-  padding-bottom:1% !important;
-  height: 55px;
-  min-width:200px;
-}
-
 td{
     padding-top: 2%;
     padding-bottom: 2%;
@@ -290,13 +293,14 @@ td{
     padding-right:30px;
     border: 5em;
 }
-
 #loadinggif{
     height: 70px;
     display: inline-block;
 }
 
-                                                    /*Zustand SC5*/
+
+/*Zustand SC5*/
+
 #SC5{
     height:100%;
     text-align:center;
@@ -304,11 +308,10 @@ td{
 #logogr5{
     height:100%; 
 }
-
 img#countdown{
     height:300px;
     width:300px;
-   }
+}
 img#spielbeginnt{
     height:120px;
 }
@@ -321,7 +324,10 @@ img#spielbeginnt{
     width: 220px;
     display: inline-block;
 }
-                                                    /*Zustand SC6*/
+
+
+/*Zustand SC6*/
+
 #SC6{
     height:100%;
     text-align:center;
@@ -380,7 +386,6 @@ img#countdown15{
     padding-bottom:3%;
     word-wrap: break-word;
 }
-
 #fragebild{
     margin:0%;
     padding: 0%;
@@ -390,7 +395,9 @@ img#countdown15{
     height:350px;
 }
 
-                                                        /*Zustand SC7*/
+
+/*Zustand SC7*/
+
 #SC7{
     height:100%;
     text-align:center;
@@ -425,13 +432,10 @@ img#countdown15{
     width: 100px;
     text-align: center !important;
 }
-
 #Loesungswort{
     font-weight:bold;
 }
-
-
-#RichtigeNickListe{              /*Tabelle Spieler, die richtig lagen*/
+#RichtigeNickListe{ /*Tabelle Spieler, die richtig lagen*/
     display: flex;
     align-items: center;
     justify-content: center;
@@ -443,7 +447,9 @@ img#countdown15{
     text-align: left;
 }
 
-                                                            /*Zustand SC8*/
+
+/*Zustand SC8*/
+
 #SC8{
     height:100%;
     text-align:center;
@@ -467,7 +473,9 @@ img#nextfrage{
     height:120px;
 }
     
-                                                                /*Zustand SC9*/
+
+/*Zustand SC9*/
+
 #SC9{
     height:100%;
     text-align:center;
@@ -478,9 +486,9 @@ img#nextfrage{
 img#gameover{
     height:180px;
     margin-top:50px;
-    animation: gameover 6s 1;                  /*Animation Game Over*/      
+    animation: gameover 6s 1; /*Animation Game Over*/      
 }
-@keyframes gameover{
+    @keyframes gameover{
     0%{
         height: 50px;
     }   
@@ -488,7 +496,10 @@ img#gameover{
         height: 180px;
     } 
 }
-                                                                       /*Zustand SC10*/
+
+
+/*Zustand SC10*/
+
 #SC10{
     height:100%;
     text-align:center;
@@ -499,7 +510,7 @@ img#gameover{
 img#highscoretitel{
     height:180px;
 }
-#Score9{                     /*Tabelle Spieler score*/
+#Score9{ /*Tabelle Spieler score*/
     display: flex;
     align-items: center;
     justify-content: center;
@@ -522,7 +533,7 @@ td.platz{
     text-align: left;
     color:dimgray;
 }
-#Score1{                    /*Tabelle gewinner score*/
+#Score1{ /*Tabelle gewinner score*/
     display: flex;
     align-items: center;
     justify-content: center;

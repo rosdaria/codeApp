@@ -1,13 +1,13 @@
 //counter von Zustand SC5
 
 function counterx1(){
-var seconds1 = document.getElementById("counterx1").textContent;
-var countdown1 = setInterval(function() {
-        seconds1--;
-        document.getElementById("counterx1").textContent = seconds1;
-        if (seconds1 <= 0) clearInterval(countdown1);
+var seconds1 = document.getElementById("counterx1").textContent;//counterx1 ist das Div-Element, in welches der Counter rein soll
+var countdown1 = setInterval(function() { //Funktion für den Countdown
+        seconds1--; //seconds1 wird um 1 heruntergezählt
+        document.getElementById("counterx1").textContent = seconds1; //counterx1 soll sconds1 als textcontent haben, welcher jede sec. heruntergezählt wird
+        if (seconds1 <= 0) clearInterval(countdown1); // Intervalle resetten, wenn Counter auf Null ist
         }, 1000)
-//setz counter wieder auf 5 sec.
+//setz counter wieder auf 5 sec., nachdem der Countdown abgelaufen ist
      if (seconds1 <= 0){
          document.getElementById("counterx1").textContent=5;
          seconds1=5;}
@@ -16,8 +16,6 @@ var countdown1 = setInterval(function() {
 //counter von Zustand SC6
 
 function countdown(elem){
-//get aus DB
-//var elem = elem;
 var xhttp = new XMLHttpRequest();
 
 xhttp.onreadystatechange = function() {
@@ -52,25 +50,9 @@ var countdown4 = setInterval(function() { //funktion für den countdown
         if (seconds4 <= 0) clearInterval(countdown4); //resettet den countdown
         }, 1000)
 }
-//alte Version
-/*function counterx42(myObj){
-var length = myObj.response[0].antwortzeit; //antwortzeit, welche admin einstellt
-var seconds4 = document.getElementById("counterx4").textContent;
-var countdown4 = setInterval(function() {
-        seconds4--;
-        document.getElementById("counterx4").textContent = seconds4;
-        if (seconds4 <= 0) clearInterval(countdown4);
-        }, 1000)
-//setz counter wieder auf 15 sec.
-//TODO Antwortzeit aus db ziehn
-     if (seconds4 <= 0){
-         document.getElementById("counterx4").textContent=length;
-         seconds4=length;}
-}
-*/
-
 
 //counter von Zustand SC7
+// siehe function counterx1(), nur die Variablen wurden verändert
 
 function counterx3(){
 var seconds3= document.getElementById("counterx3").textContent;
@@ -86,6 +68,7 @@ var countdown3 = setInterval(function() {
 }
 
 //counter von Zustand SC8
+// siehe function counterx1(), nur die Variablen wurden verändert
 
 function counterx2(){
 var seconds2= document.getElementById("counterx2").textContent;
