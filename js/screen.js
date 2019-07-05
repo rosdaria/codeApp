@@ -1,5 +1,4 @@
 //counter von Zustand SC5
-
 function counterx1(){
 var seconds1 = document.getElementById("counterx1").textContent;//counterx1 ist das Div-Element, in welches der Counter rein soll
 var countdown1 = setInterval(function() { //Funktion für den Countdown
@@ -13,9 +12,9 @@ var countdown1 = setInterval(function() { //Funktion für den Countdown
          seconds1=5;}
 }
 
-//counter von Zustand SC6
 
-function countdown(elem){
+//counter von Zustand SC6
+function countdown(elem){ //für Beschreibung siehe function get() in Datei abfragen.js
 var xhttp = new XMLHttpRequest();
 
 xhttp.onreadystatechange = function() {
@@ -41,6 +40,7 @@ var countdown4 = setInterval(function() { //funktion für den countdown
         }, 1000)
 }
 
+
 function countdownfix(time,elem){
 var seconds4 = time; //antwortzeit, welche admin einstellt
 document.getElementById(elem).textContent= seconds4;//Inhalt von Counter 4 soll anfangs der vom Admin Eigestellte Startwert sein
@@ -51,9 +51,9 @@ var countdown4 = setInterval(function() { //funktion für den countdown
         }, 1000)
 }
 
+
 //counter von Zustand SC7
 // siehe function counterx1(), nur die Variablen wurden verändert
-
 function counterx3(){
 var seconds3= document.getElementById("counterx3").textContent;
 var countdown3 = setInterval(function() {
@@ -67,9 +67,9 @@ var countdown3 = setInterval(function() {
          seconds3=15;}
 }
 
+
 //counter von Zustand SC8
 // siehe function counterx1(), nur die Variablen wurden verändert
-
 function counterx2(){
 var seconds2= document.getElementById("counterx2").textContent;
 var countdown2 = setInterval(function() {
