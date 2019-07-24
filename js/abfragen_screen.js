@@ -18,6 +18,8 @@ var looprule=0;
 var ran=0;
 var tempfrage;
 var tempantwort;
+var rundenstart;
+var antwortdauer;
 
               function del(){
                 var data = null;
@@ -487,9 +489,9 @@ var tempantwort;
                               console.log("pauseloop");
                             }
                             //rundenloop
-                            //TODO reihenfolge abändern für pause funktionalität
+                            if(myObj.response[0].rundenzahlgesamt > myObj.response[0].counter_runden){
                             if(status == play){
-                            var antwortdauer= myObj.response[0].antwortzeit; // 15 sec zeit zu antworten
+                            antwortdauer= myObj.response[0].antwortzeit; // 15 sec zeit zu antworten
                             antwortdauer= antwortdauer *1000;
                               var showfragengen = setTimeout("fragengenerator()",0);
                               var showSC5 = setTimeout("hideelem('SC5','SC4')",0);
@@ -498,7 +500,9 @@ var tempantwort;
                               var fragencountdown = setTimeout("countdown('counterx4');", 5000);
                               var getkor = setTimeout("getkorrekt();",antwortdauer+5000);
                               var showSC7 = setTimeout("hideelem('SC7','SC6')",antwortdauer+5000);
+                              var scorerechner = setTimeout("highscore()",antwortdauer+9700);
                               var loopin = setTimeout("nacheinander2()",antwortdauer+10000);
+
 
 
 
@@ -514,7 +518,23 @@ var tempantwort;
                             //var showSC8 = setTimeout("hideelem('SC8','SC7')",20000);
                             var showfragengen = setTimeout("fragengenerator()",20000);
                             var loopin = setTimeout("nacheinander2()",25000);*/
-                          }
+                          };
+                        };
+                        if(myObj.response[0].rundenzahlgesamt == myObj.response[0].counter_runden){
+                          var xhttp = new XMLHttpRequest();
+                          xhttp.onreadystatechange = function() {
+                            if (this.readyState == 4 && this.status == 200) {
+                              //JSON Parse
+                              var myMessage = xhttp.responseText;
+                              var myObj = JSON.parse(myMessage);
+                            //  console.log(myObj);
+                              spielende2(myObj);
+                              // Typical action to be performed when the document is ready:
+                            }
+                          };
+                          xhttp.open("GET", "/spieletabelle/2", true);
+                          xhttp.send();
+                        };
                           //spielabbruch
                           if(status == abbruch){
                             //TODO abbruch rückwurft auf lobby
@@ -543,6 +563,13 @@ var tempantwort;
             };
 
             function getkorrekt2(myObj){
+              for(var i=0;i<29;i++){
+                document.getElementById("korrekt"+i).innerHTML = "";
+              };
+              for(var i=0; i<myObj.response.length;i++){
+              document.getElementById("korrekt"+i).innerHTML = myObj.response[i].nickname;
+            };
+            document.getElementById("richtigeantworten").innerHTML = myObj.response.length + "</span> Spieler wusste(n) die korrekte Antwort";
               //TODO den elementen in html ids zuweisen und genug davon erzeugen.
               for(var i=0;i<myObj.response.length;i++){
               //  var elem = "korrekt" + i;
@@ -579,7 +606,17 @@ var tempantwort;
               xhttp.send();
             };
 
-            function fragengenerator1(myObj){
+                function fragengenerator1(myObj){
+                  var ran= Math.floor(Math.random()*(myObj.response.length-0+1));
+                  console.log(ran);
+                  //TODO antworten öffnen, sobal DB voll ist
+                  var ran2 = myObj.response[ran].frage;
+
+                  fragengenerator2(myObj,ran,ran2);
+
+                };
+
+        /*    function fragengenerator1(myObj){
               var ran= Math.floor(Math.random()*(myObj.response.length-0+1));
               console.log(ran);
               //TODO antworten öffnen, sobal DB voll ist
@@ -600,13 +637,13 @@ var tempantwort;
                   // Typical action to be performed when the document is ready:
                 }
               };
-              xhttp.open("GET", "/fragentabelle/"+ rantest, true);
+              xhttp.open("GET", "/fragentabelle/"+ ran, true);
               xhttp.send();
-            };
+            }; */
 
-            function fragengenerator2(myObj1, ran){
+            function fragengenerator2(myObj1,ran,ran2){
               console.log(myObj1);
-              var tempfrageid = myObj1.response[0].frage;
+              var tempfrageid = ran2;
               var xhttp = new XMLHttpRequest();
               xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
@@ -618,7 +655,7 @@ var tempantwort;
                   //console.log(ist);
                   //console.log(soll);
                   //console.log(myObj);
-                  fragengenerator3(myObj1,myObj2);
+                  fragengenerator3(myObj1,myObj2,ran,ran2);
                   // Typical action to be performed when the document is ready:
                 }
               };
@@ -627,14 +664,18 @@ var tempantwort;
             };
 
 
-            function fragengenerator3(myObj,myObj2){
+            function fragengenerator3(myObj,myObj2,ran,ran2){
               console.log(myObj2);
               console.log(myObj);
-              tempfrage = myObj.response[0].frage;
-              tempantwort = myObj.response[0].antwort;
+              if(myObj2.response.length != 0){
+              tempfrage = myObj.response[ran].frage;
+              tempantwort = myObj.response[ran].antwort;
+              document.getElementById("loesung").innerHTML = "Die korrekte Antwort ist: <span>'" + tempantwort + "'</span>" ;
+
               var tempfalsch1= myObj2.response[0].falsche_antworten;
               var tempfalsch2 = myObj2.response[1].falsche_antworten;
               var tempfalsch3 = myObj2.response[2].falsche_antworten;
+              document.getElementById("fragewort").innerHTML = tempfrage;
 
               var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance
               var theUrl = "/frageverlauf";
@@ -656,6 +697,10 @@ var tempantwort;
               };
               xhttp.open("GET", "/spieletabelle/2", true);
               xhttp.send();
+            }
+            else{
+              fragengenerator();
+            };
             };
 
             function fragengen4(myObj3){
@@ -665,7 +710,7 @@ var tempantwort;
               document.getElementById("RundenCounter").innerHTML = temprunde;
               document.getElementById("RundenCounter2").innerHTML = temprunde;
               document.getElementById("RundenCounter3").innerHTML = temprunde;
-
+              rundenstart = new Date();
               myObj3.response[0].counter_runden = temprunde;
 
                               var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance
@@ -691,3 +736,86 @@ var tempantwort;
                 prevelem= helem;
                 jtzelem= elem;
             }
+
+            function highscore(){
+              var xhttp = new XMLHttpRequest();
+              xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                  //JSON Parse
+                  var myMessage = xhttp.responseText;
+                  var myObj = JSON.parse(myMessage);
+                  //console.log(myObj);
+                  //console.log(myObj.response[0].spielinstanz);
+                  //console.log(ist);
+                  //console.log(soll);
+                  highscore2(myObj);
+                  // Typical action to be performed when the document is ready:
+                }
+              };
+              xhttp.open("GET", "/nicknamestabelle/teilnehmer/playing", true);
+              xhttp.send();
+            };
+
+            function highscore2(myObj){
+            /*  for(var i=0; i<myObj.response.length;i++){
+                var antworttimer = myObj.response[i].antwortzeit;
+                var timedif = rundenstart-antworttimer;
+                console.log(timedif);
+                timedif = Math.abs(timedif);
+                var score = ((1/timedif) / antwortdauer)*100;
+                console.log(score);
+                var zwischenscore = myObj.response[i].highscore_buzzer + score;
+                myObj.response[i].highscore_buzzer = zwischenscore;
+                var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance
+                var theUrl = "/nicknamestabelle";
+                xmlhttp.open("POST", theUrl);
+                xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+                xmlhttp.send(JSON.stringify(myObj.response[i]));
+
+              };*/
+            };
+
+            function spielende2(myObj){
+              myObj.response[0].runden_counter= myObj.response[0].rundenzahlgesamt +1;
+              var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance
+              var theUrl = "/spieletabelle";
+              xmlhttp.open("POST", theUrl);
+              xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+              xmlhttp.send(JSON.stringify(myObj.response[0]));
+              console.log("spielendenloop");
+              spielende();
+            }
+
+            function spielende(){
+              console.log("spielendefunction");
+              var showSC5 = setTimeout("hideelem('SC9','SC7')",0);
+              var highscoregen = setTimeout("highscoregen();", 2000);
+              var showSC6 = setTimeout("hideelem('SC10','SC9')", 5000);
+            };
+
+            function highscoregen(){
+              var xhttp = new XMLHttpRequest();
+              xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                  //JSON Parse
+                  var myMessage = xhttp.responseText;
+                  var myObj = JSON.parse(myMessage);
+                  //console.log(myObj);
+                  //console.log(myObj.response[0].spielinstanz);
+                  //console.log(ist);
+                  //console.log(soll);
+                  highscoregen2(myObj);
+                  // Typical action to be performed when the document is ready:
+                }
+              };
+              xhttp.open("GET", "/nicknamestabelle/teilnehmer/playing", true);
+              xhttp.send();
+            };
+
+            function highscoregen2(myObj){
+              console.log(myObj);
+              for(var i=0; i<myObj.response.length;i++){
+              document.getElementById("screenplatz"+i).innerHTML = myObj.response[i].nickname;
+              document.getElementById("screenscore"+i).innerHTML = myObj.response[i].highscore_buzzer;
+            };
+          };

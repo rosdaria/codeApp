@@ -265,7 +265,7 @@ var runde=1;
                     nacheinander();
                   }
                 };
-                if(runde == rundenmax){
+                if(runde > rundenmax){
                   runde=0;
                   stopNacheinander();
                   highscore();
@@ -289,7 +289,7 @@ var runde=1;
             var theUrl = "/spieletabelle";
             xmlhttp.open("POST", theUrl);
             xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xmlhttp.send(JSON.stringify({"id":2,"spiel_id":"buzzer","rundenzahlgesamt":15,"counter_zeit":20,"counter_runden":0,"antwortzeit":30,"gestartet":"true","level1":"true","level2":"true","level3":"true"}));
+            xmlhttp.send(JSON.stringify({"id":2,"spiel_id":"buzzer","rundenzahlgesamt": 5 ,"counter_zeit":20,"counter_runden":0,"antwortzeit":15,"gestartet":"true","level1":"true","level2":"true","level3":"true"}));
 
             loop3=setInterval(function(){
           //  var ist = status;
@@ -359,7 +359,7 @@ var runde=1;
               var theUrl = "/spieletabelle";
               xmlhttp.open("POST", theUrl);
               xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-              xmlhttp.send(JSON.stringify({"id":2,"spiel_id":"buzzer","rundenzahlgesamt":15,"counter_zeit":20,"counter_runden":0,"antwortzeit":30,"gestartet":"playing","level1":"true","level2":"true","level3":"true"}));
+              xmlhttp.send(JSON.stringify({"id":2,"spiel_id":"buzzer","rundenzahlgesamt":5,"counter_zeit":20,"counter_runden":0,"antwortzeit":15,"gestartet":"playing","level1":"true","level2":"true","level3":"true"}));
 
 
             }
@@ -386,6 +386,7 @@ var runde=1;
 
               for(var i=0; i<myObj.response.length; i++){
                 myObj.response[i].teilnahme = "false";
+                myObj.response[i].highscore_buzzer = 0;
                 myObj.response[i].spielinstanz = "S4";
                 var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance
                 var theUrl = "/nicknamestabelle";
@@ -406,7 +407,7 @@ var runde=1;
               var theUrl = "/spieletabelle";
               xmlhttp.open("POST", theUrl);
               xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-              xmlhttp.send(JSON.stringify({"id":2,"spiel_id":"buzzer","rundenzahlgesamt":15,"counter_zeit":20,"counter_runden":0,"antwortzeit":30,"gestartet":"false","level1":"true","level2":"true","level3":"true"}));
+              xmlhttp.send(JSON.stringify({"id":2,"spiel_id":"buzzer","rundenzahlgesamt":5,"counter_zeit":20,"counter_runden":0,"antwortzeit":15,"gestartet":"false","level1":"true","level2":"true","level3":"true"}));
 
             }
 
@@ -493,7 +494,7 @@ var runde=1;
                 var theUrl = "/spieletabelle";
                 xmlhttp.open("POST", theUrl);
                 xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-                xmlhttp.send(JSON.stringify({"id":2,"spiel_id":"buzzer","rundenzahlgesamt":15,"counter_zeit":20,"counter_runden":0,"antwortzeit":30,"gestartet":"false","level1":"true","level2":"true","level3":"true"}));
+                xmlhttp.send(JSON.stringify({"id":2,"spiel_id":"buzzer","rundenzahlgesamt":5,"counter_zeit":20,"counter_runden":0,"antwortzeit":15,"gestartet":"false","level1":"true","level2":"true","level3":"true"}));
 
               }
               //admins schließt --> spiel wird geschlossen
@@ -563,7 +564,7 @@ var runde=1;
                  xhttp.open("GET", '/nicknamestabelle/name/'+fragenid, true);
                  xhttp.send();
                  */
-                 innerScore ++;
+                 //innerScore ++;
                }
                else{
                  showS91 = setTimeout("hideelem('S9.1','S7');nurhide('S8');", 0);
@@ -580,19 +581,42 @@ var runde=1;
             };
 
             function nacheinander2(myObj){
-              myObj.response[i].antwort = "true";
+              myObj.response[0].antwort = "true";
               var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance
               var theUrl = "/nicknamestabelle";
               xmlhttp.open("POST", theUrl);
               xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-              xmlhttp.send(JSON.stringify(myObj.response[i]));
+              xmlhttp.send(JSON.stringify(myObj.response[0]));
 
             };
 
             function answered(answer){
 
               antwort=answer;
+              var antworttimer = new Date();
+              var xhttp = new XMLHttpRequest();
+              xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                  //JSON Parse
+                  var myMessage = xhttp.responseText;
+                  var myObj = JSON.parse(myMessage);
+                  answered2(myObj,antworttimer);
+                  // Typical action to be performed when the document is ready:
+                }
+              };
+              xhttp.open("GET", "nicknamestabelle/"+userid, true);
+              xhttp.send();
               //console.log(antwort);
+            };
+
+            function answered2(myObj,antworttimer){
+              myObj.response[0].antwortzeit = antworttimer;
+              var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance
+              var theUrl = "/nicknamestabelle";
+              xmlhttp.open("POST", theUrl);
+              xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+              xmlhttp.send(JSON.stringify(myObj.response[0]));
+
             }
 
             function highscore(){
@@ -619,6 +643,7 @@ var runde=1;
               var gesamtscore = myObj.response[0].persoenlicher_highscore + score;
               document.getElementById("highscore").innerHTML = score;
               document.getElementById("gesamtscore").innerHTML = gesamtscore;
+              spielende();
               //neue persönlciher highscore posten
             }
 
