@@ -1,4 +1,4 @@
-//global defined
+//global varibles defined
 var userid = 0;
 var loop1;
 var loop2;
@@ -12,8 +12,10 @@ var s6change=0;
 var s4change=0;
 var innerScore=0;
 var runde=1;
-
+// MUSTERFUNKTIONEN
+// delete muster
               function del(){
+                //data wird als Null defined
                 var data = null;
                 var xmlhttp = new XMLHttpRequest();
                 xmlhttp.addEventListener("readystatechange", function () {
@@ -21,40 +23,47 @@ var runde=1;
                     console.log(this.responseText);
                   }
                 });
-
+                //User mit ID 20 wird gelöscht
                 xmlhttp.open("DELETE", "/fragentabelle/20");
                 xmlhttp.send(data);
               };
 
-// post & Update funktioniert
+// post & Update muster
             function post(){
-              var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance
+              // new HttpRequest instance
+              var xmlhttp = new XMLHttpRequest();
+              //Route der Node API
               var theUrl = "/fragentabelle";
               xmlhttp.open("POST", theUrl);
               xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+              //Data im JSON Format
               xmlhttp.send(JSON.stringify({"id":20,"frage":"Updatetest23123","antwort":"Updatetest","typ":"Updatetest","level":22,"thema":"Updatetest","bild":"","zeitmultiplikator":3,"spielart":"Updatetest"}));
             };
 
-// get funktioniert
+// get muster
             function get(){
               var xhttp = new XMLHttpRequest();
               xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
-                  //JSON Parse
+                  //JSON objekt wird zwischengespeichert
                   var myMessage = xhttp.responseText;
+                  //JSON objekt wird zu Javascript Objekt geparsed
                   var myObj = JSON.parse(myMessage);
-                  // Typical action to be performed when the document is ready:
+                  // Beispielfunktion wenn Objekt bereit ist
                   document.getElementById("result").innerHTML = xhttp.responseText;
                   document.getElementById("result2").innerHTML = myObj[0].frage;
                 }
               };
+              //Route der Node API
               xhttp.open("GET", "/fragentabelle", true);
               xhttp.send();
             };
 
+// Funktionale Funktionen
+// Funktionen werden oft in mehrere Funktionen unterteilt, um Probleme mit asynchronisation zu vermeiden
 
             function adminlogin(){
-
+              //wird getriggert wenn User Admin auswählt
               //get admin User
               var xhttp = new XMLHttpRequest();
               xhttp.onreadystatechange = function() {
@@ -62,8 +71,8 @@ var runde=1;
                   //JSON Parse
                   var myMessage = xhttp.responseText;
                   var myObj = JSON.parse(myMessage);
+                  //Admin User wird als Obj übergeben
                   adminlogin2(myObj);
-                  // Typical action to be performed when the document is ready:
                 }
               };
               xhttp.open("GET", "/nicknamestabelle/4", true);
@@ -71,27 +80,31 @@ var runde=1;
 };
 
             function adminlogin2(myObj){
-              //console.log(myObj.response[0].teilnahme);
-              var test = new String('true');
-              if(myObj.response[0].teilnahme != test){
-                //admin ist inaktiv
+              var override = new String('true');
+              //Wenn Admin noch nicht aktiv ist
+              if(myObj.response[0].teilnahme != override){
+              //admin ist inaktiv
+              //admin hat immer User id=4
               userid=4;
-              var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance
+              var xmlhttp = new XMLHttpRequest();
               var theUrl = "/nicknamestabelle";
               xmlhttp.open("POST", theUrl);
               xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+              //Defaultwerte
               xmlhttp.send(JSON.stringify({"id":4,"nickname":"admin","spiel_id":"buzzerspiel","teilnahme":"true","spielinstanz":"S4","persoenlicher_highscore":56125,"highscore_buzzer":12003,"admin":"true","antwortzeit":"5","antwort":"false"}));
 
               hideelem('L4','L3S3');
               replacenav();
             }
-
               else{
                 //admin ist aktiv
                 alert("Es ist bereits ein Admin aktiv");
               }
             };
+
             function schülerlogin(){
+            //wird getriggert wenn User Spieler wählt
+            //Loop checkt ob eine Lobby geöffnet ist
               loop1= setInterval(function(){
                 var xhttp = new XMLHttpRequest();
                 xhttp.onreadystatechange = function() {
@@ -99,9 +112,8 @@ var runde=1;
                     //JSON Parse
                     var myMessage = xhttp.responseText;
                     var myObj = JSON.parse(myMessage);
-                    console.log(myObj);
+                    //spieltabelle wird übergeben
                     schülerlogin2(myObj);
-                    // Typical action to be performed when the document is ready:
                   }
                 };
                 xhttp.open("GET", "/spieletabelle/2", true);
@@ -111,21 +123,19 @@ var runde=1;
           function schülerlogin2(myObj){
                 var ist = myObj.response[0].gestartet;
                 var soll = new String("true");
-                //console.log(myObj.response[0].spielinstanz);
-                //console.log(ist);
-                //console.log(userid);
-                //console.log(soll);
+                //wenn Lobby geöffnet wird, loop wird beendet
                 if(ist == soll){
                 clearInterval(loop1);
+                //neue Instanz wird angezeigt
                 hideelem('S5','S4');
                 inputwert();
               }
             };
 
             function teilnehmen(spieler){
+              //wenn user auf Teilnehmen drückt
               var user = spieler;
               var xhttp = new XMLHttpRequest();
-              //spzifischer user wird gegettet
               xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
                   //JSON Parse
@@ -133,48 +143,44 @@ var runde=1;
                   var myObj = JSON.parse(myMessage);
                   console.log(myObj.response[0]);
                   teilnehmen2(myObj, user);
-
-                  // Typical action to be performed when the document is ready:
                 }
               }
               xhttp.open("GET", '/nicknamestabelle/name/'+user.value, true);
               xhttp.send();
             };
+
             function teilnehmen2(myObj, user){
-              //console.log(myObj.response.length);
+              //wenn user in DB vorhanden
               if (myObj.response.length > 0) {
-                //wenn user vorhanden
                 //userid wird aktualisiert
                 userid = myObj.response[0].id;
-                //console.log("loop läuft");
-                // the array is defined and has at least one element
-                var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance
+                var xmlhttp = new XMLHttpRequest();
                 var theUrl = "/nicknamestabelle";
                 xmlhttp.open("POST", theUrl);
                 xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
               //  xmlhttp.send(JSON.stringify({"id": +myObj.response[0].id+  "," +"nickname":"'" +myObj.response[0].nickname+ "'"+","+"spiel_id":"'"+myObj.response[0].spiel_id+"'"+","+"teilnahme":"true","spielinstanz":"S5","persoenlicher_highscore":"'"+myObj.response[0].persoenlicher_highscore+"'"+ ","+"highscore_buzzer":"'"+myObj.response[0].highscore_buzzer+"'"+ ","+"admin":"false","antwortzeit":"0"}));
-              //Überschreiben
+              //Überschreiben vom Teilnahme Parameter.
               myObj.response[0].teilnahme = "true";
               console.log(myObj.response[0]);
-                xmlhttp.send(JSON.stringify(myObj.response[0]));
+              xmlhttp.send(JSON.stringify(myObj.response[0]));
               }
               else{
-                //wenn user nich vorhanden
-                var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance
+                //wenn user nicht vorhanden
+                var xmlhttp = new XMLHttpRequest();
                 var theUrl = "/nicknamestabelle";
                 xmlhttp.open("POST", theUrl);
                 xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+                //Default User wird angelegt mit entsprechendem Nickname
                 xmlhttp.send(JSON.stringify({"id":0,"nickname":""+user.value+"","spiel_id":"buzzerspiel","teilnahme":"true","spielinstanz":"S5","persoenlicher_highscore":0,"highscore_buzzer":0,"admin":"false","antwortzeit":"0","antwort":"false"}));
                 teilnehmen(user);
                   }
                 };
 
           function checkloop(status,wird){
+            //Loop checkt ob Spiel gestartet wurde
             loop2=setInterval(function(){
             var ist = status;
             var soll = wird;
-
-
             //GET usertabelle
               var xhttp = new XMLHttpRequest();
               xhttp.onreadystatechange = function() {
@@ -182,12 +188,7 @@ var runde=1;
                   //JSON Parse
                   var myMessage = xhttp.responseText;
                   var myObj = JSON.parse(myMessage);
-                  //console.log(myObj);
-                  //console.log(myObj.response[0].spielinstanz);
-                  //console.log(ist);
-                  //console.log(soll);
                   checkloop2(myObj,soll,ist);
-                  // Typical action to be performed when the document is ready:
                 }
               };
               xhttp.open("GET", "/nicknamestabelle/"+userid, true);
@@ -196,22 +197,19 @@ var runde=1;
 };
         function checkloop2(myObj,soll,ist){
               ist = myObj.response[0].spielinstanz;
-              //console.log(myObj.response[0].spielinstanz);
-              //console.log(ist);
-              //console.log(userid);
-              //console.log(soll);
+              //Regel für erste Runde
               if(ist == soll && s6change == 0){
               s6change=1;
               console.log(soll);
-              //clearInterval(loop2);
-          //    hideelem('S6','S5');
+              //Erste Fragemöglichkeiten werden gegettet
               fragengen();
               console.log("checkloopgame fragengen");
               counter7();
+              //Neue Instanz wird angezeigt
               showS101 = setTimeout("hideelem('S10','S5')",0);
-
           //    setTimeout(function(){ hideelem('S7','L6') },6000);
             };
+            //wenn nach Erster Runde eine Neue runde gestaret wird, wird die Testvariable zurückgesetzt
             if(ist != soll && s6change != 0){
               s6change=0;
             };
@@ -224,9 +222,9 @@ var runde=1;
             }
           };
 
-
           function checkloopgame(){
-
+            //Gameloop, welche Rundenwechsel, Rundenmax und Rundencounter managed
+            //Triggert ausserdem die Haupt-Gameloop
             loop4=setInterval(function(){
 
             //GET spieletabelle
@@ -236,12 +234,7 @@ var runde=1;
                   //JSON Parse
                   var myMessage = xhttp.responseText;
                   var myObj = JSON.parse(myMessage);
-                  //console.log(myObj);
-                  //console.log(myObj.response[0].spielinstanz);
-                  //console.log(ist);
-                  //console.log(soll);
                   checkloopgame2(myObj);
-                  // Typical action to be performed when the document is ready:
                 }
               };
               xhttp.open("GET", "/spieletabelle/2", true);
@@ -258,43 +251,44 @@ var runde=1;
                 console.log(runde);
                 console.log(rundenmax);
                 console.log(roundcounter);
+                //Wenn neue Runde gestartet wird
                 if(roundcounter != runde){
                   runde = roundcounter;
+                  //Fragenantworten werden gegettet und im Client geupdatet
                   fragengen();
+                  //Wenn das spiel nicht pausiert oder Abbgebrochen ist
                   if(gestartet == "playing"){
+                  //Haupt-Gameloop wird getriggert
                     nacheinander();
                   }
                 };
+                //Wenn letzte Runde
                 if(runde > rundenmax){
                   runde=0;
+                  //Loops werden gestoppt
                   stopNacheinander();
+                  //Endscore Ablauf wird gestartet
                   highscore();
                 };
-                //console.log(myObj.response[0].spielinstanz);
-                //console.log(ist);
-                //console.log(userid);
-                //console.log(soll);
+                //Tote Schleife
                 if(gestartet != "true"){
                 //hideall();
               };
-                //clearInterval(loop2);
-                //counter7();
-                //setTimeout(function(){ hideelem('S7','L6') },6000);
+                //Rundencounter werden geupdatet
                 document.getElementById("RundenCounter").innerHTML = "Runde : " + myObj.response[0].counter_runden;
                 document.getElementById("RundenCounter2").innerHTML = "Runde : " + myObj.response[0].counter_runden;
             };
 
           function buzzerinit(){
-            var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance
+            //wenn Admin auf Buzzerspiel im Adminmenü drückt
+            var xmlhttp = new XMLHttpRequest();
             var theUrl = "/spieletabelle";
             xmlhttp.open("POST", theUrl);
             xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            //Defaultwerte für Buzzerspiel
             xmlhttp.send(JSON.stringify({"id":2,"spiel_id":"buzzer","rundenzahlgesamt": 5 ,"counter_zeit":20,"counter_runden":0,"antwortzeit":15,"gestartet":"true","level1":"true","level2":"true","level3":"true"}));
-
+            //Loop checkt nach Usern die Teilnehmen
             loop3=setInterval(function(){
-          //  var ist = status;
-          //  var soll = wird;
-
               var xhttp = new XMLHttpRequest();
               xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
@@ -306,25 +300,23 @@ var runde=1;
                   // Typical action to be performed when the document is ready:
                 }
               };
+              //Node API filtert Alle teilnehmen die Im feld Teilnehmen true stehen haben
               xhttp.open("GET", "/nicknamestabelle/teilnehmer/true", true);
               xhttp.send();
             },interval);
   };
         function buzzerinit2(myObj){
-
-
-
+          //Teilnehmer Count wird angezeigt
           document.getElementById("usercount").innerHTML = "Spieler : " + myObj.response.length;
+          //teilnehmer werden in Liste angezeigt
           for(var i=0; 10>i<myObj.response.length; i++){
-
-
           document.getElementById("platz"+i).innerHTML = myObj.response[i].nickname;
-
           }
-              //TODO user werden in html eingebunden
           };
 
           function buzzerstart(){
+            //Admin drück auf Spiel starten
+            //Usercheck-loop wird beendet
             clearInterval(loop3);
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
@@ -343,31 +335,28 @@ var runde=1;
           };
 
           function buzzerstart2(myObj){
-            //
+            //User Meta daten werden in DB angepasst
             for(var i=0; i<myObj.response.length; i++){
               myObj.response[i].teilnahme = "playing";
               myObj.response[i].spielinstanz = "L6";
-              console.log(  myObj.response[i].teilnahme);
+              console.log(myObj.response[i].teilnahme);
               console.log(myObj.response[i].spielinstanz);
-              var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance
+              var xmlhttp = new XMLHttpRequest();
               var theUrl = "/nicknamestabelle";
               xmlhttp.open("POST", theUrl);
               xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
               xmlhttp.send(JSON.stringify(myObj.response[i]));
-
-              var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance
+              //Spieltabelle wird auf playing gestellt
+              var xmlhttp = new XMLHttpRequest();
               var theUrl = "/spieletabelle";
               xmlhttp.open("POST", theUrl);
               xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
               xmlhttp.send(JSON.stringify({"id":2,"spiel_id":"buzzer","rundenzahlgesamt":5,"counter_zeit":20,"counter_runden":0,"antwortzeit":15,"gestartet":"playing","level1":"true","level2":"true","level3":"true"}));
-
-
             }
-
             };
 
             function spielabbruch(){
-
+              //wenn Admin das spiel abbricht
               var xhttp = new XMLHttpRequest();
               xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
@@ -383,7 +372,7 @@ var runde=1;
             };
 
             function spielabbruch2(myObj){
-
+              //alle User werden aus dem modus Playing rausgeschmissen, wenn Lobby geschlossen wird
               for(var i=0; i<myObj.response.length; i++){
                 myObj.response[i].teilnahme = "false";
                 myObj.response[i].highscore_buzzer = 0;
@@ -395,24 +384,21 @@ var runde=1;
                 xmlhttp.send(JSON.stringify(myObj.response[i]));
                 spielabbruch3();
               }
-              //spielstatus tbd
-
-              //wieder auf startseite leiten
             };
 
             function spielabbruch3(){
-
-              var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance
+              //Spieltabelle wird aus dem Playing modus rausgeschmissen
+              var xmlhttp = new XMLHttpRequest();
               console.log("spielabbruch");
               var theUrl = "/spieletabelle";
               xmlhttp.open("POST", theUrl);
               xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+              //Default Werte
               xmlhttp.send(JSON.stringify({"id":2,"spiel_id":"buzzer","rundenzahlgesamt":5,"counter_zeit":20,"counter_runden":0,"antwortzeit":15,"gestartet":"false","level1":"true","level2":"true","level3":"true"}));
-
-            }
+            };
 
             function fragengen(){
-
+              //Antworten für Fragen werden gegettet
               var xhttp = new XMLHttpRequest();
               xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
@@ -420,7 +406,6 @@ var runde=1;
                   var myMessage = xhttp.responseText;
                   var myObj = JSON.parse(myMessage);
                   fragengen2(myObj);
-                  // Typical action to be performed when the document is ready:
                 }
               };
               xhttp.open("GET", "/frageverlauf", true);
@@ -429,11 +414,13 @@ var runde=1;
             };
 
             function fragengen2(myObj){
+              //Shuffel von Antwortfeldern für jeden User individuell
               var arr= [1,2,3,4];
-
               arr = shuffle(arr);
               console.log(arr);
+              //Aktuellste antwort ist immer die Letzte hinzugefügte
               var i= myObj.response.length -1;
+              //Antworten werden an Felder gebunden
               var y1 = "antwortBtn" + arr[0];
               var y2 = "antwortBtn" + arr[1];
               var y3 = "antwortBtn" + arr[2];
@@ -447,7 +434,8 @@ var runde=1;
               var y7 = "antwortBtn" + x7;
               var y8 = "antwortBtn" + x8;
              //console.log(i);
-            //  console.log(y4);
+             //console.log(y4);
+             //Antwortmöglichkeiten werden angebunden
               korrekt= myObj.response[i].antwort_richtig;
               document.getElementById(y1).innerHTML = myObj.response[i].antwort_richtig;
               document.getElementById(y2).innerHTML = myObj.response[i].antwort_falsch1;
@@ -461,6 +449,8 @@ var runde=1;
             }
 
             function shuffle(array) {
+              //Antwort array wird geshuffelt
+              //funktion wurde von extern kopiert
               var currentIndex = array.length, temporaryValue, randomIndex;
 
               // While there remain elements to shuffle...
@@ -481,6 +471,8 @@ var runde=1;
 
 
             function unload(){
+              //Wenn Admin Seite schließt oder auf andere Seite Aufruft
+              //Funktionalität ist gleich wie spielabbruch
               if(userid == 4){
                 var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance
                 var theUrl = "/nicknamestabelle";
@@ -495,18 +487,17 @@ var runde=1;
                 xmlhttp.open("POST", theUrl);
                 xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
                 xmlhttp.send(JSON.stringify({"id":2,"spiel_id":"buzzer","rundenzahlgesamt":5,"counter_zeit":20,"counter_runden":0,"antwortzeit":15,"gestartet":"false","level1":"true","level2":"true","level3":"true"}));
-
               }
               //admins schließt --> spiel wird geschlossen
-
             };
 
             function unloadUser(){
-
-              //user schließt --> aus spiel ausgeschlossen?
+              //Konnte nicht geklärt werden was hier passieren soll
             };
 
             function nacheinander(){
+              //Haupt Gameloop
+              //Ablauf einer Runde ist in dieser Funktion
               var xhttp = new XMLHttpRequest();
               xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
@@ -522,77 +513,61 @@ var runde=1;
             };
             function nacheinander11(myObj){
                var antwortdauer = myObj.response[0].antwortzeit;
+               //antwortdauer in ms
                antwortdauer = antwortdauer*1000;
                console.log(korrekt);
                console.log(antwort);
+               //countdown funktion
                countdownfix(5,"counterx6");
+               //3x sprung von verschiedenen Zuständen. Daher 3x werden alte zustände gehided und S10(countdown) gezeigt
                showS101 = setTimeout("hideelem('S10','S7')",0);
                showS10 = setTimeout("hideelem('S10','S9')", 0);
                showS102 = setTimeout("hideelem('S10','S9.1')", 0);
-               showS7 = setTimeout("hideelem('S7','S10');", 5000);// muss 6sec!
+               //antwortbuttons werden gezeigt nachdem Countdown vorbei ist (delay 5000ms)
+               showS7 = setTimeout("hideelem('S7','S10');", 5000);// muss 5sec!
+               //nachdem zeit abgelaufen ist wird getestet ob die Antwort korrekt ist oder nicht
                rightwrong = setTimeout(function(){
                  if(antwort == korrekt){
+                  //zeigt "korrekt" feedback an
                  showS9 = setTimeout("hideelem('S9','S7');nurhide('S8');", 0);
                  var xhttp = new XMLHttpRequest();
                  xhttp.onreadystatechange = function() {
                    if (this.readyState == 4 && this.status == 200) {
-                     //JSON Parse
                      var myMessage = xhttp.responseText;
                      var myObj = JSON.parse(myMessage);
                      nacheinander2(myObj);
-                     // Typical action to be performed when the document is ready:
                    }
                  };
                  xhttp.open("GET", "nicknamestabelle/"+userid, true);
                  xhttp.send();
-
-                 //TODO SCOREBECRECHNUNG HIER
-                 //GET Fragentabelle
-               /*  var xhttp = new XMLHttpRequest();
-                 xhttp.onreadystatechange = function() {
-                   if (this.readyState == 4 && this.status == 200) {
-                     //JSON Parse
-                     var myMessage = xhttp.responseText;
-                     var myObj = JSON.parse(myMessage);
-                     console.log(myObj.response[0]);
-                     teilnehmen2(myObj, user);
-
-                     // Typical action to be performed when the document is ready:
-                   }
-                 }
-                 //ohne fragenid wird komplette liste gezogen
-                 xhttp.open("GET", '/nicknamestabelle/name/'+fragenid, true);
-                 xhttp.send();
-                 */
-                 //innerScore ++;
                }
                else{
+                 //zeigt "falsch" feedback an
                  showS91 = setTimeout("hideelem('S9.1','S7');nurhide('S8');", 0);
 
                }
+               //neue antwortmöglichkeiten werden gegettet
                  fragengen();
                },antwortdauer +5000);
-
-
-
-
                 //counterTimeout = setTimeout("counter6()",5000); // wie zeile oben! nach 3sec soll counter starten
                // plus 6sec für counter
             };
 
             function nacheinander2(myObj){
+              //In Db wird festgesetzt, dass die Antwort des Users richtig war
               myObj.response[0].antwort = "true";
-              var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance
+              var xmlhttp = new XMLHttpRequest();
               var theUrl = "/nicknamestabelle";
               xmlhttp.open("POST", theUrl);
               xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
               xmlhttp.send(JSON.stringify(myObj.response[0]));
-
             };
 
             function answered(answer){
-
+              //wird getriggert wenn antwort abgegeben wird
+              //testet ob die antwort korrekt ist
               antwort=answer;
+              //zeit der antwortabgabe wird festgelegt
               var antworttimer = new Date();
               var xhttp = new XMLHttpRequest();
               xhttp.onreadystatechange = function() {
@@ -610,8 +585,9 @@ var runde=1;
             };
 
             function answered2(myObj,antworttimer){
+              //die exakte zeit der Antwort wird in Db gespeichert, um später für Highscoreberechnung auf Beamerseite benutzt zu werden
               myObj.response[0].antwortzeit = antworttimer;
-              var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance
+              var xmlhttp = new XMLHttpRequest();
               var theUrl = "/nicknamestabelle";
               xmlhttp.open("POST", theUrl);
               xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
@@ -620,19 +596,13 @@ var runde=1;
             }
 
             function highscore(){
-
+              //wenn spiel zu ende ist werden die endscores angezeigt
               var xhttp = new XMLHttpRequest();
               xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
-                  //JSON Parse
                   var myMessage = xhttp.responseText;
                   var myObj = JSON.parse(myMessage);
-                  //console.log(myObj);
-                  //console.log(myObj.response[0].spielinstanz);
-                  //console.log(ist);
-                  //console.log(soll);
                   highscore2(myObj);
-                  // Typical action to be performed when the document is ready:
                 }
               };
               xhttp.open("GET", "/nicknamestabelle/"+userid, true);
@@ -640,33 +610,30 @@ var runde=1;
             }
 
             function highscore2(myObj){
+              //die scores des Aktiven Users wird ins HTMl geschrieben
               var gesamtscore = myObj.response[0].persoenlicher_highscore + score;
               document.getElementById("highscore").innerHTML = score;
               document.getElementById("gesamtscore").innerHTML = gesamtscore;
               spielende();
-              //neue persönlciher highscore posten
+              //neue persönlicher highscore posten
             }
 
             function spielende(){
-
+              //bei spielende werden die Alten instanzen gehided und der "game over" und "highscore" screent gezeigt
               hideelem('S11','S10');
               setTimeout(function(){ hideelem('S12','L11') },5000);
 
             }
 
             function paused(){
+              //wenn admin auf pause drückt
               var xhttp = new XMLHttpRequest();
               xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
                   //JSON Parse
                   var myMessage = xhttp.responseText;
                   var myObj = JSON.parse(myMessage);
-                  //console.log(myObj);
-                  //console.log(myObj.response[0].spielinstanz);
-                  //console.log(ist);
-                  //console.log(soll);
                   paused2(myObj);
-                  // Typical action to be performed when the document is ready:
                 }
               };
               xhttp.open("GET", "/spieletabelle/2", true);
@@ -674,11 +641,16 @@ var runde=1;
             }
 
             function paused2(myObj){
+              //pause wirkt als toggle
+              //wenn das spiel läuft
               if(myObj.response[0].gestartet == "playing"){
+                //spieltabelle wird in DB auf "paused" gesetzt
               myObj.response[0].gestartet = "paused";
               document.getElementById("angehalten").innerHTML = "Spiel fortfahren";
             }
+            //wenn das spiel pausiert ist
             else{
+              //spieltabelle wird in DB auf "playing" gesetzt
               myObj.response[0].gestartet = "playing";
               document.getElementById("angehalten").innerHTML = "Spiel anhalten";
             }
@@ -692,18 +664,14 @@ var runde=1;
             };
 
             function lastround(){
+              //wenn der Admin auf letzte Runde drückt
               var xhttp = new XMLHttpRequest();
               xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
                   //JSON Parse
                   var myMessage = xhttp.responseText;
                   var myObj = JSON.parse(myMessage);
-                  //console.log(myObj);
-                  //console.log(myObj.response[0].spielinstanz);
-                  //console.log(ist);
-                  //console.log(soll);
                   lastround2(myObj);
-                  // Typical action to be performed when the document is ready:
                 }
               };
               xhttp.open("GET", "/spieletabelle/2", true);
@@ -711,6 +679,7 @@ var runde=1;
             };
 
             function lastround2(myObj){
+              //der Rundencounter wird auf den selben Wert wie die gesamtrundenzahl gesetzt, wodurch die letzte Runde eingeleitet wird
               var gesamt = myObj.response[0].rundenzahlgesamt;
               myObj.response[0].counter_runden = gesamt;
               var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance
@@ -722,8 +691,8 @@ var runde=1;
             };
 
             function settingsinit(){
-
-              //DB änderung: kategorien in spieletabelle einpflegen
+              //Einstellungen werden geändert
+              //Funktion nicht vollständig
               var xhttp = new XMLHttpRequest();
               xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
@@ -742,7 +711,8 @@ var runde=1;
               xhttp.send();
             };
             function settingsinit2(myObj){
-
+              //alle aktuellen Einstellungen werden gezogen
+              //fehlend: speicherund in der DB
               var gesamtrunden = myObj.response[0].rundenzahlgesamt;
               var zeit = myObj.response[0].antwortzeit;
               document.getElementById("antwortzeitwert").innerHTML = zeit;
