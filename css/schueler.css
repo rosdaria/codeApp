@@ -1,10 +1,10 @@
-/*alle ZUstände außer L2S2 zu Beginn versteckt*/
+/*Alle Zustände außer L2S2 zu Beginn versteckt*/
 .hide{
     display:none;
 }    
 
 
-/*Zustand S2/L2*/ 
+/*Zustand von S2/L2*/ 
 
 #logogross{
     height: 200px;
@@ -30,7 +30,7 @@
 }
 
 
-/*Zustand S3/L3*/ 
+/*Zustand von S3/L3*/ 
 
 .buttoncss{
     background-color:#575da1!important;
@@ -45,7 +45,7 @@
 }
 
 
-/*Zustand S4*/ 
+/*Zustand von S4*/ 
 
 .disabled{
     box-shadow: none !important;
@@ -58,14 +58,14 @@
 }
 
 
-/*Zustand S4*/
+/*Zustand von S4*/
 
 .textd{
     color:#3b355d;
 }
 
 
-/*Zustand S4.1*/
+/*Zustand von S4.1*/
 
 .platz{
     background-image: url(../bilder/hintergrund3.png) ;
@@ -76,7 +76,7 @@
 }
 
 
-/*Zustand S6*/
+/*Zustand von S6*/
 
 .CountDownTrigger{
     background-image: url(../bilder/hintergrund2.png);
@@ -93,7 +93,7 @@
 }
 
 
-/*Zustand S7*/
+/*Zustand von S7*/
 
 .btnantworten{
      white-space: normal !important; 
@@ -113,7 +113,7 @@
 }
 
 
-/*Zustand S8*/
+/*Zustand von S8*/
 
 #RundenCounter2{
     margin-bottom: 40px;
@@ -128,7 +128,7 @@
 }
 
 
-/*Zustand S12*/
+/*Zustand von S12*/
 
 .hintergrbildgelb{
     background-image: url(../bilder/hintergrund3.png) !important;
@@ -137,7 +137,7 @@
 }
 
 
-/*Zustand L5.1*/
+/*Zustand von L5.1*/
 
 .buttoncss2{
     background-color:#575da1!important;
@@ -152,7 +152,7 @@
 } 
 
 
-/*Zustand L5.3*/
+/*Zustand von L5.3*/
 
 .linkfarbe{
     color:#575da1!important;
@@ -166,7 +166,7 @@
 }
 
 
-/*Zustand L7*/
+/*Zustand von L7*/
 
 .btnsteuerung{
      white-space: normal !important;

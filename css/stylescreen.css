@@ -59,7 +59,7 @@ body {
 }
 
 
-/*Animation Willkommen*/
+/*Animation von Willkommensbildschirm*/
 
 #willk{                         
     animation: willkommen 5s 1;
@@ -76,7 +76,7 @@ body {
 }
 
 
-/*Animation @Admin*/
+/*Animation von @Admin*/
 
 #nachrichtAdmin{                         
     animation: admin 5s 1;
@@ -91,7 +91,7 @@ body {
 }
 
 
-/*Animation @Spieler*/ 
+/*Animation von @Spieler*/ 
 
 #nachrichtSpieler{                        
     animation: spieler 5s 1;
@@ -109,7 +109,7 @@ body {
 }
 
 
-/*Zustand SC1*/
+/*Zustand von SC1*/
 
 #SC1{
     height:100%;
@@ -176,7 +176,7 @@ div.anfangstext{
 }
 
 
-/*Zustand SC2*/
+/*Zustand von SC2*/
 
 #SC2{
     height:100%;
@@ -196,7 +196,7 @@ div.anfangstext{
 }
 
 
-/*Zustand SC3*/
+/*Zustand von SC3*/
 
 #SC3{
     height:100%;
@@ -219,7 +219,7 @@ div.anfangstext{
 }
 
 
-/*Zustand SC4*/
+/*Zustand von SC4*/
 
 #SC4{
     height:100%;
@@ -299,7 +299,7 @@ td{
 }
 
 
-/*Zustand SC5*/
+/*Zustand von SC5*/
 
 #SC5{
     height:100%;
@@ -326,7 +326,7 @@ img#spielbeginnt{
 }
 
 
-/*Zustand SC6*/
+/*Zustand von SC6*/
 
 #SC6{
     height:100%;
@@ -396,7 +396,7 @@ img#countdown15{
 }
 
 
-/*Zustand SC7*/
+/*Zustand von SC7*/
 
 #SC7{
     height:100%;
@@ -448,7 +448,7 @@ img#countdown15{
 }
 
 
-/*Zustand SC8*/
+/*Zustand von SC8*/
 
 #SC8{
     height:100%;
@@ -474,7 +474,7 @@ img#nextfrage{
 }
     
 
-/*Zustand SC9*/
+/*Zustand von SC9*/
 
 #SC9{
     height:100%;
@@ -498,7 +498,7 @@ img#gameover{
 }
 
 
-/*Zustand SC10*/
+/*Zustand von SC10*/
 
 #SC10{
     height:100%;

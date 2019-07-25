@@ -1,9 +1,10 @@
+/*Schriftfamilie*/
 body {
   font-family: sans-serif; }
-
+/*Anzeigen, Ausblenden von Abschnitten*/
 .hide {
   display: none; }
-
+/*Navigationsleiste*/
 .navbar {
   position: fixed;
   bottom: 0;
@@ -14,7 +15,7 @@ body {
     height: 100%;
     width: 100%;
     margin: auto; }
-
+/*Willkommensseite*/
 #L2S2 .pad {
   padding: 25% 15%; }
   #L2S2 .pad .txt_box {
@@ -31,7 +32,7 @@ body {
     #L2S2 .pad .logos_small_box .col-4 .slogo {
       border: 1px solid #000;
       height: 50px; }
-
+/*Admin/Spieler wählen*/
 #L3S3 .logo {
   width: 30%;
   height: 100px;
@@ -52,11 +53,11 @@ body {
   #L3S3 .auswahl_button p {
     display: table-cell;
     vertical-align: middle; }
-
+/*Lehrer Spielauswahl*/
 #L4 .row .col-6 pt-3 .but {
   padding: 2vh;
   width: 10vh !important; }
-
+/*Warten auf Login der Schüler*/
 #L5_1 #usercount {
   margin-bottom: 40px;
   margin-top: 10px;
